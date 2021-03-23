@@ -20,8 +20,20 @@
  
 ## UX
 
+<details><summary>Site Owner Goals</summary>
+<p>
+
+- I want the users to be able to easily navigate across the site and to feel comfortable doing so, easily finding what they want and need. 
+- I want to be able to easily make any adjustments needed to any products across the website.
+- I want customers to get a feel for the brand and what it is through the design and layout of the website.
+- I want customers to not only visit the website but complete orders.
+- I want customers to feel they can trust the brand by providing them with as much important information as they need.  
+
+</p>
+</details>
 
 ## User Stories
+
 <details><summary>Shopper</summary>
 <p>
 
