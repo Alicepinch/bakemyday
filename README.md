@@ -50,7 +50,6 @@
 - As a shopper on bakemyday I would like to be able to sort product by name an description
 - As a shopper on bakemyday I would like to recieve email confirmation after I have placed an order
 
-
 </p>
 </details>
 
@@ -71,19 +70,81 @@
 
 ## Wireframes
 
+Below are the wireframes created for bakemyday.
 
-<details><summary>User Logged In</summary>
+<details><summary>Homepage (All Users) </summary>
+<p>
+
+![](docs/readme/wireframes/bakemyday-homepage-wireframe.png)
+
+</p>
+</details>
+
+<details><summary>Products page (All Users) </summary>
+<p>
+
+![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+
+</p>
+</details>
+
+<details><summary>Products detail page (All Users) </summary>
+<p>
+
+![](docs/readme/wireframes/bakemyday-product-detail-wireframe.png)
+
+</p>
+</details>
+
+<details><summary>Profile Page (Registered Users) </summary>
+<p>
+
+![](docs/readme/wireframes/bakemyday-profile-page-wireframe.png)
+
+</p>
+</details>
+
+<details><summary>About page (All Users) </summary>
 <p>
 
 </p>
 </details>
 
-<details><summary>User Logged Out</summary>
+<details><summary>Shopping bag (All Users) </summary>
+<p>
+
+![](docs/readme/wireframes/bakemyday-shopping-bag-wireframe.png)
+
+</p>
+</details>
+
+<details><summary>Login Page (All Users) </summary>
+<p>
+
+![](docs/readme/wireframes/bakemyday-login-page-wireframe.png)
+
+</p>
+</details>
+
+<details><summary>Register Page (All Users) </summary>
+<p>
+
+![](docs/readme/wireframes/bakemyday-register-page-wireframe.png)
+
+</p>
+</details>
+
+<details><summary>Create an order (All Users) </summary>
 <p>
 
 </p>
 </details>
 
+<details><summary>Contact page (All Users) </summary>
+<p>
+
+</p>
+</details>
 
 
 ## Design 
