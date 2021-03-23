@@ -5,6 +5,6 @@ from django.shortcuts import render
 
 def index(request):
     """
-    view to return index page
+    View to return index page
     """
     return render(request, 'home/index.html')
