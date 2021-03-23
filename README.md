@@ -19,22 +19,9 @@
  
 ## UX
 
-<details><summary>Site Owner Goals</summary>
-<p>
-
-- I want the users to be able to easily navigate across the site and to feel comfortable doing so, easily finding what they want and need. 
-- I want to be able to easily make any adjustments needed to any products across the website.
-- I want customers to get a feel for the brand and what it is through the design and layout of the website.
-- I want customers to not only visit the website but complete orders.
-- I want customers to feel they can trust the brand by providing them with as much important information as they need.  
-
-</p>
-</details>
-
 ## User Stories
 
-<details><summary>Shopper</summary>
-<p>
+### Shopper
 
 - As a shopper on bakemyday I would like to be able to view all products available
 - As a shopper on bakemyday I would like to be able to view product details
@@ -49,12 +36,7 @@
 - As a shopper on bakemyday I would like to be able to sort product by name an description
 - As a shopper on bakemyday I would like to recieve email confirmation after I have placed an order
 
-</p>
-</details>
-
-
-<details><summary>Site User</summary>
-<p>
+### Site User
 
 - As a site user of bakemyday I would like to easily register for an account
 - As a site users of bakemyday I would like to easily login and logout
@@ -63,109 +45,152 @@
 - As a site users of bakemyday I would like to have a personalized user profile
 - As a shopper on bakemyday I would like to be able to view my order history after placing an order
 
-</p>
-</details>
+### Site Owner Goals
 
+- As the site owner I want the users to be able to easily navigate across the site and to feel comfortable doing so, easily finding what they want and need. 
+- As the site owner I want to be able to easily make any adjustments needed to any products across the website.
+- As the site owner I want customers to get a feel for the brand and what it is through the design and layout of the website.
+- As the site owner I want customers to not only visit the website but complete orders.
+- As the site owner I want customers to feel they can trust the brand by providing them with as much important information as they need.  
 
 ## Wireframes
 
-Below are the wireframes created for bakemyday.
+Below are all the wireframes that have been created for bakemyday.
 
-<details><summary>Homepage (All Users) </summary>
-<p>
+### Homepage (All users):
+<details><summary>Desktop </summary>
 
 ![](docs/readme/wireframes/bakemyday-homepage-wireframe.png)
 
-</p>
 </details>
 
-<details><summary>Products page (All Users) </summary>
-<p>
+<details><summary>Mobile</summary>
 
 ![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
 
-</p>
 </details>
 
-<details><summary>Products detail page (All Users) </summary>
-<p>
+### Products page (All users)
+
+<details><summary>Desktop</summary>
+
+
+![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+
+</details>
+
+<details><summary>Mobile</summary>
+
+![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+
+</details>
+
+### Products detail page (All users)
+
+<details><summary>Desktop </summary>
 
 ![](docs/readme/wireframes/bakemyday-product-detail-wireframe.png)
 
-</p>
 </details>
 
-<details><summary>Profile Page (Registered Users) </summary>
-<p>
+<details><summary>Mobile</summary>
+
+![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+
+</details>
+
+### Profile page (Registered users)
+
+<details><summary>Desktop</summary>
 
 ![](docs/readme/wireframes/bakemyday-profile-page-wireframe.png)
 
-</p>
 </details>
 
-<details><summary>About page (All Users) </summary>
-<p>
+<details><summary>Mobile</summary>
 
-</p>
+![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+
 </details>
 
-<details><summary>Shopping bag (All Users) </summary>
-<p>
+### Shopping Bag (All users)
+
+<details><summary>Desktop </summary>
 
 ![](docs/readme/wireframes/bakemyday-shopping-bag-wireframe.png)
 
-</p>
 </details>
 
-<details><summary>Login Page (All Users) </summary>
-<p>
+<details><summary>Mobile</summary>
+
+![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+
+</details>
+
+### Login Page (All users)
+
+<details><summary>Desktop </summary>
 
 ![](docs/readme/wireframes/bakemyday-login-page-wireframe.png)
 
-</p>
 </details>
 
-<details><summary>Register Page (All Users) </summary>
-<p>
+<details><summary>Mobile</summary>
+
+![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+
+</details>
+
+### Register page (All users)
+
+<details><summary>Desktop </summary>
 
 ![](docs/readme/wireframes/bakemyday-register-wireframe.png)
 
-</p>
 </details>
 
-<details><summary>Create an order (All Users) </summary>
-<p>
+<details><summary>Mobile</summary>
+
+![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+
+</details>
+
+### Personalised order (All users)
+<details><summary>Desktop </summary>
 
 ![](docs/readme/wireframes/bakemyday-personalise-cake-form-wireframe.png)
 
-
-</p>
 </details>
 
-<details><summary>Contact page (All Users) </summary>
-<p>
+<details><summary>Mobile</summary>
+
+![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+
+</details>
+
+### Contact page (All users)
+
+<details><summary>Desktop </summary>
 
 ![](docs/readme/wireframes/bakemyday-contact-page-wireframe.png)
 
-</p>
 </details>
 
+<details><summary>Mobile</summary>
+
+![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+
+</details>
 
 ## Design 
 
+### Typography 
 
-<details><summary>Typography</summary>
-<p>
+The fonts chosen for this website are "Lobster two" and "open sans" the reason for this choice was to try and match the logo font as closely as possible to keep a similiar design feel throughout the website.
 
-</p>
-</details>
+### Colour Scheme 
 
-<details><summary>Colour Scheme</summary>
-<p>
-
-
-</p>
-</details>
+The colour scheme for this website was also chosen to align with the company logo. 
 
 ## Features
  
