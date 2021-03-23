@@ -128,7 +128,7 @@ Below are the wireframes created for bakemyday.
 <details><summary>Register Page (All Users) </summary>
 <p>
 
-![](docs/readme/wireframes/bakemyday-register-page-wireframe.png)
+![](docs/readme/wireframes/bakemyday-register-wireframe.png)
 
 </p>
 </details>
@@ -136,11 +136,16 @@ Below are the wireframes created for bakemyday.
 <details><summary>Create an order (All Users) </summary>
 <p>
 
+![](docs/readme/wireframes/bakemyday-personalise-cake-form-wireframe.png)
+
+
 </p>
 </details>
 
 <details><summary>Contact page (All Users) </summary>
 <p>
+
+![](docs/readme/wireframes/bakemyday-contact-page-wireframe.png)
 
 </p>
 </details>
