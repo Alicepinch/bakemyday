@@ -1,4 +1,10 @@
+h1,h2 {
+    font-family: "lobster two", sans-serif;
+    font-weight: 700;
+}
+
 .dropdown-item {
     padding-top: 5px;
     padding-left: 0;
 }
+
