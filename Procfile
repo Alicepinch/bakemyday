@@ -1,0 +1,1 @@
+web: gunicorn bake_my_day.wsgi:application
