@@ -2,7 +2,6 @@
 
 [Bake My Day Live Site](https://bakemydaybyamber.herokuapp.com/)
 
-
 ## Table of Index: 
 - [UX](#ux)
    - [User Stories](#user-stories)
@@ -165,7 +164,11 @@ Below are the wireframes created for bakemyday.
 
 ## Features
  
-- [x] 
+- Allauth authentication
+  - Login
+  - Register
+- Shopping cart
+- 
 
 ## Future Features
 
