@@ -1,5 +1,7 @@
 # Bake My Day
 
+Bake my day is an online e-commerce store where users can search through all of the different products on offer and add anything that they would like to purchase to their basket. On Bake my day not only can you search through the array of products that are on offer but you can also order personalised cakes, cupcakes and more. 
+
 [Bake My Day Live Site](https://bakemydaybyamber.herokuapp.com/)
 
 ## Table of Index: 
@@ -19,16 +21,36 @@
  
 ## UX
 
+### Target Audience
+
+- People who need a cake for a special occasion such as Birthdays, Easter, Christmas etc. 
+- People who want to order sweet treats for their friends or family during the global pandemic.
+- People who want to support a local business. 
+
+### Visitor/User goals:
+
+- Purchase products in a safe and secure way.
+- Be provided with all the necessary information regarding cake ingredients for allergen reasons. 
+- Get quotes for a personalised cake.
+
+### Site Owner Goals
+
+- To be able to easily navigate across the site and to feel comfortable doing so, easily finding what they want and need. 
+- To be able to easily make any adjustments needed to any products across the website.
+- For customers to get a feel for the brand and what it is through the design and layout of the website.
+- For customers to not only visit the website but complete orders.
+- For customers to feel they can trust the brand by providing them with as much important information as they need.
+
 ## User Stories
 
 ### Shopper
 
 - As a shopper on bakemyday I would like to be able to view all products available
 - As a shopper on bakemyday I would like to be able to view product details
-- As a shopper on bakemyday I would like to be able to sort products by category
+- As a shopper on bakemyday I would like to be able to sort products by category/occasion
 - As a shopper on bakemyday I would like to be able identiy if there are any deals on the website
-- As a shopper on bakemyday I would like to be able to add product to my basket
-- As a shopper on bakemyday I would like to be able to view the product I have added to my basket
+- As a shopper on bakemyday I would like to be able to add a product to my basket
+- As a shopper on bakemyday I would like to be able to view all the products I have added to my basket
 - As a shopper on bakemyday I would like to be able to create a personalised order
 - As a shopper on bakemyday I would like to be able to personalise my order
 - As a shopper on bakemyday I would like to be able to search the website and see my results
@@ -44,14 +66,6 @@
 - As a site users of bakemyday I would like to recieve email confirmation after registering
 - As a site users of bakemyday I would like to have a personalized user profile
 - As a shopper on bakemyday I would like to be able to view my order history after placing an order
-
-### Site Owner Goals
-
-- As the site owner I want the users to be able to easily navigate across the site and to feel comfortable doing so, easily finding what they want and need. 
-- As the site owner I want to be able to easily make any adjustments needed to any products across the website.
-- As the site owner I want customers to get a feel for the brand and what it is through the design and layout of the website.
-- As the site owner I want customers to not only visit the website but complete orders.
-- As the site owner I want customers to feel they can trust the brand by providing them with as much important information as they need.  
 
 ## Wireframes
 
