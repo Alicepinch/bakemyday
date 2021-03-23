@@ -200,23 +200,19 @@ Below are all the wireframes that have been created for bakemyday.
 
 ### Typography 
 
-The fonts chosen for this website are "Lobster two" and "open sans" the reason for this choice was to try and match the logo font as closely as possible to keep a similiar design feel throughout the website.
+The fonts chosen for this website are [Lobster two](https://fonts.google.com/specimen/Lobster+Two?preview.text_type=custom) and [Open sans](https://fonts.google.com/specimen/Open+Sans?preview.text_type=custom) the reason for this choice was to try and match the logo font as closely as possible to keep a similiar design feel throughout the website.
 
 ### Colour Scheme 
 
-The colour scheme for this website was also chosen to align with the company logo. 
 
 ## Features
  
-- Allauth authentication
-  - Login
-  - Register
-- Shopping cart
-- 
 
 ## Future Features
 
-- [ ] 
+
+## Data Modelling 
+
 
 ## Technologies Used
 
@@ -227,6 +223,7 @@ The colour scheme for this website was also chosen to align with the company log
 - Heroku
 - Bootstrap
 - Git & GitHub.com
+- Jinja templating 
 
 ### Other Tools Used
 
@@ -237,15 +234,19 @@ The colour scheme for this website was also chosen to align with the company log
 - [W3Schools](https://www.w3schools.com/) 
 - [StackOverflow](https://stackoverflow.com/) 
 - [Coloors](https://coolors.co/) 
-- [Favicon generator](https://www.favicon-generator.org/) 
 - [JShint](https://jshint.com/) 
 - [W3cValidator](https://validator.w3.org/)
-- Google chrome developer tools.
-- [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/)
-  - [Flask error pages](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages)
-  - [For view decorators](https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/)
-  - [For permanent session cookie](https://flask.palletsprojects.com/en/1.1.x/config/)
-- [Video to gif converter](https://ezgif.com/video-to-gif)
+- Google chrome developer tools
+- Stripe 
+- Django Crispy Forms 
+- Gunicorn 
+- Psycopg2 
+- AWS S3 Bucket
+- Boto3
+
+### Databases
+- SQlite3
+- PostgreSQL 
 
 ## Testing
 
