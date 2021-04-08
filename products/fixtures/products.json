@@ -1,0 +1,17 @@
+[
+    {
+            "pk": 1,
+            "model": "product.products",
+            "fields": {
+                "sku": "",
+                "name": "",
+                "description": "",
+                "category": "",
+                "occasion": "",
+                "price": ,
+                "has_size": "True",
+                "image": "",
+                "image_url": "",
+            }
+        }
+    ]

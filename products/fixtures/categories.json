@@ -1,0 +1,58 @@
+[
+   {
+      "pk":1,
+      "model":"products.category",
+      "fields":{
+         "name":"large_cakes",
+         "friendly_name":"Large Cakes"
+      }
+   },
+   {
+      "pk":1,
+      "model":"products.category",
+      "fields":{
+         "name":"cupcakes",
+         "friendly_name":"Cupcakes"
+      }
+   },
+   {
+      "pk":1,
+      "model":"products.category",
+      "fields":{
+         "name":"smash_hearts",
+         "friendly_name":"Smash Hearts"
+      }
+   },
+   {
+      "pk":1,
+      "model":"products.category",
+      "fields":{
+         "name":"cheesecake",
+         "friendly_name":"Cheesecake"
+      }
+   },
+   {
+      "pk":1,
+      "model":"products.category",
+      "fields":{
+         "name":"cake_pops",
+         "friendly_name":"Cake Pops"
+      }
+   },
+   {
+      "pk":1,
+      "model":"products.category",
+      "fields":{
+         "name":"cookies",
+         "friendly_name":"Cookies"
+      }
+   },
+   {
+      "pk":1,
+      "model":"products.category",
+      "fields":{
+         "name":"giant_cookies",
+         "friendly_name":"Giant Cookies"
+      }
+   }
+]
