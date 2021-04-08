@@ -8,3 +8,23 @@ h1,h2 {
     padding-left: 0;
 }
 
+.navbar {
+    background: white;
+}
+
+.dropdown-menu {
+    border: 0;
+}
+
+.navbar-toggler-icon i {
+    color: #000;
+    padding-top: .25rem;
+}
+
+.nav-link {
+    color: black;
+}
+
+.nav-link:hover {
+    color: brown;
+}
