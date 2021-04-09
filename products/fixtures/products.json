@@ -1,17 +1,354 @@
 [
     {
             "pk": 1,
-            "model": "product.products",
+            "model": "products.product",
             "fields": {
                 "sku": "",
-                "name": "",
+                "name": "Pink & Rose Gold Cake",
                 "description": "",
-                "category": "",
-                "occasion": "",
-                "price": ,
-                "has_size": "True",
+                "category": "1",
+                "occasion": "4",
+                "price": 65,
+                "has_size": "False",
+                "has_flavours": "True",
                 "image": "",
-                "image_url": "",
+                "image_url": ""
             }
-        }
-    ]
+        },
+        {
+            "pk": 3,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Chocolate Cake",
+                "description": "",
+                "category": "1",
+                "occasion": "4",
+                "price": 65,
+                "has_size": "False",
+                "has_flavours": "False",
+                "image": "",
+                "image_url": ""
+            }
+        },
+         {
+            "pk": 4,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Cookies and Cream",
+                "description": "",
+                "category": "1",
+                "occasion": "4",
+                "price": 65,
+                "has_size": "False",
+                "has_flavours": "False",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 5,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Lemon Cake",
+                "description": "",
+                "category": "1",
+                "occasion": "4",
+                "price": 65,
+                "has_size": "False",
+                "has_flavours": "False",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 6,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Biscoff Cake",
+                "description": "",
+                "category": "1",
+                "occasion": "4",
+                "price": 65,
+                "has_size": "False",
+                "has_flavours": "False",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 7,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Pink Dream",
+                "description": "",
+                "category": "1",
+                "occasion": "4",
+                "price": 65,
+                "has_size": "False",
+                "has_flavours": "False",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 8,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Chocolate Overload",
+                "description": "",
+                "category": "1",
+                "occasion": "4",
+                "price": 12,
+                "has_size": "False",
+                "has_flavours": "False",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 9,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Blue Cupcakes",
+                "description": "",
+                "category": "2",
+                "occasion": "4",
+                "price": 12,
+                "has_size": "True",
+                "has_flavours": "True",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 10,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Easter Cupcakes",
+                "description": "",
+                "category": "2",
+                "occasion": "1",
+                "price": 12,
+                "has_size": "True",
+                "has_flavours": "True",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 11,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Pink Cupcakes",
+                "description": "",
+                "category": "2",
+                "occasion": "4",
+                "price": 12,
+                "has_size": "True",
+                "has_flavours": "True",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 12,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Cookies and Cream Cupcakes",
+                "description": "",
+                "category": "2",
+                "occasion": "4",
+                "price": 12,
+                "has_size": "True",
+                "has_flavours": "True",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 13,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Nutella, Biscoff and Orange Cupcakes",
+                "description": "",
+                "category": "2",
+                "occasion": "4",
+                "price": 12,
+                "has_size": "True",
+                "has_flavours": "True",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 14,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Love Cupcakes",
+                "description": "",
+                "category": "2",
+                "occasion": "3",
+                "price": 12,
+                "has_size": "True",
+                "has_flavours": "True",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 15,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Love Cookie",
+                "description": "",
+                "category": "7",
+                "occasion": "3",
+                "price": 12,
+                "has_size": "False",
+                "has_flavours": "False",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 16,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Love Smash Heart",
+                "description": "",
+                "category": "3",
+                "occasion": "3",
+                "price": 12,
+                "has_size": "False",
+                "has_flavours": "False",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 17,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Heart Cakepops",
+                "description": "",
+                "category": "3",
+                "occasion": "3",
+                "price": 12,
+                "has_size": "False",
+                "has_flavours": "True",
+                "image": "",
+                "image_url": ""
+            }
+        },
+         {
+            "pk": 18,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Christmas Cupcakes",
+                "description": "",
+                "category": "2",
+                "occasion": "2",
+                "price": 12,
+                "has_size": "False",
+                "has_flavours": "True",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 19,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "White Chocolate Cupcakes",
+                "description": "",
+                "category": "2",
+                "occasion": "4",
+                "price": 12,
+                "has_size": "True",
+                "has_flavours": "True",
+                "image": "",
+                "image_url": ""
+            }
+        },
+         {
+            "pk": 20,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Chocolate Cheesecake",
+                "description": "",
+                "category": "4",
+                "occasion": "4",
+                "price": 45,
+                "has_size": "True",
+                "has_flavours": "True",
+                "image": "",
+                "image_url": ""
+            }
+        },
+        {
+            "pk": 21,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Unicorn Cupcakes",
+                "description": "",
+                "category": "2",
+                "occasion": "4",
+                "price": 12,
+                "has_size": "True",
+                "has_flavours": "True",
+                "image": "",
+                "image_url": ""
+            }
+        },        
+        {
+            "pk": 22,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Unicorn Cookie",
+                "description": "",
+                "category": "7",
+                "occasion": "4",
+                "price": 12,
+                "has_size": "False",
+                "has_flavours": "False",
+                "image": "",
+                "image_url": ""
+            }
+        },
+            {
+            "pk": 23,
+            "model": "products.product",
+            "fields": {
+                "sku": "",
+                "name": "Strawberry and Cream Cupcakes",
+                "description": "",
+                "category": "2",
+                "occasion": "6",
+                "price": 12,
+                "has_size": "True",
+                "has_flavours": "True",
+                "image": "",
+                "image_url": ""
+            }
+        }        
+]

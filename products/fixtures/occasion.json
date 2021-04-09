@@ -1,55 +1,55 @@
 [
    {
       "pk":1,
-      "model":"products.category",
+      "model":"products.occasion",
       "fields":{
          "name":"easter",
          "friendly_name":"Easter"
       }
    },
    {
-      "pk":1,
-      "model":"products.category",
+      "pk":2,
+      "model":"products.occasion",
       "fields":{
          "name":"christmas",
          "friendly_name":"Christmas"
       }
    },
    {
-      "pk":1,
-      "model":"products.category",
+      "pk":3,
+      "model":"products.occasion",
       "fields":{
          "name":"valentines_day",
          "friendly_name":"Valentines"
       }
    },
       {
-      "pk":1,
-      "model":"products.category",
+      "pk":4,
+      "model":"products.occasion",
       "fields":{
          "name":"birthdays",
-         "friendly_name":"Birthdays"
+         "friendly_name":"Baby Shower"
       }
    },
-         {
-      "pk":1,
-      "model":"products.category",
-      "fields":{
-         "name":"mothers_day",
-         "friendly_name":"Mothers Day"
-      }
-   },
-            {
-      "pk":1,
-      "model":"products.category",
+    {
+      "pk":5,
+      "model":"products.occasion",
       "fields":{
          "name":"fathers_day",
          "friendly_name":"Fathers Day"
       }
    },
-         {
-      "pk":1,
-      "model":"products.category",
+        {
+      "pk":6,
+      "model":"products.occasion",
+      "fields":{
+         "name":"mothers_day",
+         "friendly_name":"Mothers Day"
+      }
+   },
+           {
+      "pk":6,
+      "model":"products.occasion",
       "fields":{
          "name":"afternoon_tea",
          "friendly_name":"Afternoon Tea"

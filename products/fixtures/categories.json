@@ -8,7 +8,7 @@
       }
    },
    {
-      "pk":1,
+      "pk":2,
       "model":"products.category",
       "fields":{
          "name":"cupcakes",
@@ -16,7 +16,7 @@
       }
    },
    {
-      "pk":1,
+      "pk":3,
       "model":"products.category",
       "fields":{
          "name":"smash_hearts",
@@ -24,7 +24,7 @@
       }
    },
    {
-      "pk":1,
+      "pk":4,
       "model":"products.category",
       "fields":{
          "name":"cheesecake",
@@ -32,7 +32,7 @@
       }
    },
    {
-      "pk":1,
+      "pk":5,
       "model":"products.category",
       "fields":{
          "name":"cake_pops",
@@ -40,7 +40,7 @@
       }
    },
    {
-      "pk":1,
+      "pk":6,
       "model":"products.category",
       "fields":{
          "name":"cookies",
@@ -48,7 +48,7 @@
       }
    },
    {
-      "pk":1,
+      "pk":7,
       "model":"products.category",
       "fields":{
          "name":"giant_cookies",
