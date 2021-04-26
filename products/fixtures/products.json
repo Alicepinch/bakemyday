@@ -3,7 +3,7 @@
             "pk": 1,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123456",
                 "name": "Pink & Rose Gold Cake",
                 "description": "",
                 "category": "1",
@@ -19,7 +19,7 @@
             "pk": 3,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123457",
                 "name": "Chocolate Cake",
                 "description": "",
                 "category": "1",
@@ -35,7 +35,7 @@
             "pk": 4,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123458",
                 "name": "Cookies and Cream",
                 "description": "",
                 "category": "1",
@@ -51,7 +51,7 @@
             "pk": 5,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123459",
                 "name": "Lemon Cake",
                 "description": "",
                 "category": "1",
@@ -67,7 +67,7 @@
             "pk": 6,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123460",
                 "name": "Biscoff Cake",
                 "description": "",
                 "category": "1",
@@ -83,7 +83,7 @@
             "pk": 7,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123461",
                 "name": "Pink Dream",
                 "description": "",
                 "category": "1",
@@ -99,7 +99,7 @@
             "pk": 8,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123462",
                 "name": "Chocolate Overload",
                 "description": "",
                 "category": "1",
@@ -115,7 +115,7 @@
             "pk": 9,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123463",
                 "name": "Blue Cupcakes",
                 "description": "",
                 "category": "2",
@@ -131,7 +131,7 @@
             "pk": 10,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123464",
                 "name": "Easter Cupcakes",
                 "description": "",
                 "category": "2",
@@ -147,7 +147,7 @@
             "pk": 11,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123465",
                 "name": "Pink Cupcakes",
                 "description": "",
                 "category": "2",
@@ -163,7 +163,7 @@
             "pk": 12,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123466",
                 "name": "Cookies and Cream Cupcakes",
                 "description": "",
                 "category": "2",
@@ -179,7 +179,7 @@
             "pk": 13,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123467",
                 "name": "Nutella, Biscoff and Orange Cupcakes",
                 "description": "",
                 "category": "2",
@@ -195,7 +195,7 @@
             "pk": 14,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123468",
                 "name": "Love Cupcakes",
                 "description": "",
                 "category": "2",
@@ -211,7 +211,7 @@
             "pk": 15,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123469",
                 "name": "Love Cookie",
                 "description": "",
                 "category": "7",
@@ -227,7 +227,7 @@
             "pk": 16,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123470",
                 "name": "Love Smash Heart",
                 "description": "",
                 "category": "3",
@@ -243,7 +243,7 @@
             "pk": 17,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123471",
                 "name": "Heart Cakepops",
                 "description": "",
                 "category": "3",
@@ -259,7 +259,7 @@
             "pk": 18,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123472",
                 "name": "Christmas Cupcakes",
                 "description": "",
                 "category": "2",
@@ -275,7 +275,7 @@
             "pk": 19,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123473",
                 "name": "White Chocolate Cupcakes",
                 "description": "",
                 "category": "2",
@@ -291,7 +291,7 @@
             "pk": 20,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123474",
                 "name": "Chocolate Cheesecake",
                 "description": "",
                 "category": "4",
@@ -307,7 +307,7 @@
             "pk": 21,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123475",
                 "name": "Unicorn Cupcakes",
                 "description": "",
                 "category": "2",
@@ -323,7 +323,7 @@
             "pk": 22,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123476",
                 "name": "Unicorn Cookie",
                 "description": "",
                 "category": "7",
@@ -339,7 +339,7 @@
             "pk": 23,
             "model": "products.product",
             "fields": {
-                "sku": "",
+                "sku": "AC123478",
                 "name": "Strawberry and Cream Cupcakes",
                 "description": "",
                 "category": "2",
