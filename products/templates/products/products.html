@@ -28,8 +28,9 @@
         </a>
         {% endif %}
         <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">{{ product.description }}</p>
+          <h5>{{ product.name }}</h5>
+          <small class="text-muted">{{ product.category.friendly_name }} <br></small>
+          <p class="card-text"> Testing Product Description {{ product.description }}</p>
           <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-primary btn-sm"> View Product </a>
         </div>
       </div>

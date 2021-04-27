@@ -28,7 +28,7 @@
       "model":"products.occasion",
       "fields":{
          "name":"birthdays",
-         "friendly_name":"Baby Shower"
+         "friendly_name":"Birthdays"
       }
    },
     {
