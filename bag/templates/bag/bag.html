@@ -11,9 +11,17 @@
 {% endblock %} {% block content %}
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-12">
 
-      SHOPPING BAG
+      {% if bag_items %}
+
+      {% else%}
+
+      <p>
+        Your shopping bag is empty
+      </p> 
+
+      {%endif%}
 
     </div>
   </div>
