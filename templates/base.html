@@ -46,18 +46,43 @@
 
 <body>
     <header>
-        <div class="container-fluid text-center">
+        <div class="container-fluid">
             <div class="row">
                 <div class="offset-lg-10 offset-md-9 mt-2">
-                    <a href="">Login</a>
-                    <a class="ml-3" href="">Register</a>
+                    <ul class="list-inline list-unstyled my-0">
+                        <li class="list-inline-item">
+                            <a href="">Login</a>
+                        </li>
+                       
+                        <li class="list-inline-item">
+                            <a href="">Register</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} my-auto" href="{% url 'view_bag' %}">
+                                <div class="text-center">
+                                    <p class="my-0">
+                                        <i class="fas fa-shopping-bag fa-lg"></i>
+                                        {% if grand_total %}
+                                            ${{ grand_total|floatformat:2 }}
+                                        {% else %}
+                                            $0.00
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                   
                 </div>
             </div>
+        </div>
+
+        <div class="container text-center">
             <div class="row">
-                 <div class="col">
-                    <a href="{% url 'home' %}"><h1 id="company-name">Bake My Day</h1></a>
-                </div>
-            </div>
+                <div class="col">
+                   <a><h1 id="company-name">Bake My Day</h1></a>
+               </div>
+           </div>
         </div>
 
         <div class="container ">
@@ -89,9 +114,6 @@
                                     </div>
                                 </div>
                             </form>
-                        </li>
-                        <li class="list-inline-item d-none d-inline-block">
-                            <p>Login</p>
                         </li>
                     </ul>
                 </div>
