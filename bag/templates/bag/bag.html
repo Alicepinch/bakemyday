@@ -2,6 +2,9 @@
 <div class="container">
   <div class="row">
     <div class="col">
+
+      <h2>Your Basket</h2>
+      <hr>
         
     </div>
   </div>
@@ -9,14 +12,55 @@
 
 
 {% endblock %} {% block content %}
-<div class="container">
+<div class="container pt-3">
   <div class="row">
-    <div class="col-12">
-
+    <div class="col">
 
       {% if bag_items %}
+      
+      <table>
+        <thead>
+          <tr class="text-center">
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th >Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>&nbsp;</th>
+          </tr>
+        </thead>
 
-      {{ bag_items }}
+        {% for item in bag_items %}
+          <tr>
+            <td>
+              {% if product.image %}
+                            <img class="bag-img img-fluid" src="{{ product.image.url }}" alt="{{ item.product.name }}">
+                        {% else %}
+                            <img class="bag-img img-fluid" src="/media/noimage.jpeg" alt="{{ item.product.name }}">
+                    {% endif %}
+            </td>
+            <td class="bag-product-name pr-3">
+              <p>{{ item.product.name }}</p> 
+            </td>
+            <td class="bag-product-price p-3">
+              <p>£{{ item.product.price }}</p>
+            </td>
+            <td>
+              <div class="bag-quantity p-3">
+                <a href=""><i class="fas fa-minus"></i></a>
+                <input type="number" class="quantity" value="{{ item.quantity }}"/>
+                <a href=""><i class="fas fa-plus"></i></a>
+              </div>
+            </td>
+            <td class="bag-subtotal p-3">
+               <p> £... </p> 
+            </td>
+            <td class="bag-remove">
+              <a href=""><i class="fas fa-times-circle"></i></a>
+            </td>
+          </tr>
+          {% endfor %}
+      </table>
 
       {% else%}
 
