@@ -48,7 +48,7 @@
       }
    },
            {
-      "pk":6,
+      "pk":7,
       "model":"products.occasion",
       "fields":{
          "name":"afternoon_tea",

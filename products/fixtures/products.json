@@ -9,8 +9,6 @@
                 "category": "1",
                 "occasion": "4",
                 "price": 65,
-                "has_size": "False",
-                "has_flavours": "True",
                 "image": "",
                 "image_url": ""
             }
@@ -25,8 +23,6 @@
                 "category": "1",
                 "occasion": "4",
                 "price": 65,
-                "has_size": "False",
-                "has_flavours": "False",
                 "image": "",
                 "image_url": ""
             }
@@ -41,8 +37,6 @@
                 "category": "1",
                 "occasion": "4",
                 "price": 65,
-                "has_size": "False",
-                "has_flavours": "False",
                 "image": "",
                 "image_url": ""
             }
@@ -57,8 +51,6 @@
                 "category": "1",
                 "occasion": "4",
                 "price": 65,
-                "has_size": "False",
-                "has_flavours": "False",
                 "image": "",
                 "image_url": ""
             }
@@ -73,8 +65,6 @@
                 "category": "1",
                 "occasion": "4",
                 "price": 65,
-                "has_size": "False",
-                "has_flavours": "False",
                 "image": "",
                 "image_url": ""
             }
@@ -89,8 +79,6 @@
                 "category": "1",
                 "occasion": "4",
                 "price": 65,
-                "has_size": "False",
-                "has_flavours": "False",
                 "image": "",
                 "image_url": ""
             }
@@ -105,8 +93,6 @@
                 "category": "1",
                 "occasion": "4",
                 "price": 12,
-                "has_size": "False",
-                "has_flavours": "False",
                 "image": "",
                 "image_url": ""
             }
@@ -121,8 +107,6 @@
                 "category": "2",
                 "occasion": "4",
                 "price": 12,
-                "has_size": "True",
-                "has_flavours": "True",
                 "image": "",
                 "image_url": ""
             }
@@ -137,8 +121,6 @@
                 "category": "2",
                 "occasion": "1",
                 "price": 12,
-                "has_size": "True",
-                "has_flavours": "True",
                 "image": "",
                 "image_url": ""
             }
@@ -153,8 +135,6 @@
                 "category": "2",
                 "occasion": "4",
                 "price": 12,
-                "has_size": "True",
-                "has_flavours": "True",
                 "image": "",
                 "image_url": ""
             }
@@ -169,8 +149,6 @@
                 "category": "2",
                 "occasion": "4",
                 "price": 12,
-                "has_size": "True",
-                "has_flavours": "True",
                 "image": "",
                 "image_url": ""
             }
@@ -185,8 +163,6 @@
                 "category": "2",
                 "occasion": "4",
                 "price": 12,
-                "has_size": "True",
-                "has_flavours": "True",
                 "image": "",
                 "image_url": ""
             }
@@ -201,8 +177,6 @@
                 "category": "2",
                 "occasion": "3",
                 "price": 12,
-                "has_size": "True",
-                "has_flavours": "True",
                 "image": "",
                 "image_url": ""
             }
@@ -217,8 +191,6 @@
                 "category": "7",
                 "occasion": "3",
                 "price": 12,
-                "has_size": "False",
-                "has_flavours": "False",
                 "image": "",
                 "image_url": ""
             }
@@ -233,8 +205,6 @@
                 "category": "3",
                 "occasion": "3",
                 "price": 12,
-                "has_size": "False",
-                "has_flavours": "False",
                 "image": "",
                 "image_url": ""
             }
@@ -249,8 +219,6 @@
                 "category": "5",
                 "occasion": "3",
                 "price": 12,
-                "has_size": "False",
-                "has_flavours": "True",
                 "image": "",
                 "image_url": ""
             }
@@ -265,8 +233,6 @@
                 "category": "2",
                 "occasion": "2",
                 "price": 12,
-                "has_size": "False",
-                "has_flavours": "True",
                 "image": "",
                 "image_url": ""
             }
@@ -281,8 +247,6 @@
                 "category": "2",
                 "occasion": "4",
                 "price": 12,
-                "has_size": "True",
-                "has_flavours": "True",
                 "image": "",
                 "image_url": ""
             }
@@ -297,8 +261,6 @@
                 "category": "4",
                 "occasion": "4",
                 "price": 45,
-                "has_size": "True",
-                "has_flavours": "True",
                 "image": "",
                 "image_url": ""
             }
@@ -313,8 +275,6 @@
                 "category": "2",
                 "occasion": "4",
                 "price": 12,
-                "has_size": "True",
-                "has_flavours": "True",
                 "image": "",
                 "image_url": ""
             }
@@ -329,8 +289,6 @@
                 "category": "7",
                 "occasion": "4",
                 "price": 12,
-                "has_size": "False",
-                "has_flavours": "False",
                 "image": "",
                 "image_url": ""
             }
@@ -345,8 +303,6 @@
                 "category": "2",
                 "occasion": "6",
                 "price": 12,
-                "has_size": "True",
-                "has_flavours": "True",
                 "image": "",
                 "image_url": ""
             }
