@@ -18,14 +18,14 @@
 
       {% if bag_items %}
       
-      <table>
+      <table class="table table-sm table-borderless">
         <thead>
-          <tr class="text-center">
+          <tr>
+            <th class="pb-4">Product Information</th>
             <th>&nbsp;</th>
-            <th>&nbsp;</th>
-            <th >Price</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
+            <th class="pb-4">Price</th>
+            <th class="pb-4">Quantity</th>
+            <th class="pb-4">Subtotal</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -39,20 +39,24 @@
                             <img class="bag-img img-fluid" src="/media/noimage.jpeg" alt="{{ item.product.name }}">
                     {% endif %}
             </td>
-            <td class="bag-product-name pr-3">
-              <p>{{ item.product.name }}</p> 
+            <td class="bag-product-name">
+              <p class="m-0 font-weight-bold">{{ item.product.name }}</p> 
+              <small class="text-muted">SKU:{{ item.product.sku}}</small>
             </td>
-            <td class="bag-product-price p-3">
+            <td class="bag-product-price">
               <p>£{{ item.product.price }}</p>
             </td>
             <td>
-              <div class="bag-quantity p-3">
+              <div class="bag-quantity">
                 <a href=""><i class="fas fa-minus"></i></a>
                 <input type="number" class="quantity" value="{{ item.quantity }}"/>
                 <a href=""><i class="fas fa-plus"></i></a>
               </div>
+              <div class="mt-1">
+                <small><a href="">Update</a></small>
+              </div>
             </td>
-            <td class="bag-subtotal p-3">
+            <td class="bag-subtotal">
                <p> £... </p> 
             </td>
             <td class="bag-remove">
@@ -60,6 +64,16 @@
             </td>
           </tr>
           {% endfor %}
+          <tr>
+            <td colspan="5" class="text-right">
+                <a href="{% url 'products' %}" class="btn btn-secondary">
+                  <i class="fas fa-chevron-left pr-1"></i><span>Keep Shopping</span>
+                </a>
+                <a href="" class="btn btn-secondary">
+                    <span>Secure Checkout</span><i class="fas fa-lock pl-1"></i>
+                </a>
+            </td>
+        </tr>
       </table>
 
       {% else%}
