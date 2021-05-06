@@ -15,9 +15,6 @@
 <div class="container pt-3">
   <div class="row">
     <div class="col">
-
-      {% if bag_items %}
-      
       <table class="table table-sm table-borderless">
         <thead>
           <tr>
@@ -41,6 +38,7 @@
             </td>
             <td class="bag-product-name">
               <p class="m-0 font-weight-bold">{{ item.product.name }}</p> 
+              <p class="m-0 font-weight-bold">Size:{% if item.product.has_size %}{{ item.size }}{% else %}N/A{% endif %}</p> 
               <small class="text-muted">SKU:{{ item.product.sku}}</small>
             </td>
             <td class="bag-product-price">
@@ -81,6 +79,13 @@
       <p>
         Your shopping bag is empty
       </p> 
+      <div>
+        <a href="{% url 'products' %}" class="btn btn-secondary">
+          <i class="fas fa-chevron-left pr-1"></i><span>Keep Shopping</span>
+        </a>
+
+      </div>
+      
 
       {%endif%}
 
