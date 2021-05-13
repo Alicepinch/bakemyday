@@ -9,6 +9,7 @@ def bag_contents(request):
 
     bag_items = []
     total = 0
+    delivery = 0
     product_count = 0
     bag = request.session.get('bag', {})
 
@@ -34,7 +35,9 @@ def bag_contents(request):
                     'size': size,
                 })
 
-    delivery = settings.STANDARD_DELIVERY_PERCENTAGE
+    if total:
+        delivery = settings.STANDARD_DELIVERY_PERCENTAGE
+
     grand_total = delivery + total
 
     context = {
