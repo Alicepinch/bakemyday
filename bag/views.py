@@ -44,13 +44,9 @@ def adjust_item(request, item_id):
     """ Adjusts the quantity of item in bag """
 
     quantity = int(request.POST.get('quantity'))
-    cupcakesize = None
-    cakesize = None
     size = None
-    if 'cake_size' or 'cupcake_size' in request.POST:
-        cakesize = request.POST['cake_size']
-        cupcakesize = request.POST['cupcake_size']
-        size = cupcakesize or cakesize
+    if 'product_size' in request.POST:
+        size = request.POST['product_size']
     bag = request.session.get('bag', {})
 
     if size:

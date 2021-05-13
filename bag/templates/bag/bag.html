@@ -47,7 +47,7 @@
               <p>£{{ item.product.price }}</p>
             </td>
             <td>
-              <form class="form update-form" method="POST" action="">
+              <form class="form update-form" method="POST" action="{% url 'adjust_item' item.item_id %}">
                 {% csrf_token %}
                 <div class="form-group">
                     <div class="input-group">
@@ -71,13 +71,13 @@
                                 </span>
                             </button>
                         </div>
-                        {% if item.product.has_sizes %}
+                        {% if item.product.has_size %}
                         <input type="hidden" name="product_size" value="{{ item.size }}">
                     {% endif %}
                     </div>
                   </div>
               </form>
-              <a href="update">Update</a>
+              <a class="update-link text-info">Update</a>
               </td>
             <td class="bag-subtotal">
                <p> £... </p> 
@@ -123,4 +123,12 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
+
+<script type="text/javascript">
+    // Update quantity
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+</script>
 {% endblock %}
