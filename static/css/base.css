@@ -29,9 +29,17 @@ h1,h2 {
     color: brown;
 }
 
+/* Bag */
+
 .bag-img {
     height: 200px;
     width: 200px;
+}
+
+
+.remove-item:hover,
+.update-link:hover {
+    cursor: pointer;
 }
 
 /* Hides default arrows for number input field for Chrome, Safari, Edge, Opera taken from W3schools */

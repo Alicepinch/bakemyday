@@ -1,3 +1,4 @@
+
 <li class="list-inline-item">
     <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
@@ -34,4 +35,20 @@
             <a href="" class="dropdown-item">Register</a>
             <a href="" class="dropdown-item">Login</a>
     </div>
+</li>
+<li class="list-inline-item d-lg-none">
+    <a class="{% if grand_total %}font-weight-bold{% else %}text-black{% endif %} my-auto" href="{% url 'view_bag' %}">
+        <div class="text-center">
+            <i class="fas fa-shopping-bag fa-lg"></i>
+        </div>
+    <div class="text-center">
+        <p class="my-0">
+            {% if grand_total %}
+                ${{ grand_total|floatformat:2 }}
+            {% else %}
+                $0.00
+            {% endif %}
+        </p>
+    </div>
+    </a>
 </li>

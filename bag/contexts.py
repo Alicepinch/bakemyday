@@ -11,7 +11,6 @@ def bag_contents(request):
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
-    delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
 
     for item_id, item_data in bag.items():
         if isinstance(item_data, int):
@@ -35,6 +34,7 @@ def bag_contents(request):
                     'size': size,
                 })
 
+    delivery = settings.STANDARD_DELIVERY_PERCENTAGE
     grand_total = delivery + total
 
     context = {
