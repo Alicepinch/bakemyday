@@ -33,3 +33,15 @@ h1,h2 {
     height: 200px;
     width: 200px;
 }
+
+/* Hides default arrows for number input field for Chrome, Safari, Edge, Opera taken from W3schools */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

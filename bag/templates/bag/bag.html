@@ -15,6 +15,8 @@
 <div class="container pt-3">
   <div class="row">
     <div class="col">
+
+      {% if bag_items %}
       <table class="table table-sm table-borderless">
         <thead>
           <tr>
@@ -45,15 +47,38 @@
               <p>£{{ item.product.price }}</p>
             </td>
             <td>
-              <div class="bag-quantity">
-                <a href=""><i class="fas fa-minus"></i></a>
-                <input type="number" class="quantity" value="{{ item.quantity }}"/>
-                <a href=""><i class="fas fa-plus"></i></a>
-              </div>
-              <div class="mt-1">
-                <small><a href="">Update</a></small>
-              </div>
-            </td>
+              <form class="form update-form" method="POST" action="">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="decrement-qty" 
+                                data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                <span>
+                                    <i class="fas fa-minus"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <input class="form-control qty_input" type="number"
+                            name="quantity" value="{{ item.quantity }}" min="1" max="5"
+                            data-item_id="{{ item.item_id }}"
+                            id="id_qty_{{ item.item_id }}">
+                        <div class="input-group-append">
+                            <button class="increment-qty"
+                                data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                <span>
+                                    <i class="fas fa-plus"></i>
+                                </span>
+                            </button>
+                        </div>
+                        {% if item.product.has_sizes %}
+                        <input type="hidden" name="product_size" value="{{ item.size }}">
+                    {% endif %}
+                    </div>
+                  </div>
+              </form>
+              <a href="update">Update</a>
+              </td>
             <td class="bag-subtotal">
                <p> £... </p> 
             </td>
@@ -93,4 +118,9 @@
   </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
