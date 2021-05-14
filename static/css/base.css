@@ -36,10 +36,18 @@ h1,h2 {
     width: 200px;
 }
 
-
 .remove-item:hover,
 .update-link:hover {
     cursor: pointer;
+}
+
+/* Message containers */
+
+.message-container {
+    position: fixed;
+    top: 50px;
+    right: 15px;
+    z-index: 99999999999;
 }
 
 /* Hides default arrows for number input field for Chrome, Safari, Edge, Opera taken from W3schools */

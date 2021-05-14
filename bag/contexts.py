@@ -5,7 +5,6 @@ from products.models import Product
 
 
 def bag_contents(request):
-    """ Displays """
 
     bag_items = []
     total = 0

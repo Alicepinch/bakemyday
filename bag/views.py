@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+
+from products.models import Product
 
 
 def view_bag(request):
@@ -10,31 +13,38 @@ def view_bag(request):
 def add_item(request, item_id):
     """ Adds item to bag in session """
 
+    product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     cupcakesize = None
     cakesize = None
     size = None
     if 'cake_size' or 'cupcake_size' in request.POST:
-        cakesize = request.POST['cake_size']
-        cupcakesize = request.POST['cupcake_size']
+        cakesize = request.POST.get('cake_size', False)
+        cupcakesize = request.POST.get('cupcake_size', False)
         size = cupcakesize or cakesize
+
     bag = request.session.get('bag', {})
 
     if size:
         if item_id in list(bag.keys()):
             if size in bag[item_id]['cakes_by_size'].keys():
                 bag[item_id]['cakes_by_size'][size] += quantity
+                messages.success(
+                    request, f'Added another {size.title()} {product.name} to bag, quantity is now {bag[item_id]["cakes_by_size"][size]}')
             else:
                 bag[item_id]['cakes_by_size'][size] = quantity
+                messages.success(
+                    request, f'Added {size.title()} {product.name} to bag')
         else:
             bag[item_id] = {'cakes_by_size': {size: quantity}}
+            messages.success(request, f'Added {size.title()} {product.name} to bag')
     else:
-    # Increases quantity of product if item is in bag already
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
         else:
             bag[item_id] = quantity
+            messages.success(request, f'Added {product.name} to bag')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
