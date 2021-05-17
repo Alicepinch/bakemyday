@@ -65,7 +65,7 @@
                 "category": "1",
                 "occasion": "4",
                 "price": 65,
-                "image": "",
+                "image": "biscoff-cake.jpg",
                 "image_url": ""
             }
         },
@@ -79,7 +79,7 @@
                 "category": "1",
                 "occasion": "4",
                 "price": 65,
-                "image": "",
+                "image": "pink-dream-cake.jpg",
                 "image_url": ""
             }
         },
@@ -135,7 +135,7 @@
                 "category": "2",
                 "occasion": "4",
                 "price": 12,
-                "image": "",
+                "image": "pink-and-cream-cupcakes.jpg",
                 "image_url": ""
             }
         },
@@ -149,7 +149,7 @@
                 "category": "2",
                 "occasion": "4",
                 "price": 12,
-                "image": "",
+                "image": "oreo-chocolate-cupcakes.jpg",
                 "image_url": ""
             }
         },
@@ -177,7 +177,7 @@
                 "category": "2",
                 "occasion": "3",
                 "price": 12,
-                "image": "",
+                "image": "love-cupcakes.jpg",
                 "image_url": ""
             }
         },
@@ -205,7 +205,7 @@
                 "category": "3",
                 "occasion": "3",
                 "price": 12,
-                "image": "",
+                "image": "chocolate-smash-heart.jpg",
                 "image_url": ""
             }
         },
@@ -275,7 +275,7 @@
                 "category": "2",
                 "occasion": "4",
                 "price": 12,
-                "image": "",
+                "image": "rainbow-cupcakes.jpg",
                 "image_url": ""
             }
         },        
@@ -289,7 +289,7 @@
                 "category": "7",
                 "occasion": "4",
                 "price": 12,
-                "image": "",
+                "image": "rainbow-giant-cookie.jpg",
                 "image_url": ""
             }
         },
@@ -303,7 +303,7 @@
                 "category": "2",
                 "occasion": "6",
                 "price": 12,
-                "image": "",
+                "image": "strawberries-and-cream-cupcakes.jpg",
                 "image_url": ""
             }
         }        

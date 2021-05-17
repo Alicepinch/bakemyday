@@ -1,4 +1,7 @@
-{% extends "base.html"%} {% load static %} {% block page_header %}
+{% extends "base.html"%} {% load static %}
+{% block title %} Shopping Bag | {% endblock %}
+
+{% block page_header %}
 <div class="container">
   <div class="row">
     <div class="col">
@@ -32,11 +35,11 @@
         {% for item in bag_items %}
           <tr>
             <td>
-              {% if product.image %}
-                            <img class="bag-img img-fluid" src="{{ product.image.url }}" alt="{{ item.product.name }}">
+              {% if item.product.image %}
+                            <img class="bag-img" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                         {% else %}
-                            <img class="bag-img img-fluid" src="/media/noimage.jpeg" alt="{{ item.product.name }}">
-                    {% endif %}
+                            <img class="bag-img" src="/media/noimage.jpeg" alt="{{ item.product.name }}">
+              {% endif %}
             </td>
             <td class="bag-product-name">
               <p class="m-0 font-weight-bold">{{ item.product.name }}</p> 

@@ -1,5 +1,7 @@
 {% extends "base.html"%} {% load static %} 
 
+{% block title %} {{product.name}} | {% endblock %}
+
 {% block page_header %}
 <div class="container">
   <div class="row">
@@ -54,9 +56,9 @@
                 name="cake_size"
                 id="id_cake_size"
               >
-                <option value="6-inches" selected>6-inches</option>
-                <option value="8-inches">8-inches</option>
-                <option value="10-inces">10-inches</option>
+                <option value="6-inch" selected>6-inches</option>
+                <option value="8-inch">8-inches</option>
+                <option value="10-inch">10-inches</option>
               </select>
               <p class="mt-3"><strong>Number of cupcakes:</strong></p>
               <select
@@ -64,9 +66,9 @@
                 name="cupcake_size"
                 id="id_cupcake_size"
               >
-                <option value="6 cupcakes" selected>6 Cupcakes</option>
-                <option value="12 cupcakes">12 Cupcakes</option>
-                <option value="24 cupcakes">24 Cupcakes</option>
+                <option value="6" selected>6 Cupcakes</option>
+                <option value="12">12 Cupcakes</option>
+                <option value="24">24 Cupcakes</option>
               </select>
               {% endif %}
               <div class="col-12">
