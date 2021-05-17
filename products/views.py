@@ -1,7 +1,9 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+
 from .models import Product, Category, Occasion
+from .forms import ProductForm
 
 # Create your views here.
 
@@ -56,3 +58,23 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product-detail.html', context)
+
+
+def add_product(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'New product succesfully added!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Failed to add product 😔 Please check form is valid.')
+    else:
+        form = ProductForm()
+
+    template = 'products/add-product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
