@@ -35,20 +35,12 @@
       "pk":5,
       "model":"products.occasion",
       "fields":{
-         "name":"fathers_day",
-         "friendly_name":"Fathers Day"
-      }
-   },
-        {
-      "pk":6,
-      "model":"products.occasion",
-      "fields":{
-         "name":"mothers_day",
-         "friendly_name":"Mothers Day"
+         "name":"mother_and_fathers_day",
+         "friendly_name":"Mothers & Fathers Day"
       }
    },
            {
-      "pk":7,
+      "pk":6,
       "model":"products.occasion",
       "fields":{
          "name":"afternoon_tea",

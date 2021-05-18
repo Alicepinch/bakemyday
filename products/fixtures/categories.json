@@ -27,20 +27,12 @@
       "pk":4,
       "model":"products.category",
       "fields":{
-         "name":"cheesecake",
-         "friendly_name":"Cheesecake"
-      }
-   },
-   {
-      "pk":5,
-      "model":"products.category",
-      "fields":{
          "name":"cake_pops",
          "friendly_name":"Cake Pops"
       }
    },
    {
-      "pk":6,
+      "pk":5,
       "model":"products.category",
       "fields":{
          "name":"cookies",
@@ -48,7 +40,7 @@
       }
    },
    {
-      "pk":7,
+      "pk":6,
       "model":"products.category",
       "fields":{
          "name":"giant_cookies",

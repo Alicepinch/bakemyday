@@ -1,310 +1,297 @@
 [
     {
-            "pk": 1,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123456",
-                "name": "Pink & Rose Gold Cake",
-                "description": "",
-                "category": "1",
-                "occasion": "4",
-                "price": 65,
-                "image": "",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 2,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123457",
-                "name": "Chocolate Cake",
-                "description": "",
-                "category": "1",
-                "occasion": "4",
-                "price": 65,
-                "image": "",
-                "image_url": ""
-            }
-        },
-         {
-            "pk": 3,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123458",
-                "name": "Cookies and Cream",
-                "description": "",
-                "category": "1",
-                "occasion": "4",
-                "price": 65,
-                "image": "",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 4,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123459",
-                "name": "Lemon Cake",
-                "description": "",
-                "category": "1",
-                "occasion": "4",
-                "price": 65,
-                "image": "",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 5,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123460",
-                "name": "Biscoff Cake",
-                "description": "",
-                "category": "1",
-                "occasion": "4",
-                "price": 65,
-                "image": "biscoff-cake.jpg",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 6,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123461",
-                "name": "Pink Dream",
-                "description": "",
-                "category": "1",
-                "occasion": "4",
-                "price": 65,
-                "image": "pink-dream-cake.jpg",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 7,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123462",
-                "name": "Chocolate Overload",
-                "description": "",
-                "category": "1",
-                "occasion": "4",
-                "price": 12,
-                "image": "",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 8,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123463",
-                "name": "Blue Cupcakes",
-                "description": "",
-                "category": "2",
-                "occasion": "4",
-                "price": 12,
-                "image": "",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 9,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123464",
-                "name": "Easter Cupcakes",
-                "description": "",
-                "category": "2",
-                "occasion": "1",
-                "price": 12,
-                "image": "",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 10,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123465",
-                "name": "Pink Cupcakes",
-                "description": "",
-                "category": "2",
-                "occasion": "4",
-                "price": 12,
-                "image": "pink-and-cream-cupcakes.jpg",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 11,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123466",
-                "name": "Cookies and Cream Cupcakes",
-                "description": "",
-                "category": "2",
-                "occasion": "4",
-                "price": 12,
-                "image": "oreo-chocolate-cupcakes.jpg",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 12,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123467",
-                "name": "Nutella, Biscoff and Orange Cupcakes",
-                "description": "",
-                "category": "2",
-                "occasion": "4",
-                "price": 12,
-                "image": "",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 13,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123468",
-                "name": "Love Cupcakes",
-                "description": "",
-                "category": "2",
-                "occasion": "3",
-                "price": 12,
-                "image": "love-cupcakes.jpg",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 14,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123469",
-                "name": "Love Cookie",
-                "description": "",
-                "category": "7",
-                "occasion": "3",
-                "price": 12,
-                "image": "",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 15,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123470",
-                "name": "Love Smash Heart",
-                "description": "",
-                "category": "3",
-                "occasion": "3",
-                "price": 12,
-                "image": "chocolate-smash-heart.jpg",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 16,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123471",
-                "name": "Heart Cakepops",
-                "description": "",
-                "category": "5",
-                "occasion": "3",
-                "price": 12,
-                "image": "",
-                "image_url": ""
-            }
-        },
-         {
-            "pk": 17,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123472",
-                "name": "Christmas Cupcakes",
-                "description": "",
-                "category": "2",
-                "occasion": "2",
-                "price": 12,
-                "image": "",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 18,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123473",
-                "name": "White Chocolate Cupcakes",
-                "description": "",
-                "category": "2",
-                "occasion": "4",
-                "price": 12,
-                "image": "",
-                "image_url": ""
-            }
-        },
-         {
-            "pk": 19,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123474",
-                "name": "Chocolate Cheesecake",
-                "description": "",
-                "category": "4",
-                "occasion": "4",
-                "price": 45,
-                "image": "",
-                "image_url": ""
-            }
-        },
-        {
-            "pk": 20,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123475",
-                "name": "Unicorn Cupcakes",
-                "description": "",
-                "category": "2",
-                "occasion": "4",
-                "price": 12,
-                "image": "rainbow-cupcakes.jpg",
-                "image_url": ""
-            }
-        },        
-        {
-            "pk": 21,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123476",
-                "name": "Unicorn Cookie",
-                "description": "",
-                "category": "7",
-                "occasion": "4",
-                "price": 12,
-                "image": "rainbow-giant-cookie.jpg",
-                "image_url": ""
-            }
-        },
-            {
-            "pk": 22,
-            "model": "products.product",
-            "fields": {
-                "sku": "AC123478",
-                "name": "Strawberry and Cream Cupcakes",
-                "description": "",
-                "category": "2",
-                "occasion": "6",
-                "price": 12,
-                "image": "strawberries-and-cream-cupcakes.jpg",
-                "image_url": ""
-            }
-        }        
+       "pk": 1,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123456",
+           "name": "Oreo & Strawberry Cake",
+           "description": "Oreo frosting and vanilla sponge topped with strawberries.",
+           "category": "1",
+           "occasion": "4",
+           "price": 65,
+           "image": "cookies-and-cream-cake.jpg",
+           "image_url": "https://ibb.co/1LvgMHM"
+       }
+   },
+   {
+       "pk": 2,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123457",
+           "name": "Lemon Cake",
+           "description": "Zesty lemon sponge cake with lemon and white chocolate frosting.",
+           "category": "1",
+           "occasion": "4",
+           "price": 65,
+           "image": "lemon-cake.jpg",
+           "image_url": "https://ibb.co/CHTyKk7"
+       }
+   },
+   {
+       "pk": 3,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123458",
+           "name": "Biscoff Cake",
+           "description": "Biscoff frosting, vanilla sponge topped with the infamous biscoff biscuits.",
+           "category": "1",
+           "occasion": "4",
+           "price": 65,
+           "image": "biscoff-cake.jpg",
+           "image_url": "https://ibb.co/FK4rYhM"
+       }
+   },
+   {
+       "pk": 4,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123459",
+           "name": "Pink Dream",
+           "description": "Vanilla frosting with vanilla sponge cake.",
+           "category": "1",
+           "occasion": "4",
+           "price": 65,
+           "image": "pink-dream-cake.jpg",
+           "image_url": "https://ibb.co/277f9Nz"
+       }
+   },
+   {
+       "pk": 5,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123460",
+           "name": "Chocolate Overload",
+           "description": "Chocolate sponge and chocolate frosting topped with lindor chocolate.",
+           "category": "1",
+           "occasion": "4",
+           "price": 65,
+           "image": "chocolate-overload.jpg",
+           "image_url": "https://ibb.co/GMVNr48"
+       }
+   },
+   {
+       "pk": 6,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123461",
+           "name": "Easter Cupcakes",
+           "description": "12 Celebrate easter with these chocolate cupcakes topped with colourful frosting, cream eggs and mini eggs.",
+           "category": "2",
+           "occasion": "1",
+           "price": 30,
+           "image": "easter-cupcakes.jpg",
+           "image_url": "https://ibb.co/68Zj8kw"
+       }
+   },
+   {
+       "pk": 7,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123462",
+           "name": "Pink Cupcakes",
+           "description": "Pretty in pink cupcakes. Vanilla sponge with pink frosting.",
+           "category": "2",
+           "occasion": "4",
+           "price": 30,
+           "image": "pink-and-cream-cupcakes.jpg",
+           "image_url": "https://ibb.co/6RWSPwj"
+       }
+   },
+   {
+       "pk": 8,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123463",
+           "name": "Cookies & Cream Cupcakes",
+           "description": "12 Chocolate sponge with oreo frosting on top.",
+           "category": "2",
+           "occasion": "4",
+           "price": 30,
+           "image": "oreo-chocolate-cupcakes.jpg",
+           "image_url": "https://ibb.co/ZBYMpDH"
+       }
+   },
+   {
+       "pk": 9,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123464",
+           "name": "Love Cupcakes",
+           "description": "Pink frosting with vanilla sponge with love heart sprinkles.",
+           "category": "2",
+           "occasion": "3",
+           "price": 30,
+           "image": "love-cupcakes.jpg",
+           "image_url": "https://ibb.co/4TvV4q8"
+       }
+   },
+   {
+       "pk": 10,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123465",
+           "name": "Love Giant Cookie",
+           "description": "Giant chocolate chip cookie with I love you writing and pink frosting.",
+           "category": "6",
+           "occasion": "3",
+           "price": 25,
+           "image": "love-giant-cookie.jpg",
+           "image_url": "https://ibb.co/SrTRt9W"
+       }
+   },
+   {
+       "pk": 11,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123466",
+           "name": "Heart Cakepops",
+           "description": "Heart shaped chocolate shells with cake and frosting filling.",
+           "category": "4",
+           "occasion": "4",
+           "price": 20,
+           "image": "heart-cake-pops.jpg",
+           "image_url": "https://ibb.co/71dKznH"
+       }
+   },
+   {
+       "pk": 12,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123467",
+           "name": "Creme Egg Cupcakes",
+           "description": "Cream egg topped cupcakes with vanilla sponge and vanilla frosting.",
+           "category": "2",
+           "occasion": "1",
+           "price": 30,
+           "image": "creme-egg-cupcakes.jpg",
+           "image_url": "https://ibb.co/x2MY5zt"
+       }
+   },
+   {
+       "pk": 13,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123468",
+           "name": "Unicorn Cupcakes",
+           "description": "Multi-couloured frosting with a vanilla sponge",
+           "category": "2",
+           "occasion": "4",
+           "price": 30,
+           "image": "rainbow-cupcakes.jpg",
+           "image_url": "https://ibb.co/PYrWkjj"
+       }
+   },        
+   {
+       "pk": 14,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123469",
+           "name": "Unicorn Cookie",
+           "description": "Multi-coloured frosting with vanilla multi-coloured sponge.",
+           "category": "6",
+           "occasion": "4",
+           "price": 25,
+           "image": "rainbow-giant-cookie.jpg",
+           "image_url": "https://ibb.co/LYPdPfQ"
+       }
+   },
+       {
+       "pk": 15,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123470",
+           "name": "Strawberry & Cream Cupcakes",
+           "description": "Cream frosting on a vanilla sponge topped with strawberries, strawberry goo and meringue.",
+           "category": "2",
+           "occasion": "6",
+           "price": 30,
+           "image": "strawberries-and-cream-cupcakes.jpg",
+           "image_url": "https://ibb.co/ydT0g9f"
+       }
+   },       
+   {
+       "pk": 16,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123471",
+           "name": "Mothers Day Cupcakes",
+           "description": "Flower cupcake frosting with vanilla sponge cupcakes topped with mum hearts.",
+           "category": "2",
+           "occasion": "5",
+           "price": 30,
+           "image": "mothers-day-cupcakes.jpg",
+           "image_url": "https://ibb.co/q0h4QnD"
+       }
+   },  
+   {
+       "pk": 17,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123472",
+           "name": "Afternoon Tea Box",
+           "description": "6 chocolate strawberry covered cupcakes with 8 homemade scones with strawberry jam and clotted cream.",
+           "category": "2",
+           "occasion": "6",
+           "price": 30,
+           "image": "afternoon-tea-box.jpg",
+           "image_url": "https://ibb.co/bN5FyVw"
+       }
+   },
+   {
+       "pk": 18,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123473",
+           "name": "Chocolate Topped Cookies",
+           "description": "Soft goey chocolate chip cookies topped with kinder bueno and oreos.",
+           "category": "5",
+           "occasion": "4",
+           "price": 20,
+           "image": "chocolate-topped-cookies.jpg",
+           "image_url": "https://ibb.co/d08wZV7"
+       }
+   },  
+   {
+       "pk": 19,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123474",
+           "name": "Valentines Cake Pops",
+           "description": "Heart and lollie shaped coated chocolate shell hearts filled with cake and frosting.",
+           "category": "4",
+           "occasion": "3",
+           "price": 20,
+           "image": "valentines-cake-pops.jpg",
+           "image_url": "https://ibb.co/hybxBbp"
+       }
+   },
+   {
+       "pk": 20,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123475",
+           "name": "White Chocolate & Rasberry Cake",
+           "description": "Vanilla sponge filled and decorated with white chocolate frosting and raspberry goo.",
+           "category": "1",
+           "occasion": "4",
+           "price": 65,
+           "image": "white-chocolate-rasberry-cake.jpg",
+           "image_url": "https://ibb.co/rFYDznp"
+       }
+   }             
+   ,
+   {
+       "pk": 21,
+       "model": "products.product",
+       "fields": {
+           "sku": "AC123476",
+           "name": "Chocolate Smash Heart",
+           "description": "Chocolate smash heart filled with chocolate goodies. Comes with a small wooden hammer to break heart.",
+           "category": "3",
+           "occasion": "4",
+           "price": 20,
+           "image": "chocolate-smash-heart.jpg",
+           "image_url": "https://ibb.co/Hz9P63P"
+       }
+   }                     
 ]
