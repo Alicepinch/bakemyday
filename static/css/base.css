@@ -32,7 +32,7 @@ h1,h2 {
 /* Bag */
 
 .bag-img {
-    height: 200px;
+    height: 250px;
     width: 200px;
     object-fit: cover;
 }

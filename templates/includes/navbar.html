@@ -12,22 +12,6 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="nav-link" href="#" id="occasion-link"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Occasion
-            </a>
-            <div class="dropdown-menu" aria-labelledby="cake-links">
-                <a href="{% url 'products'%}?occasion=birthdays" class="dropdown-item">Birthdays</a>
-                <a href="{% url 'products'%}?occasion=mothers_day,fathers_day" class="dropdown-item ">Mothers & Fathers Day</a>
-                <a href="{% url 'products'%}?occasion=easter" class="dropdown-item">Easter</a>
-                <a href="{% url 'products'%}?occasion=afternoon_tea" class="dropdown-item">Afternoon tea</a>
-                <a href="{% url 'products'%}?occasion=christmas" class="dropdown-item">Christmas</a>
-                <a href="{% url 'products'%}?occasion=birthdays,mothers_day,fathers_day,easter,afternoon_tea,christmas" class="dropdown-item">All Occasions</a>
-
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="cake-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Cakes
@@ -35,9 +19,25 @@
             <div class="dropdown-menu" aria-labelledby="cake-links">
                 <a href="{% url 'products'%}?category=large_cakes" class="dropdown-item">Large Cakes</a>
                 <a href="{% url 'products'%}?category=cupcakes" class="dropdown-item ">Cupcakes</a>
-                <a href="{% url 'products'%}?category=cheesecake" class="dropdown-item ">Cheesecake</a>
-                <a href="{% url 'products'%}?category=cakepops" class="dropdown-item ">Cakepops</a>
+                <a href="{% url 'products'%}?category=cake_pops" class="dropdown-item ">Cakepops</a>
                 <a href="{% url 'products'%}?category=large_cakes,cupcakes,cheesecake,cakepops" class="dropdown-item">All Cakes</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="#" id="occasion-link"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Occasion
+            </a>
+            <div class="dropdown-menu" aria-labelledby="cake-links">
+                <a href="{% url 'products'%}?occasion=birthdays" class="dropdown-item">Birthdays</a>
+                <a href="{% url 'products'%}?occasion=mother_and_fathers_day" class="dropdown-item ">Mothers & Fathers Day</a>
+                <a href="{% url 'products'%}?occasion=valentines_day" class="dropdown-item ">Valentines Day</a>
+                <a href="{% url 'products'%}?occasion=easter" class="dropdown-item">Easter</a>
+                <a href="{% url 'products'%}?occasion=afternoon_tea" class="dropdown-item">Afternoon tea</a>
+                <a href="{% url 'products'%}?occasion=christmas" class="dropdown-item">Christmas</a>
+                <a href="{% url 'products'%}?occasion=birthdays,mothers_day,fathers_day,easter,afternoon_tea,christmas" class="dropdown-item">All Occasions</a>
+
             </div>
         </li>
 
