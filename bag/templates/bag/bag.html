@@ -42,7 +42,7 @@
               {% endif %}
             </td>
             <td class="bag-product-name">
-              <p class="m-0 font-weight-bold">{{ item.product.name }}</p> 
+              <h3 class="m-0 font-weight-bold">{{ item.product.name }}</h3> 
               <p class="m-0 font-weight-bold">Size: {% if item.product.has_size %}{{ item.size }}{% else %}N/A{% endif %}</p> 
               <small class="text-muted">SKU: {{ item.product.sku}}</small>
             </td>
@@ -55,7 +55,7 @@
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <button class="decrement-qty" 
+                            <button class="decrement-qty btn" 
                                 data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                 <span>
                                     <i class="fas fa-minus"></i>
@@ -67,7 +67,7 @@
                             data-item_id="{{ item.item_id }}"
                             id="id_qty_{{ item.item_id }}">
                         <div class="input-group-append">
-                            <button class="increment-qty"
+                            <button class="increment-qty btn"
                                 data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                 <span>
                                     <i class="fas fa-plus"></i>

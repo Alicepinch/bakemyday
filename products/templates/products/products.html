@@ -23,12 +23,12 @@
         <a href="">
           <img
           class="card-img-top img-fluid"
-          src="/media/noimage.jpeg"
+          src="/media/personalise-anything.png"
           alt=""
         />
         </a>
         <div class="card-body">
-          <h5 class="m-0 font-weight-bold"> Personalise anything!</h5>
+          <h3 class="m-0 font-weight-bold"> Personalise anything!</h3>
           <p class="pt-1">Get a quote for a personalise cake, cookie, cupcakes or cakepops. </p>
           <a href="" class="btn btn-outline-primary btn-sm"> Personalise </a>
         </div>
@@ -57,7 +57,7 @@
         </a>
         {% endif %}
         <div class="card-body">
-          <h5 class="m-0 font-weight-bold">{{ product.name }}</h5>
+          <h3 class="m-0 font-weight-bold">{{ product.name }}</h3>
           <small class="text-muted">{{ product.category.friendly_name }} <br></small>
           <p class="font-weight-bold">£{{ product.price }}</p>
           <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-primary btn-sm"> View Product </a>
