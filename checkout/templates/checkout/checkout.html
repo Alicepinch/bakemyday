@@ -1,0 +1,83 @@
+{% extends "base.html"%} 
+{% load static %} 
+{% block title %} Shopping Bag | {% endblock %} 
+{% block page_header %}
+
+
+<div class="container pt-4">
+  <div class="row">
+    <div class="col ">
+      <h2>Checkout</h2>
+      <hr />
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block content %}
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-12">
+      <p>Please fill out the form below.</p>
+      <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="pt-3">
+        {% csrf_token %}
+        <fieldset class=" mb-5">
+          <legend class="fieldset-label small w-auto font-weight-bold">
+            Your Details
+          </legend>
+          {{ order_form.full_name | as_crispy_field }} 
+          {{ order_form.email | as_crispy_field }}
+        </fieldset>
+        <fieldset class=" mb-5">
+          <legend class="fieldset-label small w-auto font-weight-bold">
+            Delivery
+          </legend>
+          {{ order_form.phone_number | as_crispy_field }} 
+          {{ order_form.postcode| as_crispy_field }} 
+          {{ order_form.town_or_city | as_crispy_field }}
+          {{ order_form.street_address1 | as_crispy_field }} 
+          {{ order_form.street_address2 | as_crispy_field }} 
+          {{ order_form.county | as_crispy_field }}
+        </fieldset>
+        <fieldset>
+          <legend class="fieldset-label small w-auto font-weight-bold">
+            Payment
+          </legend>
+          <!-- Stripe card element will go here -->
+          <div class="mb-3"></div>
+
+          <!-- Form errors -->
+          <div class="mb-3"></div>
+        </fieldset>
+
+        <div class="submit-button text-right mt-5 mb-2">
+          <a
+            href="{% url 'view_bag' %}"
+            class="btn "
+          >
+            <span class="icon">
+              <i class="fas fa-chevron-left"></i>
+            </span>
+            <span>Adjust Bag</span>
+          </a>
+          <button id="submit-button" class="btn">
+            <span>Complete your Order</span>
+            <span class="icon">
+              <i class="fas fa-lock"></i>
+            </span>
+          </button>
+          <p class="small my-0">
+            <span
+              >You will be charged
+              <strong>${{ grand_total|floatformat:2 }}  <i class="fas fa-exclamation-circle"></i>
+              </strong>
+              </span
+            >
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

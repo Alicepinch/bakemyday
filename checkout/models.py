@@ -64,6 +64,6 @@ class OrderItem(models.Model):
     def save(self, *args, **kwargs):
         self.item_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
-    
+
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_number}'
