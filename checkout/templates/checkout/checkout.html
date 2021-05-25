@@ -20,7 +20,7 @@
       <p>Order Summary</p>
       {% for item in bag_items %}
       <div class="row">
-        <div class="col-2">
+        <div class="col-2 pt-3">
             <a href="{% url 'product_detail' item.product.id %}">
                 {% if item.product.image %}
                     <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
@@ -31,7 +31,7 @@
         </div>
         <div class="col-7">
             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-            <p class="my-0 small">{% if item.product.has_colors %}Color: {{ item.color|upper }}{% endif %}</p>
+            <p class="my-0 small">{% if item.product.has_size %}Size: {{ item.size }}{% else %}N/A{% endif %}</p>
             <p class="my-0 small ">Qty: {{ item.quantity }}</p>
         </div>
         <div class="col-3 text-right">
