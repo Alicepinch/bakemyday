@@ -16,7 +16,45 @@
 {% endblock %} {% block content %}
 <div class="container pt-3">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 col-md-6">
+      <p>Order Summary</p>
+      {% for item in bag_items %}
+      <div class="row">
+        <div class="col-2">
+            <a href="{% url 'product_detail' item.product.id %}">
+                {% if item.product.image %}
+                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                {% else %}
+                    <img class="w-100" src="media/noimage.png" alt="{{ product.name }}">
+                {% endif %}
+            </a>
+        </div>
+        <div class="col-7">
+            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+            <p class="my-0 small">{% if item.product.has_colors %}Color: {{ item.color|upper }}{% endif %}</p>
+            <p class="my-0 small ">Qty: {{ item.quantity }}</p>
+        </div>
+        <div class="col-3 text-right">
+            <p class="my-0 small">£{{ item.product.price }}</p>
+        </div>
+    </div>
+    {% endfor %}
+    <hr >
+    <div class="row text-right">
+        <div class="col-7 offset-2">
+            <p class="my-0">Order Total:</p>
+            <p class="my-0">Delivery:</p>
+            <p class="my-0">Grand Total:</p>
+        </div>
+        <div class="col-3">
+            <p class="my-0">£{{ total | floatformat:2 }}</p>
+            <p class="my-0">£{{ delivery | floatformat:2 }}</p>
+            <p class="my-0"><strong>£{{ grand_total | floatformat:2 }}</strong></p>
+        </div>
+    </div>
+
+    </div>
+    <div class="col-12 col-md-6">
       <p>Please fill out the form below.</p>
       <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="pt-3">
         {% csrf_token %}
