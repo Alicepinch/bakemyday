@@ -25,9 +25,12 @@ a {
     padding-left: 0;
 }
 
-.navbar {
-    background: white;
+header,
+footer {
+    background-color: rgb(252, 221, 233);
 }
+
+
 
 .dropdown-menu {
     border: 0;
@@ -50,11 +53,21 @@ a {
     font-size: 4rem;
 }
 
+.btn-search {
+    background-color: transparent;
+    color: white;
+}
+
 /* Home */
 
 .favourite-product {
     height: 200px;
     width: 200px;
+    object-fit: cover;
+}
+
+.hero-section {
+    margin: 5rem 0;
 }
 
 .intro-img {
@@ -65,8 +78,32 @@ a {
 
 .favourite-product-container {
     margin: 3rem 0;
+    height: 50vh;
+    background-color: rgb(252, 221, 233);
+}
+
+.instagram-section {
     height: 100vh;
     background-color: rgb(252, 221, 233);
+}
+.homepage-header {
+    font-size: 2.5rem;
+}
+
+.occasion-promotion-section {
+    height: 70vh;
+    margin: 150px 0;
+}
+
+.occasion-img-1 {
+    height: 400px;
+}
+
+.occasion-img-2 {
+    position: relative;
+    right: 4rem;
+    top: 10rem;
+    height: 250px;
 }
 
 /* Bag */

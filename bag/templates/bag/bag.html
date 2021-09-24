@@ -2,7 +2,7 @@
 {% block title %} Shopping Bag | {% endblock %}
 
 {% block page_header %}
-<div class="container">
+<div class="container pt-4">
   <div class="row">
     <div class="col">
 
@@ -38,7 +38,7 @@
               {% if item.product.image %}
                             <img class="bag-img" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                         {% else %}
-                            <img class="bag-img" src="/media/noimage.jpeg" alt="{{ item.product.name }}">
+                            <img class="bag-img" src="{{ MEDIA_URL }}noimage.jpeg" alt="{{ item.product.name }}">
               {% endif %}
             </td>
             <td class="bag-product-name">
@@ -95,7 +95,7 @@
                 <a href="{% url 'products' %}" class="btn btn-secondary">
                   <i class="fas fa-chevron-left pr-1"></i><span>Keep Shopping</span>
                 </a>
-                <a href="" class="btn btn-secondary">
+                <a href="{% url 'checkout' %}" class="btn btn-secondary">
                     <span>Secure Checkout</span><i class="fas fa-lock pl-1"></i>
                 </a>
             </td>

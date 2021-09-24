@@ -80,7 +80,7 @@ Below are all the wireframes that have been created for bakemyday.
 
 <details><summary>Mobile</summary>
 
-![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+![](docs/readme/wireframes/.png)
 
 </details>
 
@@ -95,7 +95,7 @@ Below are all the wireframes that have been created for bakemyday.
 
 <details><summary>Mobile</summary>
 
-![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+![](docs/readme/wireframes/.png)
 
 </details>
 
@@ -109,7 +109,7 @@ Below are all the wireframes that have been created for bakemyday.
 
 <details><summary>Mobile</summary>
 
-![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+![](docs/readme/wireframes/.png)
 
 </details>
 
@@ -123,7 +123,7 @@ Below are all the wireframes that have been created for bakemyday.
 
 <details><summary>Mobile</summary>
 
-![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+![](docs/readme/wireframes.png)
 
 </details>
 
@@ -137,7 +137,7 @@ Below are all the wireframes that have been created for bakemyday.
 
 <details><summary>Mobile</summary>
 
-![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+![](docs/readme/wireframes/.png)
 
 </details>
 
@@ -151,7 +151,7 @@ Below are all the wireframes that have been created for bakemyday.
 
 <details><summary>Mobile</summary>
 
-![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+![](docs/readme/wireframes/.png)
 
 </details>
 
@@ -165,7 +165,7 @@ Below are all the wireframes that have been created for bakemyday.
 
 <details><summary>Mobile</summary>
 
-![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+![](docs/readme/wireframes/.png)
 
 </details>
 
@@ -178,7 +178,7 @@ Below are all the wireframes that have been created for bakemyday.
 
 <details><summary>Mobile</summary>
 
-![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+![](docs/readme/wireframes/.png)
 
 </details>
 
@@ -192,7 +192,7 @@ Below are all the wireframes that have been created for bakemyday.
 
 <details><summary>Mobile</summary>
 
-![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
+![](docs/readme/wireframes/.png)
 
 </details>
 
@@ -206,10 +206,29 @@ The fonts chosen for this website are [Lobster two](https://fonts.google.com/spe
 
 
 ## Features
+
+- Products
+- Filter by different occasions and categorys
+- Checkout
+- Stripe payments
+- Personalisation form
+- Django-allauth authorisation
+- CRUD for all products
+- Contact page
+- Add to bag
+- Profile page
+- Error pages
  
 
 ## Future Features
 
+- Personalisation for each product on page
+- Reviews 
+- Social account login
+- Multiple images per product
+- Pagination
+- Discount System
+- Blog section
 
 ## Data Modelling 
 
@@ -323,4 +342,4 @@ Once you have an account please follow the below steps.
 ## Credits
 
 All images and content has been taken from the [@bakemyday_byamber](https://www.instagram.com/bakemyday_byamber/) instagram account. 
-I have full permission to use all images and all branding for this website from the owner of this company. 
+I have full permission to use all images and all branding for this website from the owner of this business. 
