@@ -37,8 +37,7 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
-        self.order_total = self.items.aggregate(
-            Sum('item_total'))['item_total_sum']
+        self.order_total = self.items.aggregate(Sum('item_total'))['item_total__sum'] or 0
         self.delivery_cost = settings.STANDARD_DELIVERY_PERCENTAGE
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
@@ -46,7 +45,7 @@ class Order(models.Model):
     def save(self, *args, **kwargs):
         if not self.order_number:
             self.order_number = self._generate_order_number()
-            super.save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.order_number
