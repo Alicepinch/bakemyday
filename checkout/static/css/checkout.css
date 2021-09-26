@@ -30,3 +30,8 @@
     border: 1px solid #ced4da;
     border-radius: .25rem;
 }
+
+.order-confirmation {
+    box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 5%);
+    border: pink;
+}
