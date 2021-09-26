@@ -80,9 +80,15 @@
           {{ order_form.street_address2 | as_crispy_field }} 
           {{ order_form.county | as_crispy_field }}
         </fieldset>
-        <fieldset class="mb-5">
-      
-        </fieldset>
+        <fieldset>
+          <legend class="fieldset-label small font-weight-bold w-auto">Payment</legend>
+          <!-- Stripe card element -->
+          <div id="card-element"></div>
+
+          <!-- Error for card element-->
+          <div class="text-danger" id="card-errors" role="alert"></div>
+      </fieldset>
+
         <div class="submit-button text-right mt-5 mb-2">
           <a
             href="{% url 'view_bag' %}"
@@ -102,7 +108,7 @@
           <p class="small my-0">
             <span
               >You will be charged
-              <strong>${{ grand_total|floatformat:2 }}  <i class="fas fa-exclamation-circle"></i>
+              <strong>${{ grand_total|floatformat:2 }} <i class="fas text-danger fa-exclamation-circle"></i>
               </strong>
               </span
             >
@@ -114,3 +120,11 @@
 </div>
 
 {% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'js/stripe_elements.js' %}"></script>
+{% endblock %}
+
