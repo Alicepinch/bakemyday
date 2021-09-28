@@ -81,8 +81,17 @@
           {{ order_form.postcode| as_crispy_field }} 
           {{ order_form.town_or_city | as_crispy_field }}
           {{ order_form.county | as_crispy_field }}
-          <input type="radio" id="save-info" value="save-info">
-                  <label for="save-info">Save Info</label><br>
+          <div class="form-check form-check-inline float-right mr-0">
+            {% if user.is_authenticated %}
+              <label class="form-check-label" for="id-save-info">Save Information</label>
+                              <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+            {% else %}
+              <label class="form-check-label" for="id-save-info">
+                                  <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+                                  <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                              </label>
+            {% endif %}
+          </div>
         </fieldset>
         <fieldset>
           <legend class="fieldset-label small font-weight-bold w-auto">Payment</legend>
@@ -91,7 +100,7 @@
 
           <!-- Error for card element-->
           <div class="text-danger" id="card-errors" role="alert"></div>
-          <input type="hidden" value="{{clitent_secret}}" name="client_secret">
+          <input type="hidden" value="{{client_secret}}" name="client_secret">
       </fieldset>
 
         <div class="submit-button text-right mt-5 mb-2">
