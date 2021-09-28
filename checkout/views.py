@@ -23,11 +23,11 @@ def cache_checkout_data(request):
             'save_info': request.POST.get('save-info'),
             'username': request.user,
         })
+        return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry, your payment cant be processed right now. Please try again later.')
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
-
-    return HttpResponse(status=200)
 
 
 def checkout(request):
@@ -110,7 +110,6 @@ def checkout(request):
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
-                    'country': profile.default_country,
                     'postcode': profile.default_postcode,
                     'town_or_city': profile.default_town_or_city,
                     'street_address1': profile.default_street_address1,
@@ -138,7 +137,7 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
-
+    save_info = request.session.get('save-info')
     profile = UserProfile.objects.get(user=request.user)
     order.user_profile = profile
     order.save()
