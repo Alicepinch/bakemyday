@@ -211,24 +211,25 @@ The fonts chosen for this website are [Lobster two](https://fonts.google.com/spe
 - Filter by different occasions and categorys
 - Checkout
 - Stripe payments
-- Personalisation form
 - Django-allauth authorisation
 - CRUD for all products
 - Contact page
 - Add to bag
 - Profile page
 - Error pages
+- Review section
+- Wishlist
  
 
 ## Future Features
 
 - Personalisation for each product on page
-- Reviews 
 - Social account login
 - Multiple images per product
 - Pagination
 - Discount System
 - Blog section
+- Form where users can personalise a cake and generate an order
 
 ## Data Modelling 
 
@@ -312,32 +313,54 @@ This repository can now be deployed to Heroku:
 To deploy this project to Heroku you will need a Heroku acccount.
 Once you have an account please follow the below steps. 
 
+Before you deploy to heroku make sure you have dj_database_url and psycopg2 installed. To do this then enter the below into your terminal :
+
+```
+pip3 install dj_database_url
+pip3 install psycopg2
+
+```
+
 1. In Heroku create a new app and set the region to EU. 
+2. Next you want to Login to the Heroku CLI ```heroku login -i``` 
+3. Run migrations on Heroku Postgres - heroku run python manage.py migrate
+3. Then Create a superuser - ```python manage.py createsuperuser``` 
+4. Install gunicorn ```pip3 install gunicorn```
 
-2. In your github project create a requirements.txt file using the terminal command ```pip3 freeze —-local > requirements.txt ``` (This is so Heroku can read all of the web apps that have been used in the project)
+5. In your github project create a requirements.txt file using the terminal command ```pip3 freeze —-local > requirements.txt ``` (This is so Heroku can read all of the web apps that have been used in the project)
 
-3. Create a Procfile by typing ```echo web: python app.py > Procfile``` into the terminal.
+6. Create a Procfile by typing ```echo web: python app.py > Procfile``` into the terminal.
 
-4. Add all files to github by typing 'git add .' into the terminal to stage all of your files. Then ```git commit -m "<message here>``` to commit the changes ready to be pushed to GitHub.
+7. You will need to disable Heroku from collecting static files in your terminal with ```heroku config:set DISABLE_COLLECTSTATIC=1 --app <your-app-name>```
 
-5. When all your files are ready to be pushed to github, type ```git push``` in the terminal.
+8. Then add all files to github by typing 'git add .' into the terminal to stage all of your files. Then ```git commit -m "<message here>``` to commit the changes ready to be pushed to GitHub.
 
-6. Back on your Heroku dashboard for your application, go to 'Deploy'.
+9. When all your files are ready to be pushed to github, type ```git push``` in the terminal.
 
-7. Within this section, scroll down to 'Deployment method' and select 'Connect to GitHub'
+10. Back on your Heroku dashboard for your application, go to 'Deploy'.
 
-8. In the 'Connect to GitHub' section below - search for the github repository name. When you see the repository name click on the 'Connect' button.
+11. Within this section, scroll down to 'Deployment method' and select 'Connect to GitHub'
 
-9. Confirm the linking of the heroku app to the correct GitHub repository.
+12. In the 'Connect to GitHub' section below - search for the github repository name. When you see the repository name click on the 'Connect' button.
 
-10. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+13. Confirm the linking of the heroku app to the correct GitHub repository.
 
-11. In the fields fill out the following:
+14. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+15. In the fields fill out the following:
 
 | Key | Value |
  --- | ---
+DEBUG | FALSE
+IP | 0.0.0.0
+DISABLE_COLLECTSTATIC |	1 
+SECRET_KEY | `<your_secret_key>`
+SECRET_KEY | `<your_secret_key>`
+STRIPE_SECRET_KEY | `<your_stripe_key>`
+STRIPE_PUBLIC_KEY| `<your_stripe_secret_key>`
+SECRET_WH_KEY | `<your_webhook_secret_key>`
 
-
+16. Back in your terminal the next time you add, commit and push any of your changes this will automatically deploy to heroku
 
 ## Credits
 

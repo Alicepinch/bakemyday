@@ -135,6 +135,11 @@
             reason we cannot guarantee they are free from traces of these
             allergens.</small>
         </div>
+        <div class="col-12 p-0 mt-5">
+          {% if user.is_superuser %}
+          <a class="btn" href="{% url 'delete_product' product.id %}">Delete Product</a>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>

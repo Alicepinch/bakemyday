@@ -25,10 +25,11 @@
                 <li class="list-inline-item">
                     <a href="{% url 'profile' %}">My Profile</a>
                 </li>
-
+                {% if user.is_superuser%}
                 <li class="list-inline-item">
-                    <a href="">Product Management</a>
+                    <a href="{% url 'add_product' %}">Product Management</a>
                 </li>
+                {% endif %}
                 {% else %}
 
                 <li class="list-inline-item">
@@ -61,7 +62,7 @@
 <div class="container text-center">
     <div class="row">
         <div class="col">
-           <a><h1 class="my-0" id="company-name">Bake My Day</h1></a>
+           <a class="main-header" href="{% url 'home' %}"><h1 class="my-0" id="company-name">Bake My Day</h1></a>
        </div>
    </div>
 </div>

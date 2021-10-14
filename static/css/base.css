@@ -1,6 +1,5 @@
 h1,h2,h3,h4,h5,h6 {
-    font-family: 'Amatic SC', cursive;
-    font-weight: 700;
+    font-family: 'Archivo Black', cursive;
     color: black;
 }
 
@@ -30,8 +29,6 @@ footer {
     background-color: rgb(252, 221, 233);
 }
 
-
-
 .dropdown-menu {
     border: 0;
 }
@@ -50,8 +47,9 @@ footer {
 }
 
 #company-name {
-    font-size: 4rem;
+    font-size: 3rem;
 }
+
 
 .btn-search {
     background-color: transparent;
