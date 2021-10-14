@@ -8,7 +8,7 @@ class ProductForm(forms.ModelForm):
         fields = '__all__'
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, *kwargs)
+        super().__init__(*args, **kwargs)
         categories = Category.objects.all()
         occasions = Occasion.objects.all()
         cat_friendly_names = [
