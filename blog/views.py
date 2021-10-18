@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .models import BlogPost
 from .forms import BlogForm
@@ -19,8 +20,23 @@ def blog(request):
 
 
 def add_blogpost(request):
-
     """ Adds a blogpost to the blog section """
+
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, you can only add a blog post if you are a registered user!')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = BlogForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'New blogpost added')
+            return redirect(reverse('blog'))
+        else:
+            messages.error(request, 'Failed to add blogpost 😔 Please check the form is valid.')
+    else:
+        form = BlogForm()
+    
     form = BlogForm()
     template = 'blog/add-blogpost.html'
     context = {

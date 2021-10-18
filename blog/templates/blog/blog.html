@@ -21,27 +21,27 @@
     {% for blogpost in blogposts %}
     <div class="col-lg-4 col-md-6 col-12 pt-4">
       <div class="card">
-        {% if blog.image %}
-        <a href="{% url 'blog_post' blog.id %}">
+        {% if blogpost.image %}
+        <a href="">
           <img
             class="card-img-top img-fluid"
-            src="{{ blog.image.url }}"
-            alt="{{ blog.blog_title }}"
+            src="{{ blogpost.image.url }}"
+            alt="{{ blogpost.blog_title }}"
           />
         </a>
         {% else %}
-        <a href="{% url 'blog_post' blog.id %}">
+        <a href="">
           <img
             class="card-img-top img-fluid"
             src="{{ MEDIA_URL }}noimage.jpeg"
-            alt="{{ product.name }}"
+            alt="{{ blogpost.blog_title }}"
           />
         </a>
         {% endif %}
         <div class="card-body">
-          <h3 class="m-0 font-weight-bold">{{ blog.blog_title }}</h3>
-          <p class="font-weight-bold">{{ blog.blog_preview }}</p>
-          <a href="{% url 'blog_post' blog.id %}" class="btn btn-outline-primary btn-sm"> View Full Blogpost </a>
+          <h3 class="m-0 font-weight-bold">{{ blogpost.blog_title }}</h3>
+          <p class="font-weight-bold">{{ blogpost.blog_preview }}</p>
+          <a href="" class="btn btn-outline-primary btn-sm"> View Full Blogpost </a>
         </div>
       </div>
     </div>

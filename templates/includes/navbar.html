@@ -53,12 +53,26 @@
             <a href="{% url 'products'%}?category=smash_hearts,giant_cookies,cookies" class="dropdown-item">All Other</a>
         </div>
         </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="{% url 'blog' %}" id="blog-link" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Blog </a>
+             <div class="dropdown-menu" aria-labelledby="blog-links">
+            <a href="{% url 'blog' %}" class="dropdown-item">View all blogposts</a>
+           
+            <a href="{% url 'add_blogpost' %}" class="dropdown-item">Create a blogpost</a>
+            </div>
+        {% else %}
 
         <li class="nav-item dropdown">
             <a class="nav-link" href="{% url 'blog' %}">
                 Blog
             </a>
         </div>
+        </li>
+        {% endif %}
+
         </li>
     </ul>
 </div>
