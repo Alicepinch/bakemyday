@@ -57,6 +57,7 @@ Bake my day is an online e-commerce store where users can search through all of 
 - As a shopper on bakemyday I would like to be able to easily select the quantity of what I add to my basket
 - As a shopper on bakemyday I would like to be able to sort product by name an description
 - As a shopper on bakemyday I would like to recieve email confirmation after I have placed an order
+- As a shopper on bakemyday I would like to be able to view my order history after placing an order
 
 ### Site User
 
@@ -65,7 +66,10 @@ Bake my day is an online e-commerce store where users can search through all of 
 - As a site users of bakemyday I would to easily recover my password incase I forget it
 - As a site users of bakemyday I would like to recieve email confirmation after registering
 - As a site users of bakemyday I would like to have a personalized user profile
-- As a shopper on bakemyday I would like to be able to view my order history after placing an order
+- As a site user of bakemydat I would like to be able to post blog posts
+- As a site user of bakemyday I would like to be able to edit or delete a blog post I have created
+- As a site user of bakemyday I would like to be able to comment on & view other users blog posts
+- As a site user of bakemyday I would like to be able to write reviews for products I have purchased
 
 ## Wireframes
 
@@ -218,7 +222,7 @@ The fonts chosen for this website are [Lobster two](https://fonts.google.com/spe
 - Profile page
 - Error pages
 - Review section
-- Wishlist
+- Blog section
  
 
 ## Future Features
@@ -228,7 +232,6 @@ The fonts chosen for this website are [Lobster two](https://fonts.google.com/spe
 - Multiple images per product
 - Pagination
 - Discount System
-- Blog section
 - Form where users can personalise a cake and generate an order
 
 ## Data Modelling 
@@ -300,7 +303,11 @@ In your local IDE create a file called env.py.
 Inside the env.py file create the following environment variables: 
 
 ``` 
-
+os.environ.setdefault("SECRET_KEY", "{YOUR SECRET KEY}")
+os.environ.setdefault("STRIPE_SECRET_KEY", "{YOUR STRIPE SECRET KEY}")
+os.environ.setdefault("STRIPE_WH_SECRET", "{YOUR WH SECRET KEY}")
+os.environ.setdefault("SECRET_PUBLIC_KEY", "{YOUR PUBLIC KEY}")
+os.environ.setdefault("DEVELOPMENT", "True")
 
 ```
 
@@ -323,10 +330,9 @@ pip3 install psycopg2
 
 1. In Heroku create a new app and set the region to EU. 
 2. Next you want to Login to the Heroku CLI ```heroku login -i``` 
-3. Run migrations on Heroku Postgres - heroku run python manage.py migrate
+3. Run migrations on Heroku Postgres - ```heroku run python manage.py migrate```
 3. Then Create a superuser - ```python manage.py createsuperuser``` 
 4. Install gunicorn ```pip3 install gunicorn```
-
 5. In your github project create a requirements.txt file using the terminal command ```pip3 freeze —-local > requirements.txt ``` (This is so Heroku can read all of the web apps that have been used in the project)
 
 6. Create a Procfile by typing ```echo web: python app.py > Procfile``` into the terminal.
