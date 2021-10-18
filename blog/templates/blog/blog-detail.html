@@ -29,7 +29,7 @@
         <p class="mb-0">{{ blogpost.blog_body }}</p>
         <div class="col-12 p-0 mt-5">
           {% if user.name == blogpost.author %}
-          <a class="btn" href="">Delete Blog Post</a>
+          <a class="btn" href="{% url 'delete_blogpost' blogpost.id %}" >Delete Blog Post</a>
           <a class="btn" href="">Edit Blog Post</a>
           {% endif %}
         </div>

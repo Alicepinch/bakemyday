@@ -20,6 +20,7 @@ def blog(request):
 
 
 def blog_detail(request, blogpost_id):
+    """ A view to display blog detail page"""
 
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
 
@@ -55,3 +56,16 @@ def add_blogpost(request):
     }
 
     return render(request, template, context)
+
+
+def delete_blogpost(request, blogpost_id):
+    """ Deletes blog post from blog section"""
+
+    blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
+
+    if request.user.is_superuser or request.user == blogpost.author:
+        blogpost.delete()
+        return redirect(reverse('blog'))
+    else:
+        messages.error(request, "Sorry, you didn't create this blogpost so you can't delete this")
+        return redirect(reverse('blog'))
