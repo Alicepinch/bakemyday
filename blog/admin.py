@@ -9,6 +9,5 @@ class BlogAdmin(admin.ModelAdmin):
             "blog_content",
     )
 
-
 admin.site.register(BlogPost)
 
