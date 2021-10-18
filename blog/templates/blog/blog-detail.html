@@ -1,0 +1,41 @@
+{% extends "base.html"%} {% load static %} {% block title %} {{blogpost.blog_title}} |
+{% endblock %} 
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+      <div class="image-container my-5">
+        {% if blogpost.image %}
+        <a href="{{ blogpost.image.url }}" target="_blank">
+          <img
+            class="img-fluid"
+            src="{{ blogpost.image.url }}"
+            alt="{{ blogpost.blog_title }}"
+          />
+        </a>
+        {% else %}
+          <img
+            class="img-fluid"
+            src="{{ MEDIA_URL }}noimage.jpeg"
+            alt="{{ blogpost.blog_title }}"
+          />
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 mx-4">
+      <div class="mb-5 mt-md-5">
+        <h3 class="mb-0">{{ blogpost.blog_title }}</h3>
+        <p class="mb-0">{{ blogpost.blog_body }}</p>
+        <div class="col-12 p-0 mt-5">
+          {% if user.name == blogpost.author %}
+          <a class="btn" href="">Delete Blog Post</a>
+          <a class="btn" href="">Edit Blog Post</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} 
+

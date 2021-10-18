@@ -19,6 +19,17 @@ def blog(request):
     return render(request, 'blog/blog.html', context)
 
 
+def blog_detail(request, blogpost_id):
+
+    blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
+
+    context = {
+        'blogpost': blogpost,
+    }
+
+    return render(request, 'blog/blog-detail.html', context)
+
+
 def add_blogpost(request):
     """ Adds a blogpost to the blog section """
 

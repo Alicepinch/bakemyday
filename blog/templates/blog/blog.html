@@ -22,7 +22,7 @@
     <div class="col-lg-4 col-md-6 col-12 pt-4">
       <div class="card">
         {% if blogpost.image %}
-        <a href="">
+        <a href="% url 'blog_detail' blogpost.id %}">
           <img
             class="card-img-top img-fluid"
             src="{{ blogpost.image.url }}"
@@ -30,7 +30,7 @@
           />
         </a>
         {% else %}
-        <a href="">
+        <a href="{% url 'blog_detail' blogpost.id %}">
           <img
             class="card-img-top img-fluid"
             src="{{ MEDIA_URL }}noimage.jpeg"
@@ -41,7 +41,7 @@
         <div class="card-body">
           <h3 class="m-0 font-weight-bold">{{ blogpost.blog_title }}</h3>
           <p class="font-weight-bold">{{ blogpost.blog_preview }}</p>
-          <a href="" class="btn btn-outline-primary btn-sm"> View Full Blogpost </a>
+          <a href="{% url 'blog_detail' blogpost.id %}" class="btn btn-outline-primary btn-sm"> View Full Blogpost </a>
         </div>
       </div>
     </div>
