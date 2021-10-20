@@ -4,8 +4,15 @@
 {% block content %}
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-      <div class="image-container my-5">
+    <div class="col-12 text-center">
+      <div class="mt-3">
+        <h3 class="mb-0">{{ blogpost.blog_title }}</h3>
+        <p class="mb-0"><i class="fas fa-user pt-1"></i> {{ blogpost.author }}</p>
+        <small class="mb-0">{{ blogpost.date_created }}</small>
+      </div>
+    </div>
+    <div class="col-12 text-center">
+      <div class="image-container my-3">
         {% if blogpost.image %}
         <a href="{{ blogpost.image.url }}" target="_blank">
           <img
@@ -23,12 +30,11 @@
         {% endif %}
       </div>
     </div>
-    <div class="col-12 col-md-6 col-lg-4 mx-4">
-      <div class="mb-5 mt-md-5">
-        <h3 class="mb-0">{{ blogpost.blog_title }}</h3>
+    <div class="col-12 text-center">
+      <div class="mb-4">
         <p class="mb-0">{{ blogpost.blog_body }}</p>
-        <div class="col-12 p-0 mt-5">
-          {% if user.name == blogpost.author %}
+        <div class="col-12 p-0">
+          {% if request.user == blogpost.author %}
           <a class="btn" href="{% url 'delete_blogpost' blogpost.id %}" >Delete Blog Post</a>
           <a class="btn" href="">Edit Blog Post</a>
           {% endif %}

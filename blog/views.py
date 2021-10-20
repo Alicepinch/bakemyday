@@ -5,7 +5,6 @@ from django.contrib.auth.decorators import login_required
 from .models import BlogPost
 from .forms import BlogForm
 
-# Create your views here.
 
 def blog(request):
     """ A view to show blog posts details """
@@ -31,6 +30,7 @@ def blog_detail(request, blogpost_id):
     return render(request, 'blog/blog-detail.html', context)
 
 
+
 def add_blogpost(request):
     """ Adds a blogpost to the blog section """
 
@@ -41,7 +41,9 @@ def add_blogpost(request):
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            blogpost = form.save(commit=False)
+            blogpost.author = request.user
+            blogpost.save()
             messages.success(request, 'New blogpost added')
             return redirect(reverse('blog'))
         else:
@@ -56,6 +58,7 @@ def add_blogpost(request):
     }
 
     return render(request, template, context)
+
 
 
 def delete_blogpost(request, blogpost_id):
