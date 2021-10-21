@@ -6,13 +6,13 @@
 <!----Hero Image --->
 <section class="hero-section">
     <div class="container-fluid mt-4">
-        <div class="row">
-        <div class="col-12">
-            <div class="cover-text text-center">
-            <img class="intro-img" src="/media/pink-dream-cake.jpg" alt="pink-dream-cake">
-            <img class="intro-img" src="/media/white-chocolate-rasberry-cake.jpg" alt="pink-dream-cake">
+        <div class="row text-center" >
+                <div class="col-md-6 col-12">
+                    <img class="intro-img" src="/media/pink-dream-cake.jpg" alt="pink-dream-cake">
+                </div>
+                <div class="col-md-6 col-12">
+                <img class="intro-img" src="/media/white-chocolate-rasberry-cake.jpg" alt="pink-dream-cake">
             </div>
-        </div>
         </div>
     </div>
 </section>
@@ -43,7 +43,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 text-center my-auto">
-                <h3 class="homepage-header">Shop for any occasion</h3>
+                <h3 class="homepage-header-brown">Shop for any occasion</h3>
                 <p class=""> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio facilis et harum. Dolorum molestias repudiandae sit ratione ea, rerum doloremque ducimus ullam magni ipsa error quis hic eius illo maxime!</p>
                 <a href="{% url 'products'%}?occasion=birthdays,mother_and_fathers_day,easter,afternoon_tea,christmas" class="btn">Shop All Occasions</a>
             </div>
@@ -56,17 +56,5 @@
     </div>
 </section>
 
-<!----Instagram---->
 
-<section class="instagram-section my-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center py-5">
-                <h3 class="homepage-header">Our Instagram Feed <i class="fab fa-instagram"></i></h3>
-                <h5><a href="https://www.instagram.com/bakemyday_byamber/" target="_blank" rel="noopener">@bakemyday_byamber</a></h5>
-            </div>
-
-        </div>
-    </div>
-</section>
 {% endblock %}

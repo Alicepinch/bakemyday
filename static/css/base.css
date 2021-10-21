@@ -1,6 +1,10 @@
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Archivo Black', cursive;
-    color: black;
+    color: rgb(255, 255, 255);
+}
+
+.page-headline {
+    color: rgb(82, 68, 68);
 }
 
 a {
@@ -14,14 +18,22 @@ a {
 }
 
 .btn:hover {
-    background-color: rgb(199, 250, 199);
+    background-color: rgb(82, 68, 68);
     color: white;
+    border: 0;
+}
+
+.dropdown-menu-search {
     border: 0;
 }
 
 .dropdown-item {
     padding-top: 5px;
-    padding-left: 0;
+    color: rgb(82, 68, 68);
+}
+
+.dropdown-item:focus {
+    background-color: rgb(82, 68, 68);
 }
 
 header,
@@ -29,32 +41,49 @@ footer {
     background-color: rgb(252, 221, 233);
 }
 
-.dropdown-menu {
-    border: 0;
-}
-
 .navbar-toggler-icon i {
-    color: #000;
+    color: rgb(255, 255, 255);
     padding-top: .25rem;
 }
 
 .nav-link {
-    color: black;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
 }
 
 .nav-link:hover {
-    color: rgb(255 255 255);
+    color: rgb(82, 68, 68);
 }
 
-#company-name {
+.main-header {
     font-size: 3rem;
-}
-
-
-.btn-search {
-    background-color: transparent;
     color: white;
 }
+
+.header-links {
+    color: white;
+    font-weight: bold;
+}
+
+.header-links:hover {
+    color: rgb(82, 68, 68);
+    text-decoration: none;
+}
+
+.main-header:hover {
+    text-decoration: none;
+}
+
+.btn-search {
+    background-color: rgb(82, 68, 68);
+    color: white;
+}
+
+.search {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
 
 /* Home */
 
@@ -88,6 +117,11 @@ footer {
     font-size: 2.5rem;
 }
 
+.homepage-header-brown {
+    color:  rgb(82, 68, 68);
+    font-size: 2.5rem;
+}
+
 .occasion-promotion-section {
     height: 70vh;
     margin: 150px 0;
@@ -104,6 +138,10 @@ footer {
     height: 250px;
 }
 
+#company-name {
+    color: rgb(82, 68, 68);
+}
+
 /* Bag */
 
 .bag-img {
@@ -114,7 +152,7 @@ footer {
 
 .fa-shopping-basket,
 .fa-user  {
-    color: rgb(0, 0, 0);
+    color: rgb(82, 68, 68);
     font-size: 1.25rem;
 }
 
@@ -152,6 +190,9 @@ input[type=number] {
 
 /* Products */
 
+.product-name {
+    color: rgb(82, 68, 68);;
+}
 .card {
     border: 0;
 }
