@@ -60,7 +60,6 @@ def add_blogpost(request):
     return render(request, template, context)
 
 
-
 def delete_blogpost(request, blogpost_id):
     """ Deletes blog post from blog section"""
 
@@ -68,7 +67,41 @@ def delete_blogpost(request, blogpost_id):
 
     if request.user.is_superuser or request.user == blogpost.author:
         blogpost.delete()
+        messages.success(request, "Blogpost succesfully deleted")
         return redirect(reverse('blog'))
     else:
         messages.error(request, "Sorry, you didn't create this blogpost so you can't delete this")
         return redirect(reverse('blog'))
+
+
+def edit_blogpost(request, blogpost_id):
+    """ Edits blog post from blog section"""
+
+    blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
+    
+    if not request.user.is_superuser or request.user != blogpost.author:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = BlogForm(request.POST, request.FILES, instance=blogpost)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated blog post!')
+            return redirect(reverse('blog_detail', args=[blogpost.id]))
+        else:
+            messages.error(
+                    request,
+                    'Failed to update the blog post.\
+                    Please ensure the form is valid.')
+    else:
+        form = BlogForm(instance=blogpost)
+        messages.info(request, f'You are editing {blogpost.blog_title}')
+
+    template = 'blog/edit-blogpost.html'
+    context = {
+        'form': form,
+        'blogpost': blogpost,
+    }
+
+    return render(request, template, context)
