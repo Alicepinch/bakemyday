@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from .models import BlogPost
-from .forms import BlogForm
+from .models import BlogPost, BlogComment
+from .forms import BlogForm, CommentForm
 
 
 def blog(request):
@@ -29,8 +29,7 @@ def blog_detail(request, blogpost_id):
 
     return render(request, 'blog/blog-detail.html', context)
 
-
-
+@login_required
 def add_blogpost(request):
     """ Adds a blogpost to the blog section """
 
@@ -60,6 +59,7 @@ def add_blogpost(request):
     return render(request, template, context)
 
 
+@login_required
 def delete_blogpost(request, blogpost_id):
     """ Deletes blog post from blog section"""
 
@@ -70,17 +70,18 @@ def delete_blogpost(request, blogpost_id):
         messages.success(request, "Blogpost succesfully deleted")
         return redirect(reverse('blog'))
     else:
-        messages.error(request, "Sorry, you didn't create this blogpost so you can't delete this")
+        messages.error(request, "Sorry, you didn't create this blogpost so you can't delete it")
         return redirect(reverse('blog'))
 
 
+@login_required
 def edit_blogpost(request, blogpost_id):
     """ Edits blog post from blog section"""
 
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
-    
+
     if not request.user.is_superuser or request.user != blogpost.author:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, you didnt create this blogpost so you cant edit it')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -92,13 +93,41 @@ def edit_blogpost(request, blogpost_id):
         else:
             messages.error(
                     request,
-                    'Failed to update the blog post.\
-                    Please ensure the form is valid.')
+                    'Failed to update the blog post. Pleas make sure form is valid')
     else:
         form = BlogForm(instance=blogpost)
         messages.info(request, f'You are editing {blogpost.blog_title}')
 
     template = 'blog/edit-blogpost.html'
+    context = {
+        'form': form,
+        'blogpost': blogpost,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def add_comment(request, blogpost_id):
+    """ Adds comment and attaches to blogpost """
+
+    blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            blogcomment = form.save(commit=False)
+            blogcomment.comment_user = request.user
+            blogcomment.blogpost = blogpost
+            blogcomment.save()
+            messages.success(request, f'Thanks for your commententing on {blogpost.blog_title}')
+            return redirect(reverse('blog_detail', args=[blogpost.id]))
+        else:
+            messages.error(request,
+                           'Sorry something went wrong 😔 Please try again')
+    else:
+        form = CommentForm(instance=blogpost)
+    template = 'blog/add-comment.html'
     context = {
         'form': form,
         'blogpost': blogpost,

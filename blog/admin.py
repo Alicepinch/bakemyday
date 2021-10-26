@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BlogPost
+from .models import BlogPost, BlogComment
 # Register your models here.
 
 class BlogAdmin(admin.ModelAdmin):
@@ -9,5 +9,18 @@ class BlogAdmin(admin.ModelAdmin):
             "blog_content",
     )
 
+
+class BlogCommentAdmin(admin.ModelAdmin):
+    """ Creates the admin interface for Blog Comment """
+    
+    list_display = (
+        'comment_title',
+        'comment',
+        'blogpost',
+        'comment_user'
+    )
+
+
 admin.site.register(BlogPost)
+admin.site.register(BlogComment, BlogCommentAdmin)
 

@@ -2,13 +2,11 @@
 {% endblock %} 
 
 {% block content %}
-<div class="container-fluid">
+<div class="container">
   <div class="row">
     <div class="col-12 text-center">
       <div class="mt-3">
         <h1 class="mb-0 page-headline">{{ blogpost.blog_title }}</h1>
-        <p class="mb-0"><i class="fas fa-user pt-1"></i> {{ blogpost.author }}</p>
-        <small class="mb-0">{{ blogpost.date_created }}</small>
       </div>
     </div>
     <div class="col-12 text-center">
@@ -28,6 +26,7 @@
             alt="{{ blogpost.blog_title }}"
           />
         {% endif %}
+        <p class="mb-0 text-muted"> By {{ blogpost.author }} on {{ blogpost.date_created }}</p>
       </div>
     </div>
     <div class="col-12 text-center">
@@ -38,6 +37,17 @@
           <a class="btn" href="{% url 'edit_blogpost' blogpost.id %}">Edit Blog Post</a>
         {% endif %}
       </div>
+    </div>
+  </div>
+</div>
+
+  <!---Comments Section--->
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h4 class="blog-title">Comments Section</h4>
+      <a href="{% url 'add_comment' blogpost.id %}">Create New Comment</a>
     </div>
   </div>
 </div>
