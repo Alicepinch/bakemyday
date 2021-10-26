@@ -22,9 +22,11 @@ def blog_detail(request, blogpost_id):
     """ A view to display blog detail page"""
 
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
+    blogcomments = BlogComment.objects.filter(blogpost=blogpost)
 
     context = {
         'blogpost': blogpost,
+        'blogcomments': blogcomments,
     }
 
     return render(request, 'blog/blog-detail.html', context)
@@ -96,7 +98,6 @@ def edit_blogpost(request, blogpost_id):
                     'Failed to update the blog post. Pleas make sure form is valid')
     else:
         form = BlogForm(instance=blogpost)
-        messages.info(request, f'You are editing {blogpost.blog_title}')
 
     template = 'blog/edit-blogpost.html'
     context = {
