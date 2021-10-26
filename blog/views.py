@@ -135,3 +135,19 @@ def add_comment(request, blogpost_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_comment(request, blogcomment_id):
+    """ Deletes comment from blogpost """
+
+    blogcomment = get_object_or_404(BlogComment, pk=blogcomment_id)
+
+    if request.user.is_superuser or request.user == blogcomment.comment_user:
+        blogcomment.delete()
+        messages.success(request, "Comment succesfully deleted")
+        return redirect(reverse('blog'))
+    else:
+        messages.error(request, "Sorry, this isnt your comment to delete")
+        return redirect(reverse('blog'))
+

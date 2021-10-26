@@ -16,13 +16,11 @@
     <div class="col-12 p-0">
         <div class="image-container my-3">
           {% if blogpost.image %}
-          <a href="{{ blogpost.image.url }}" target="_blank">
             <img
               class="img-fluid"
               src="{{ blogpost.image.url }}"
               alt="{{ blogpost.blog_title }}"
             />
-          </a>
           {% else %}
             <img
               class="img-fluid"
@@ -39,6 +37,7 @@
       </div>
       <div class="col-12 p-0 mb-4">
           <p class="mb-0 p-0">{{ blogpost.blog_body }}</p>
+          
       </div>
     </div>
   </div>
@@ -59,6 +58,7 @@
             <h5 class="blog-title">{{ blogcomment.comment_title }}</h5>
             <small class="text-muted">By {{ blogcomment.comment_user }} on {{ blogcomment.date_created }}</small>
             <p>{{ blogcomment }}</p>
+            <a class="btn mt-3" href="{% url 'delete_blogcomment' blogcomment.id %}" >Delete Blog Post</a>
           </div>
       </div>
       {% endfor %}   

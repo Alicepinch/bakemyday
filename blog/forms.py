@@ -8,7 +8,6 @@ class BlogForm(forms.ModelForm):
             'blog_title',
             'blog_preview',
             'blog_body',
-            'image_url',
             'image',
             )
 

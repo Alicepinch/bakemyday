@@ -12,8 +12,6 @@ class BlogPost(models.Model):
     blog_preview = models.CharField(
         max_length=260, null=True, blank=True)
     blog_body = models.TextField()
-    image_url = models.URLField(
-        max_length=2048, null=True, blank=True)
     image = models.ImageField(
         null=True, blank=True)
 
