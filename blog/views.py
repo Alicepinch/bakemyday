@@ -37,7 +37,7 @@ def add_blogpost(request):
 
     if not request.user.is_authenticated:
         messages.error(request, 'Sorry, you can only add a blog post if you are a registered user!')
-        return redirect(reverse('home'))
+        return redirect(reverse('blog'))
 
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
@@ -109,7 +109,7 @@ def edit_blogpost(request, blogpost_id):
 
 
 @login_required
-def add_comment(request, blogpost_id):
+def add_blogcomment(request, blogpost_id):
     """ Adds comment and attaches to blogpost """
 
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
@@ -128,7 +128,7 @@ def add_comment(request, blogpost_id):
                            'Sorry something went wrong 😔 Please try again')
     else:
         form = CommentForm(instance=blogpost)
-    template = 'blog/add-comment.html'
+    template = 'blog/add-blogcomment.html'
     context = {
         'form': form,
         'blogpost': blogpost,
@@ -138,7 +138,7 @@ def add_comment(request, blogpost_id):
 
 
 @login_required
-def delete_comment(request, blogcomment_id):
+def delete_blogcomment(request, blogcomment_id):
     """ Deletes comment from blogpost """
 
     blogcomment = get_object_or_404(BlogComment, pk=blogcomment_id)
@@ -151,3 +151,32 @@ def delete_comment(request, blogcomment_id):
         messages.error(request, "Sorry, this isnt your comment to delete")
         return redirect(reverse('blog'))
 
+
+@login_required()
+def edit_blogcomment(request, blogcomment_id):
+    """ Edits blog comment on blogpost """
+
+    blogcomment = get_object_or_404(BlogComment, pk=blogcomment_id)
+    blogpost = get_object_or_404(BlogPost, pk=blogcomment.blogpost.id)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=blogcomment)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated comment!')
+            return redirect(reverse('blog'))
+        else:
+            messages.error(
+                    request,
+                    'Failed to update the blog comment. Please make sure form is valid')
+    else:
+        form = CommentForm(instance=blogcomment)
+
+    template = 'blog/edit-blogcomment.html'
+    context = {
+        'form': form,
+        'blogpost': blogpost,
+        'blogcomment': blogcomment,
+    }
+
+    return render(request, template, context)
