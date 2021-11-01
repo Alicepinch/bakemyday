@@ -14,28 +14,23 @@
 {% endblock %} {% block content %}
 
 
+  <!-- Search Results -->
+
+<div class="container">
+  <div class="row">
+          <div class="col-12">
+            <p class="font-weight-bold">
+                {{ products|length }} Products {% if search_term %} found for: <strong>"{{ search_term }}"</strong>{% endif %}
+            </p>
+        </div>
+  </div>
+</div>
+
+<!---- All products ---->
+
 <div class="container">
   <div class="row">
 
-     <!---- Personalise Cake ---->
-     <div class="col-lg-4 col-md-6 col-12 pt-4">
-      <div class="card">
-        <a href="">
-          <img
-          class="card-img-top img-fluid"
-          src="{{ MEDIA_URL }}personalise-anything.png"
-          alt=""
-        />
-        </a>
-        <div class="card-body">
-          <h3 class="m-0 product-name font-weight-bold"> Personalise anything!</h3>
-          <p class="pt-1">Get a quote for a personalise cake, cookie, cupcakes or cakepops. </p>
-          <a href="" class="btn"> Personalise </a>
-        </div>
-      </div>
-    </div>
-
-    <!---- All products ---->
     {% for product in products %}
     <div class="col-lg-4 col-md-6 col-12 pt-4">
       <div class="card">
