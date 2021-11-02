@@ -4,6 +4,8 @@ from .models import Product, Category, Occasion
 
 
 class ProductForm(forms.ModelForm):
+    """ Creates product form for product views """
+
     class Meta:
         model = Product
         fields = '__all__'

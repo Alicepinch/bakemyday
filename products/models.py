@@ -1,6 +1,7 @@
 from django.db import models
 
 class Category(models.Model):
+    """ Creates category in database """
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -16,6 +17,8 @@ class Category(models.Model):
 
 
 class Occasion(models.Model):
+    """ Creates Occasion in database """
+    
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -27,6 +30,8 @@ class Occasion(models.Model):
 
 
 class Product(models.Model):
+    """ Creates product in database """
+
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     occasion = models.ForeignKey(

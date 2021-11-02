@@ -6,13 +6,9 @@ from django.db.models import Q
 from .models import Product, Category, Occasion
 from .forms import ProductForm
 
-# Create your views here.
-
 
 def all_products(request):
-    """
-    View to return all products, and sorting and searching
-    """
+    """ View to return all products, and sorting and searching """
 
     products = Product.objects.all()
     query = None
@@ -60,8 +56,11 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product-detail.html', context)
 
+
 @login_required
 def add_product(request):
+    """ A view to add a new product to database """
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do this.')
         return redirect(reverse('home'))
@@ -84,8 +83,11 @@ def add_product(request):
 
     return render(request, template, context)
 
+
 @login_required
 def delete_product(request, product_id):
+    """ A view to delete a product from the database """
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do this.')
         return redirect(reverse('home'))
@@ -96,9 +98,11 @@ def delete_product(request, product_id):
 
     return redirect(reverse('products'))
 
+
 @login_required
 def edit_product(request, product_id):
-    """ Edit a product in the store """
+    """ A view to edit an existing product's details in the database """
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do this.')
         return redirect(reverse('home'))
