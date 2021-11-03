@@ -221,8 +221,8 @@ The fonts chosen for this website are [Lobster two](https://fonts.google.com/spe
 - Add to bag
 - Profile page
 - Error pages
-- Review section
 - Blog section
+- Comment section on blog
  
 
 ## Future Features
@@ -365,8 +365,16 @@ SECRET_KEY | `<your_secret_key>`
 STRIPE_SECRET_KEY | `<your_stripe_key>`
 STRIPE_PUBLIC_KEY| `<your_stripe_secret_key>`
 SECRET_WH_KEY | `<your_webhook_secret_key>`
+USE_AWS | TRUE
 
 16. Back in your terminal the next time you add, commit and push any of your changes this will automatically deploy to heroku
+
+### AWS S3 Bucket
+
+1. Go to Amazon AWS and create a new account
+2. In apps search for S3 and create a new bucket and allow public access
+3. 
+
 
 ## Credits
 

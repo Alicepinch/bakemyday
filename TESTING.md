@@ -1,0 +1,1 @@
+Git commit: 6b66b7f81d052d42873224147e38fecd9833ff7c was a large commit due to deleting database and migrations due to a database issue meaning I couldnt create multiple blog posts. Also included was changes to allauth templates which should have been split up into two or three commits. A whole commit was done by accident
