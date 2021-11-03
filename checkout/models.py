@@ -6,10 +6,9 @@ from django.conf import settings
 from products.models import Product
 from profiles.models import UserProfile
 
-# Create your models here.
-
 
 class Order(models.Model):
+    """ Creates order in database """
 
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
@@ -34,17 +33,29 @@ class Order(models.Model):
 
     def _generate_order_number(self):
         """
-        Generates unique and permanent, random 32 characters order number
+        Generates unique and permanent,
+        random 32 characters order number 
         """
+
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
+        """
+        Generates order total and adds 
+        order total to delivery cost 
+        """
+
         self.order_total = self.items.aggregate(Sum('item_total'))['item_total__sum'] or 0
         self.delivery_cost = settings.STANDARD_DELIVERY_PERCENTAGE
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
     def save(self, *args, **kwargs):
+        """
+        Overrides save method to set order
+        number if it hasn't already
+        """
+
         if not self.order_number:
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
@@ -54,6 +65,10 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
+    """
+    Creates order item in database 
+    """
+
     order = models.ForeignKey(
         Order, null=False, blank=False, on_delete=models.CASCADE, related_name='items')
     product = models.ForeignKey(
@@ -66,6 +81,11 @@ class OrderItem(models.Model):
         max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 
     def save(self, *args, **kwargs):
+        """
+        Overrides save method, sets item
+        total and updates the order total
+        """
+
         self.item_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
 
