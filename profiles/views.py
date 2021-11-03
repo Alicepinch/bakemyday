@@ -6,8 +6,10 @@ from django.contrib import messages
 
 from checkout.models import Order
 
+
 @login_required
 def profile(request):
+    """ A view to render a users profile details """
 
     profile = get_object_or_404(UserProfile, user=request.user)
     if request.method == 'POST':
@@ -30,6 +32,8 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    """ A view to render a users order history """
+
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
