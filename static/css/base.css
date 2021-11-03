@@ -1,27 +1,36 @@
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Archivo Black', cursive;
-    color: rgb(255, 255, 255);
+    color: rgb(82, 68, 68);
 }
 
-.blog-title,
-.page-headline {
+
+p {
     color: rgb(82, 68, 68);
 }
 
 a {
     font-family: "open-sans", sans-serif;
+    color: rgb(248, 202, 220)
+}
+
+a:hover {
+    color: rgb(82, 68, 68);
+    text-decoration: none;
+    transition: all 200ms ease-in-out;
 }
 
 .btn {
     background-color: rgb(248, 202, 220);
     border: 0;
     color: white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
     background-color: rgb(82, 68, 68);
     color: white;
     border: 0;
+    transition: all 200ms ease-in-out;
 }
 
 .dropdown-menu-search {
@@ -88,14 +97,19 @@ footer {
 
 /* Home */
 
-.favourite-product {
+.homepage-product {
     height: 200px;
     width: 200px;
     object-fit: cover;
 }
 
 .hero-section {
-    margin: 5rem 0;
+    background-image: url('/media/account-background.jpeg'); 
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
 }
 
 .intro-img {
@@ -104,16 +118,10 @@ footer {
     height: 616px;
 }
 
-.favourite-product-container {
-    margin: 3rem 0;
-    height: 50vh;
-    background-color: rgb(252, 221, 233);
+.homepage-product-container {
+    height: 400px;
 }
 
-.instagram-section {
-    height: 100vh;
-    background-color: rgb(252, 221, 233);
-}
 .homepage-header {
     font-size: 2.5rem;
 }
@@ -124,20 +132,24 @@ footer {
 }
 
 .occasion-promotion-section {
-    height: 70vh;
-    margin: 150px 0;
+    height: 500px;
+    background-color:rgb(252, 221, 233);
 }
 
 .occasion-img-1 {
     height: 400px;
 }
 
-.occasion-img-2 {
-    position: relative;
-    right: 4rem;
-    top: 10rem;
-    height: 250px;
+
+.occasion-btn {
+    background-color: rgb(82, 68, 68);
 }
+
+.occasion-btn:hover {
+    background-color: white;
+    color: rgb(82, 68, 68);
+}
+
 
 #company-name {
     color: rgb(82, 68, 68);
@@ -208,3 +220,33 @@ input[type=number] {
 .card-body {
     padding: .5rem;
 }
+
+/* Allauth Styling */
+
+.account-background {
+    background-image: url('/media/account-background.jpeg');
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.allauth-form-inner-content {
+    background-color: white;
+    box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 5%);
+    padding: 30px;
+}
+
+.sign-out-container {
+    height: 30vh;
+}
+
+footer a {
+    color: rgb(82, 68, 68);
+}
+
+footer a:hover {
+    color: white;
+}
+
