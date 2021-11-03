@@ -5,6 +5,10 @@ from products.models import Product
 
 
 def bag_contents(request):
+    """
+    Shows items in the Shopping Bag,
+    calculates customers order price plus delivery 
+    """
 
     bag_items = []
     total = 0

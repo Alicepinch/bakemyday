@@ -12,7 +12,7 @@ def view_bag(request):
 
 
 def add_item(request, item_id):
-    """ Adds item to bag in session """
+    """ A view to add items to bag in session """
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -53,7 +53,7 @@ def add_item(request, item_id):
 
 
 def adjust_item(request, item_id):
-    """ Adjusts the quantity of items in bag """
+    """ A view to adjusts the quantity of items within bag """
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -87,7 +87,7 @@ def adjust_item(request, item_id):
 
 
 def remove_item(request, item_id):
-    """ Removes the item from the shopping bag """
+    """ A view to remove the item from the shopping bag """
 
     try:
         product = get_object_or_404(Product, pk=item_id)
