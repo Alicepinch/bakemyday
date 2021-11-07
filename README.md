@@ -236,6 +236,115 @@ The fonts chosen for this website are [Lobster two](https://fonts.google.com/spe
 
 ## Data Modelling 
 
+Heroku PostgreSQL has been used to host the backend database in production. The database used during development of the app is SQLite.
+
+The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home) and is shown below.
+
+![](docs/readme/wireframes/bake-my-day-data-modelling.jpg)
+
+## Models
+
+Below are all the models used for this project. 
+
+### Product App
+
+#### Occasion
+
+Name              |Database Key            |Field Type        | Validation Requirements                      |
+|-----------------|------------------------|-------------------|---------------------------------------------|
+|Name             |name                    |CharField          | max_length=254                              |
+|Friendly Name    | friendly_name          | CharField         | max_length=254, null=True, blank=True       |
+
+#### Category
+Name              |Database Key            |Field Type        | Validation Requirements                      |
+|-----------------|------------------------|-------------------|---------------------------------------------|
+|Name             |name                    |CharField          | max_length=254                              |
+|Friendly Name    | friendly_name          | CharField         | max_length=254, null=True, blank=True       |
+
+#### Product
+
+Name              |Database Key            |Field Type          | Validation Requirements                     |
+|-----------------|------------------------|--------------------|---------------------------------------------|
+|Category         |category                |ForeignKey(Category)|on_delete=models.SET_NULL                    |
+|Occasion         |occasion                |ForeignKey(Occasion)|on_delete=models.SET_NULL                    |
+|SKU              |sku                     |CharField           |max_length=80, null=True, blank=True         |
+|Name             |name                    |CharField           |max_length=80, null=True, blank=True         |
+|Description      |description             |TextField           |                                             |
+|Has Size         |has_size                |Boolean             |default=False, null=True, blank=True         |
+|Has Flavours     |has_flavour             |Boolean             |default=False, null=True, blank=True         |
+|Price            |price                   |DecimalField        |max_digits=6, decimal_places=2               |
+|Image URL        |image_url               |URL Field           |max_length=20, null=True, blank=True         |
+|Image            |img                     |Image Field         |max_length=20, null=True, blank=True         |
+
+### Profile App
+
+#### UserProfile
+
+Name             |Database Key            |Field Type         | Validation Requirements                     |
+|-----------------|------------------------|-------------------|---------------------------------------------|
+|User             |user                    |OneToOneField(User)|on_delete=models.CASCADE                     |
+|Phone Number     |default_phone_number    |CharField          |max_length=20, null=True, blank=True         |
+|Street Address 1 |default_street_address1 |CharField          |max_length=80, null=True, blank=True         |
+|Street Address 2 |default_street_address2 |CharField          |max_length=80, null=True, blank=True         |
+|Town or City     |default_town_or_city    |CharField          |max_length=40, null=True, blank=True         |
+|County           |default_county          |CharField          |max_length=80, null=True, blank=True         |
+|Postcode         |default_postcode        |CharField          |max_length=20, null=True, blank=True         |
+
+### Checkout App
+
+#### Order
+
+Name              |Database Key            |Field Type          | Validation Requirements                     |
+|-----------------|------------------------|--------------------|---------------------------------------------|
+|Order Number     |order_number            |CharField           |max_length=32,null=False, editable=False     |
+|User Profile     |user_profile            |ForeignKey(UserProfile)|on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'|
+|Full Name        |full_name                |CharField           |max_length=50, null=False, blank=False       |
+|Email            |email                    |CharField           |max_length=80, null=True, blank=True         |
+|Phone Number     |phone_number             |CharField           |max_length=20, null=False, blank=False       |
+|Post Code        |post_code                |CharField           |max_length=20, null=True, blank=True         |
+|Town or City     |town_or_city             |CharField           |max_length=40, null=False, blank=False       |
+|Street Address 1 |street_address1          |CharField           |max_length=80, null=False, blank=False       |
+|Street Address 2 |street_address2          |CharField           |max_length=80, null=False, blank=False       |
+|County           |county                   |CharField           |max_length=20, null=True, blank=True         |
+|Date             |date                     |DateTimeField       |auto_now_add=True                            |
+|Delivery Cost    |delivery_cost            |DecimalField        |max_digits=6, decimal_places=2, null=False, default=0|
+|Order Total      |order_total              |DecimalField        |max_digits=6, decimal_places=2, null=False, default=0|
+|Grand Total      |grand_total              |DecimalField        |max_digits=6, decimal_places=2, null=False, default=0|
+|Original Bag     |original_bag             |TextField           |null=False, blank=False, default=''          |
+|Stripe Pid       |stripe_pid               |CharField           |max_length=254, null=False, blank=False, default=''|
+
+### OrderItem
+
+Name              |Database Key            |Field Type          | Validation Requirements                     |
+|-----------------|------------------------|--------------------|---------------------------------------------|
+|Order            |order                   |ForeignKey(Order)   |null=False, blank=False, on_delete=models.CASCADE, related_name='items'|
+|Product          |product                  |ForeignKey(Product) | null=False, blank=False, on_delete=models.CASCADE |
+|Product Size     |product_size             |CharField           |max_length=10, null=True, blank=True)       |
+|Quanity          |quantity                 |IntegerField        |null=False, blank=False, default=0          |
+|Item Total       |item_total               |DecimalField        |max_digits=6, decimal_places=2, null=False, blank=False, editable=False|
+
+### Blog App
+
+#### BlogPost
+
+Name              |Database Key            |Field Type          | Validation Requirements                     |
+|-----------------|------------------------|--------------------|---------------------------------------------|
+|Author           |author                  |ForeignKey(User)    |null=True, blank=True, on_delete=models.CASCADE|
+|Blog Title       |blog_title              |CharField           |max_length=60, null=True, blank=True.       |
+|Blog Date Created|date_created            |DateTimeField       |auto_now_add=True, null=True.               |
+|Blog Preview     |blog_preview            |CharField           |null=False, blank=False, default=0          |
+|Blog Body        |blod_body               |TextField           |                                            |
+|Image            |image                   |ImageField          |null=True, blank=True                       |
+
+#### BlogComment
+
+Name              |Database Key            |Field Type          | Validation Requirements                     |
+|-----------------|------------------------|--------------------|---------------------------------------------|
+|Blog Post        |blog_post               |ForeignKey(BlogPost)|on_delete=models.CASCADE                     |
+|comment_user     |comment_user            |ForeignKey(User)    |on_delete=models.CASCADE                     |
+|Date Created     |date_created            |DateTimeField       |auto_now_add=True, null=True.                |
+|Comment Title    |comment_title           |CharField           |max_length=50, null=False, blank=False       |
+|Comment          |comment                 |TextField           |max_length=2048, null=False, blank=False     |
 
 ## Technologies Used
 
@@ -266,6 +375,7 @@ The fonts chosen for this website are [Lobster two](https://fonts.google.com/spe
 - Psycopg2 
 - AWS S3 Bucket
 - Boto3
+- Django Storages
 
 ### Databases
 - SQlite3
@@ -365,15 +475,88 @@ SECRET_KEY | `<your_secret_key>`
 STRIPE_SECRET_KEY | `<your_stripe_key>`
 STRIPE_PUBLIC_KEY| `<your_stripe_secret_key>`
 SECRET_WH_KEY | `<your_webhook_secret_key>`
-USE_AWS | TRUE
 
 16. Back in your terminal the next time you add, commit and push any of your changes this will automatically deploy to heroku
 
 ### AWS S3 Bucket
 
 1. Go to Amazon AWS and create a new account
-2. In apps search for S3 and create a new bucket and allow public access
-3. 
+2. In apps search for S3 and create a new bucket 
+   - Name your bucket to match heroku app name
+   - Select region close to you
+   - Allow public access for files
+3. Open bucket settings and allow static website hosting 
+
+4. Under Permissions > CORS Configuration
+   - In permission tab, add in below cors configaration to set up required access for heroku app and S3 bucket:
+```
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+5. Under Permissions > Bucket Policy
+   - Generate Bucket Policy 
+   - Allow all principles using a * and set AWS action as 'Get Object'
+   - Copy ARN from AWS into bucket policy in the ARN Box
+   - Add Statement then generate policy
+   - Copy policy into bucket policy generator 
+   - Add the end of the resource key add /* to allow access to all resources and save policy
+6. Under Access Control Tab 
+   - In the public access section set 'List Objects Permission' to 'everyone'
+
+#### AWS IAM (Identity and Access Management):
+
+- In AWS Service menu open IAM 
+- Create a group for a user to live in
+- Go to JSON Tab and 'Import managed policy'
+- Import S3 Full access policy 
+- Copy Bucket policy ARN and paste it into S3 Full access policy 'Resource' 
+- Create policy
+- Navigate back to group that was created
+- Attach policy to group that we created
+- On users page create user with progammatic access
+- Add user to group
+- Download CSV file which contains users access key and secret access key
+- Make sure you save this as you can't download these again
+
+#### Connect Heroku to AWS 
+
+- Install boto3 and django-storages
+```
+pip3 install boto3
+pip3 install django-storages
+pip3 freeze > requirements.txt
+```
+- Add the secret key and access key from the .csv file to Heroku Config Vars
+- Set 'USE_AWS' to true for heroku to fetch files from AWS
+- Delete DISABLE_COLLECTSTATIC variable from Config Variables and deploy Heroku app
+- The variables in heroku should look like:
+
+| Key | Value |
+ --- | ---
+DEBUG | FALSE
+IP | 0.0.0.0
+SECRET_KEY | `<your_secret_key>`
+SECRET_KEY | `<your_secret_key>`
+STRIPE_SECRET_KEY | `<your_stripe_key>`
+STRIPE_PUBLIC_KEY| `<your_stripe_secret_key>`
+SECRET_WH_KEY | `<your_webhook_secret_key>`
+USE_AWS | TRUE
+STRIPE_PUBLIC_KEY| `<your_stripe_secret_key>`
+SECRET_WH_KEY | `<your_webhook_secret_key>`
+AWS_ACCESS_KEY_ID | `<your_aws_acess_key>`
+AWS_SECRET_ACCESS_KEY | `<your_aws_secret_key>`
 
 
 ## Credits
