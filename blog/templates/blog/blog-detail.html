@@ -2,6 +2,9 @@
 {% endblock %} 
 
 {% block page_header %}
+
+<!--- Blogpost Name --->
+
 <div class="container pt-4">
   <div class="row">
     <div class="col">
@@ -13,6 +16,9 @@
 </div>
 
 {% endblock %} {% block content %}
+
+<!--- Blogpost --->
+
 <div class="container">
     <div class="col-12 p-0">
         <div class="image-container">
@@ -32,7 +38,7 @@
         </div>
         <div class="py-3">
           {% if request.user == blogpost.author or request.user.is_superuser %}
-          <a class="btn" href="{% url 'delete_blogpost' blogpost.id %}" >Delete Blog Post</a>
+          <button class="btn" id="deleteBtn">Delete Blogpost</button>
           <a class="btn" href="{% url 'edit_blogpost' blogpost.id %}">Edit Blog Post</a>
         {% endif %}
         </div>
@@ -42,13 +48,13 @@
           
       </div>
     </div>
-  </div>
+</div>
 
-    <!---Comments Section--->
+<!--- Comments Section --->
 
-  <div class="container">
+<div class="container">
     <div class="row">
-      <div class="col-12 ">
+      <div class="col-12 pb-3">
         <h3 class="blog-title">Comments Section</h3>
         <hr>
         <a class="btn" href="{% url 'add_blogcomment' blogpost.id %}">Create New Comment</a>
@@ -61,14 +67,37 @@
             <small class="text-muted">By {{ blogcomment.comment_user }} on {{ blogcomment.date_created }}</small>
             <p>{{ blogcomment }}</p>
             {% if request.user == blogpost.author or request.user.is_superuser %}
-            <a class="mt-3" href="{% url 'delete_blogcomment' blogcomment.id %}" >Delete Comment</a>
-            <a class="mt-3" href="{% url 'edit_blogcomment' blogcomment.id %}" >Edit Comment</a>
+            <p>
+              <a class="mt-3 text-danger" href="{% url 'delete_blogcomment' blogcomment.id %}" >Delete Comment</a>
+            </p>
+            <p>
+              <a href="{% url 'edit_blogcomment' blogcomment.id %}" >Edit Comment</a>
+            </p>
             {% endif %}
           </div>
       </div>
       {% endfor %}   
     </div>
+</div>
+
+{% endblock %} 
+<!-- The Modal -->
+
+<div id="deleteModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Are you sure you want to delete product?</p>
   </div>
 </div>
-{% endblock %} 
+
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+      $('#deleteBtn').click(function(){
+        ('#deleteModal').style.display = "block";
+      });
+    </script>
+{% endblock %}
 
