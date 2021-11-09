@@ -15,11 +15,11 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Cakes
             </a>
-            <div class="dropdown-menu" aria-labelledby="cake-links">
-                <a href="{% url 'products'%}?category=large_cakes" class="dropdown-item">Large Cakes</a>
-                <a href="{% url 'products'%}?category=cupcakes" class="dropdown-item ">Cupcakes</a>
-                <a href="{% url 'products'%}?category=cake_pops" class="dropdown-item ">Cakepops</a>
-                <a href="{% url 'products'%}?category=large_cakes,cupcakes,cheesecake,cakepops" class="dropdown-item">All Cakes</a>
+            <div class="dropdown-menu border-0" aria-labelledby="cake-links">
+                <a href="{% url 'products'%}?category=large_cakes" class="dropdown-item font-weight-light">Large Cakes</a>
+                <a href="{% url 'products'%}?category=cupcakes" class="dropdown-item font-weight-light">Cupcakes</a>
+                <a href="{% url 'products'%}?category=cake_pops" class="dropdown-item font-weight-light">Cakepops</a>
+                <a href="{% url 'products'%}?category=large_cakes,cupcakes,cheesecake,cakepops" class="dropdown-item font-weight-light">All Cakes</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -27,14 +27,14 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Occasion
             </a>
-            <div class="dropdown-menu" aria-labelledby="cake-links">
-                <a href="{% url 'products'%}?occasion=birthdays" class="dropdown-item">Birthdays</a>
-                <a href="{% url 'products'%}?occasion=mother_and_fathers_day" class="dropdown-item ">Mothers & Fathers Day</a>
-                <a href="{% url 'products'%}?occasion=valentines_day" class="dropdown-item ">Valentines Day</a>
-                <a href="{% url 'products'%}?occasion=easter" class="dropdown-item">Easter</a>
-                <a href="{% url 'products'%}?occasion=afternoon_tea" class="dropdown-item">Afternoon tea</a>
-                <a href="{% url 'products'%}?occasion=christmas" class="dropdown-item">Christmas</a>
-                <a href="{% url 'products'%}?occasion=birthdays,mother_and_fathers_day,easter,afternoon_tea,christmas" class="dropdown-item">All Occasions</a>
+            <div class="dropdown-menu border-0" aria-labelledby="cake-links">
+                <a href="{% url 'products'%}?occasion=birthdays" class="dropdown-item font-weight-light">Birthdays</a>
+                <a href="{% url 'products'%}?occasion=mother_and_fathers_day" class="dropdown-item font-weight-light">Mothers & Fathers Day</a>
+                <a href="{% url 'products'%}?occasion=valentines_day" class="dropdown-item font-weight-light">Valentines Day</a>
+                <a href="{% url 'products'%}?occasion=easter" class="dropdown-item font-weight-light">Easter</a>
+                <a href="{% url 'products'%}?occasion=afternoon_tea" class="dropdown-item font-weight-light">Afternoon tea</a>
+                <a href="{% url 'products'%}?occasion=christmas" class="dropdown-item font-weight-light">Christmas</a>
+                <a href="{% url 'products'%}?occasion=birthdays,mother_and_fathers_day,easter,afternoon_tea,christmas" class="dropdown-item font-weight-light">All Occasions</a>
 
             </div>
         </li>
@@ -43,34 +43,12 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Other
             </a>
-            <div class="dropdown-menu" aria-labelledby="other-links">
-            <a href="{% url 'products'%}?category=smash_hearts" class="dropdown-item">Smash hearts</a>
-            <a href="{% url 'products'%}?category=giant_cookies" class="dropdown-item ">Giant Cookies</a>
-            <a href="{% url 'products'%}?category=cookies" class="dropdown-item ">Cookies</a>
-            <a href="{% url 'products'%}?category=smash_hearts,giant_cookies,cookies" class="dropdown-item">All Other</a>
+            <div class="dropdown-menu border-0" aria-labelledby="other-links">
+            <a href="{% url 'products'%}?category=smash_hearts" class="dropdown-item font-weight-light">Smash hearts</a>
+            <a href="{% url 'products'%}?category=giant_cookies" class="dropdown-item font-weight-light">Giant Cookies</a>
+            <a href="{% url 'products'%}?category=cookies" class="dropdown-item font-weight-light">Cookies</a>
+            <a href="{% url 'products'%}?category=smash_hearts,giant_cookies,cookies" class="dropdown-item font-weight-light">All Other</a>
         </div>
-        </li>
-        {% if user.is_authenticated %}
-        <li class="nav-item dropdown">
-            <a class="nav-link" href="{% url 'blog' %}" id="blog-link" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Blog </a>
-             <div class="dropdown-menu" aria-labelledby="blog-links">
-            <a href="{% url 'blog' %}" class="dropdown-item">View all blogposts</a>
-           
-            <a href="{% url 'add_blogpost' %}" class="dropdown-item">Create a blogpost</a>
-            </div>
-        {% else %}
-
-        <li class="nav-item dropdown">
-            <a class="nav-link" href="{% url 'blog' %}">
-                Blog
-            </a>
-        </div>
-        </li>
-        {% endif %}
-
-        </li>
     </ul>
 </div>
 

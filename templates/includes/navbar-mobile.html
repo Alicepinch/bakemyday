@@ -8,12 +8,11 @@
     </a>
     <div class="dropdown-menu-search dropdown-menu w-100" aria-labelledby="mobile-search">
         <form class="form" method="GET" action="{% url 'products' %}">
-            <div class="input-group w-100">
+            <div class="input-group">
                 <input class="form-control" type="text" name="q" placeholder="Search our site">
                 <div class="input-group-append">
                     <button class="form-control form-control btn btn-search" type="submit">
-                            <i class="fas fa-search">
-                            </i>
+                            <i class="fas fa-search"></i>
                     </button>
                 </div>
             </div>
@@ -44,7 +43,7 @@
             <i class="fas fa-shopping-basket"></i>
         </div>
     <div class="text-center">
-        <p class="my-0">
+        <p class="my-0 font-weight-bold">
             {% if grand_total %}
                 £{{ grand_total|floatformat:2 }}
             {% else %}
