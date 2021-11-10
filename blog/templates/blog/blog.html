@@ -2,7 +2,7 @@
 {% block title %} Blog | {% endblock %}
 
 {% block page_header %}
-<div class="container pt-4">
+<div class="container header-container">
   <div class="row">
     <div class="col">
       <h2 class="page-headline">Blog</h2>
@@ -24,7 +24,7 @@
         {% if blogpost.image %}
         <a href="{% url 'blog_detail' blogpost.id %}">
           <img
-            class="img-fluid"
+            class="img-fluid blogpost-img"
             src="{{ blogpost.image.url }}"
             alt="{{ blogpost.blog_title }}"
           />
@@ -32,7 +32,7 @@
         {% else %}
         <a href="{% url 'blog_detail' blogpost.id %}">
           <img
-            class="img-fluid"
+            class="img-fluid blogpost-img"
             src="{{ MEDIA_URL }}noimage.jpeg"
             alt="{{ blogpost.blog_title }}"
           />

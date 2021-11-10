@@ -8,7 +8,7 @@
 
 {% block page_header %}
 
-<div class="container pt-4">
+<div class="container header-container">
   <div class="row">
     <div class="col ">
       <h2 class="page-headline" >Checkout</h2>
@@ -122,7 +122,7 @@
           <p class="small my-0">
             <span
               >You will be charged
-              <strong>${{ grand_total|floatformat:2 }} <i class="fas text-danger fa-exclamation-circle"></i>
+              <strong>£{{ grand_total|floatformat:2 }} <i class="fas text-danger fa-exclamation-circle"></i>
               </strong>
               </span
             >
