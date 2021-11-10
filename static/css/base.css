@@ -187,6 +187,10 @@ footer {
     overflow-y: auto;
 }
 
+.table {
+    color: rgb(82, 68, 68);
+}
+
 /* Message containers */
 
 .message-container {
@@ -211,7 +215,7 @@ input[type=number] {
 /* Products */
 
 .product-name {
-    color: rgb(82, 68, 68);;
+    color: rgb(82, 68, 68);
 }
 .card {
     border: 0;
@@ -285,9 +289,6 @@ footer a:hover {
     border-color: #dc3545;
     border-radius: 0;
 }
-
-/* Modal */ 
-
 
 @media screen and (max-width: 1120px) {
 	.blog-img {
