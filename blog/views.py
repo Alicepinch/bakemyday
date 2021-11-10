@@ -143,12 +143,12 @@ def delete_blogcomment(request, blogcomment_id):
 
     blogcomment = get_object_or_404(BlogComment, pk=blogcomment_id)
 
-    if request.user.is_superuser or request.user == blogcomment.comment_user:
+    if request.user == blogcomment.comment_user or request.user.is_superuser:
         blogcomment.delete()
         messages.success(request, "Comment succesfully deleted")
         return redirect(reverse('blog'))
     else:
-        messages.error(request, "Sorry, this isnt your comment to delete")
+        messages.error(request, "Sorry, this isn't your comment to delete")
         return redirect(reverse('blog'))
 
 
@@ -159,18 +159,24 @@ def edit_blogcomment(request, blogcomment_id):
     blogcomment = get_object_or_404(BlogComment, pk=blogcomment_id)
     blogpost = get_object_or_404(BlogPost, pk=blogcomment.blogpost.id)
 
-    if request.method == 'POST':
-        form = CommentForm(request.POST, instance=blogcomment)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Successfully updated comment!')
-            return redirect(reverse('blog'))
+    if request.user == blogcomment.comment_user or request.user.is_superuser:
+        if request.method == 'POST':
+            form = CommentForm(request.POST, instance=blogcomment)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Successfully updated comment!')
+                return redirect(reverse('blog'))
+            else:
+                messages.error(
+                        request,
+                        'Failed to update the blog comment. Please make sure form is valid')
         else:
-            messages.error(
-                    request,
-                    'Failed to update the blog comment. Please make sure form is valid')
+            form = CommentForm(instance=blogcomment)
     else:
-        form = CommentForm(instance=blogcomment)
+        messages.error(
+                        request,
+                        'Not your blog comment to edit')
+        return redirect(reverse('blog'))
 
     template = 'blog/edit-blogcomment.html'
     context = {
