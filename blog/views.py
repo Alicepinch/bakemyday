@@ -121,7 +121,7 @@ def add_blogcomment(request, blogpost_id):
             blogcomment.comment_user = request.user
             blogcomment.blogpost = blogpost
             blogcomment.save()
-            messages.success(request, f'Thanks for your commententing on {blogpost.blog_title}')
+            messages.success(request, f'Thanks for your commenting on {blogpost.blog_title}')
             return redirect(reverse('blog_detail', args=[blogpost.id]))
         else:
             messages.error(request,

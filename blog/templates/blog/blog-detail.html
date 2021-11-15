@@ -1,5 +1,6 @@
-{% extends "base.html"%} {% load static %} {% block title %} {{blogpost.blog_title}} |
-{% endblock %} 
+{% extends "base.html"%} 
+{% load static %} 
+{% block title %} {{blogpost.blog_title}} |{% endblock %} 
 
 {% block page_header %}
 
@@ -15,7 +16,9 @@
   </div>
 </div>
 
-{% endblock %} {% block content %}
+{% endblock %} 
+
+{% block content %}
 
 <!--- Blogpost --->
 
@@ -68,7 +71,7 @@
           <div class="p-0">
               <h5 class="blog-title">{{ blogcomment.comment_title }}</h5>
               <small class="text-muted">By {{ blogcomment.comment_user }} on {{ blogcomment.date_created }}</small>
-              <p>{{ blogcomment }}</p>
+              <p>{{ blogcomment.comment }}</p>
               {% if request.user == blogpost.author or request.user.is_superuser %}
               <p>
                 <a class="btn" href="{% url 'delete_blogcomment' blogcomment.id %}" >Delete Comment</a>
@@ -82,7 +85,7 @@
     </div>
 </div>
 
-<!---- Delete Modal ---->
+<!---- Delete Blogpost Modal ---->
 
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
   <div class="modal-dialog">
@@ -105,6 +108,7 @@
   </div>
   </div>
 </div>
+
 
 {% endblock %} 
 
