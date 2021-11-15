@@ -107,7 +107,7 @@
       </tr>
       </table>
 
-      {% else%}
+      {% else %}
 
       <p>
         Your shopping bag is empty
@@ -118,7 +118,7 @@
         </a>
       </div>
     
-      {%endif%}
+      {% endif %}
 
     </div>
   </div>
@@ -130,7 +130,7 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');
