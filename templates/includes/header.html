@@ -1,5 +1,5 @@
 
-<div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
+<div id="topnav" class="row d-none d-lg-flex">
     <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 text-center text-lg-left">
     </div>
     <div class="col-12 col-lg-6 my-auto py-1 py-lg-0 text-center">
@@ -24,18 +24,18 @@
                     {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                     <a href="{% url 'add_product' %}"
-                        class="dropdown-item font-weight-light">Product Management</a>
+                        class="dropdown-item ">Product Management</a>
                     {% endif %}
                     <a href="{% url 'profile' %}"
-                        class="dropdown-item font-weight-light">Profile</a>
-                        <a href="{% url 'add_blogpost' %}" class="dropdown-item link-font font-weight-light">Create a blogpost</a>
+                        class="dropdown-item">Profile</a>
+                        <a href="{% url 'add_blogpost' %}" class="dropdown-item link-font">Create a blogpost</a>
                     <a href="{% url 'account_logout' %}"
-                        class="dropdown-item font-weight-light">Logout</a>
+                        class="dropdown-item">Logout</a>
                     {% else %}
                     <a href="{% url 'account_signup' %}"
-                        class="dropdown-item  font-weight-light">Register</a>
+                        class="dropdown-item">Register</a>
                     <a href="{% url 'account_login' %}"
-                        class="dropdown-item font-weight-light">Login</a>
+                        class="dropdown-item">Login</a>
                     {% endif %}
                 </div>
             </li>
@@ -43,7 +43,7 @@
                 <a class="nav-link" id="bag-link" 
                     href="{% url 'view_bag' %}">
                     <div class="text-center">
-                        <div> <i class="fas fa-shopping-basket"></i> </div>
+                        <div> <i class="fas fa-shopping-basket"></i></div>
                         <p class="my-0 x-sm">
                             {% if grand_total %}
                                 £{{ grand_total|floatformat:2 }}
