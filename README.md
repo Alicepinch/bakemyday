@@ -31,11 +31,11 @@ Bake my day is an online e-commerce store where users can search through all of 
 
 - Purchase products in a safe and secure way.
 - Be provided with all the necessary information regarding cake ingredients for allergen reasons. 
-- Get quotes for a personalised cake.
+- Be able to easily navigate across the site and to feel comfortable doing so, easily finding what they want and need. 
+- Be able to gain valuable information from the blog section.
 
 ### Site Owner Goals
 
-- To be able to easily navigate across the site and to feel comfortable doing so, easily finding what they want and need. 
 - To be able to easily make any adjustments needed to any products across the website.
 - For customers to get a feel for the brand and what it is through the design and layout of the website.
 - For customers to not only visit the website but complete orders.
@@ -62,14 +62,14 @@ Bake my day is an online e-commerce store where users can search through all of 
 ### Site User
 
 - As a site user of bakemyday I would like to easily register for an account
-- As a site users of bakemyday I would like to easily login and logout
-- As a site users of bakemyday I would to easily recover my password incase I forget it
-- As a site users of bakemyday I would like to recieve email confirmation after registering
-- As a site users of bakemyday I would like to have a personalized user profile
+- As a site user of bakemyday I would like to easily login and logout
+- As a site user of bakemyday I would like to easily be able to change my password
+- As a site user of bakemyday I would to easily recover my password incase I forget it
+- As a site user of bakemyday I would like to recieve email confirmation after registering
+- As a site user of bakemyday I would like to have a personalized user profile
 - As a site user of bakemydat I would like to be able to post blog posts
 - As a site user of bakemyday I would like to be able to edit or delete a blog post I have created
 - As a site user of bakemyday I would like to be able to comment on & view other users blog posts
-- As a site user of bakemyday I would like to be able to write reviews for products I have purchased
 
 ## Wireframes
 
@@ -161,7 +161,7 @@ Below are all the wireframes that have been created for bakemyday.
 
 ### Register page (All users)
 
-<details><summary>Desktop </summary>
+<details><summary>Desktop</summary>
 
 ![](docs/readme/wireframes/bakemyday-register-wireframe.png)
 
@@ -173,18 +173,6 @@ Below are all the wireframes that have been created for bakemyday.
 
 </details>
 
-### Personalised order (All users)
-<details><summary>Desktop </summary>
-
-![](docs/readme/wireframes/bakemyday-personalise-cake-form-wireframe.png)
-
-</details>
-
-<details><summary>Mobile</summary>
-
-![](docs/readme/wireframes/.png)
-
-</details>
 
 ### Contact page (All users)
 
@@ -204,7 +192,7 @@ Below are all the wireframes that have been created for bakemyday.
 
 ### Typography 
 
-The fonts chosen for this website are [Lobster two](https://fonts.google.com/specimen/Lobster+Two?preview.text_type=custom) and [Open sans](https://fonts.google.com/specimen/Open+Sans?preview.text_type=custom) the reason for this choice was to try and match the logo font as closely as possible to keep a similiar design feel throughout the website.
+The fonts chosen for this website are Bebas Neue and  the reason for this choice was to try and match the logo font as closely as possible to keep a similiar design feel throughout the website.
 
 ### Colour Scheme 
 
@@ -313,7 +301,7 @@ Name              |Database Key            |Field Type          | Validation Req
 |Original Bag     |original_bag             |TextField           |null=False, blank=False, default=''          |
 |Stripe Pid       |stripe_pid               |CharField           |max_length=254, null=False, blank=False, default=''|
 
-### OrderItem
+#### OrderItem
 
 Name              |Database Key            |Field Type          | Validation Requirements                     |
 |-----------------|------------------------|--------------------|---------------------------------------------|

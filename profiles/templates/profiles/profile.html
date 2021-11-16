@@ -1,100 +1,100 @@
 {% extends "base.html"%} 
 {% load static %} 
-{% block title %} Profile | 
-{%endblock %} 
-
+{% block title %} Profile |{%endblock %} 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/profiles.css' %}">
-{% endblock %}
+<link rel="stylesheet" href="{% static 'css/profiles.css' %}" />
+{% endblock %} 
 
 {% block page_header %}
 
 <div class="container header-container">
   <div class="row">
     <div class="col">
-      <h2 class="page-headline"> Profile</h2>
-        <hr>
+      <h2 class="page-headline">Profile</h2>
+      <hr />
     </div>
   </div>
 </div>
 
-{% endblock %}
+{% endblock %} 
 
 {% block content %}
 
 <div class="container py-3">
   <div class="row">
-
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <h5> Username:</h5>
-                <p>
-                    {{ user }}
-                </p>
-                <h5> Email address:</h5>
-                <p>
-                    {{ user.email }}
-                </p>
-                <h5>Password: </h5>
-                <a class="btn" href="{% url 'account_change_password' %}">Update Password</a>
-            </div>
-            <div class="col-12 col-md-6">
-                <h5>Default Delivery Information</h5>
-                <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button class="btn float-right">Update Information</button>
-                </form>
-            </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h4>Username:</h4>
+          <p>{{ user }}</p>
+          <h4>Email address:</h4>
+          <p>{{ user.email }}</p>
+          <h4>Password:</h4>
+          <a class="btn" href="{% url 'account_change_password' %}"
+            >Update Password</a
+          >
         </div>
+        <div class="col-12 col-md-6">
+          <h4>Default Delivery Information</h4>
+          <form
+            class="mt-3"
+            action="{% url 'profile' %}"
+            method="POST"
+            id="profile-update-form">
+            {% csrf_token %} {{ form|crispy }}
+            <button class="btn float-right">Update Information</button>
+          </form>
+        </div>
+      </div>
     </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h5>Order History:</h5>
-                    <hr>
-                        <div class="order-history table-responsive">
-                          <table class="table table-sm ">
-                              <thead>
-                                  <tr>
-                                      <th>Order Number</th>
-                                      <th>Date</th>
-                                      <th>Items</th>
-                                      <th>Order Total</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                  {% for order in orders %}
-                                      <tr>
-                                          <td>
-                                              <a href="{% url 'order_history' order.order_number %}"
-                                              title="{{ order.order_number }}">
-                                                  {{ order.order_number|truncatechars:6 }}
-                                              </a>
-                                          </td>
-                                          <td>{{ order.date }}</td>
-                                          <td>
-                                              <ul class="list-unstyled">
-                                                  {% for item in order.lineitems.all %}
-                                                      <li class="small">
-                                                          {% if item.product.has_sizes %}
-                                                              Size {{ item.product.size|upper }}
-                                                          {% endif %}{{ item.product.name }} x{{ item.quantity }}
-                                                      </li>
-                                                  {% endfor %}
-                                              </ul>
-                                          </td>
-                                          <td>£{{ order.grand_total }}</td>
-                                      </tr>
-                                  {% endfor %}
-                              </tbody>
-                          </table>
-                      </div>
-                </div>
-            </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h4>Order History:</h4>
+          <div class="order-history table-responsive">
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th>Order Number</th>
+                  <th>Date</th>
+                  <th>Items</th>
+                  <th>Order Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for order in orders %}
+                <tr>
+                  <td>
+                    <a
+                      href="{% url 'order_history' order.order_number %}"
+                      title="{{ order.order_number }}"
+                    >
+                      {{ order.order_number|truncatechars:6 }}
+                    </a>
+                  </td>
+                  <td>{{ order.date }}</td>
+                  <td>
+                    <ul class="list-unstyled">
+                      {% for item in order.lineitems.all %}
+                      <li class="small">
+                        {% if item.product.has_sizes %} Size {{
+                        item.product.size|upper }} {% endif %}{{
+                        item.product.name }} x{{ item.quantity }}
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </td>
+                  <td>£{{ order.grand_total }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
+    </div>
   </div>
 </div>
+
 {% endblock %}
