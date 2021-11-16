@@ -4,7 +4,7 @@
 
 {% block page_header %}
 
-<!--- Blogpost Name --->
+<!--Blogpost Name-->
 
 <div class="container header-container">
   <div class="row">
@@ -20,7 +20,7 @@
 
 {% block content %}
 
-<!--- Blogpost --->
+<!--Blogpost-->
 
 <div class="container">
     <div class="col-12 p-0">
@@ -55,7 +55,7 @@
     </div>
 </div>
 
-<!--- Comments Section --->
+<!--Comments Section-->
 
 <div class="container pb-5">
     <div class="row">
@@ -67,14 +67,14 @@
 
       {% for blogcomment in blogcomments %}
 
-      <div class="col-lg-4 col-md-6 col-12 pt-4">
+      <div class="col-12 pt-4">
           <div class="p-0">
               <h5 class="blog-title">{{ blogcomment.comment_title }}</h5>
               <small class="text-muted">By {{ blogcomment.comment_user }} on {{ blogcomment.date_created }}</small>
-              <p>{{ blogcomment.comment }}</p>
+              <p class="blog-comment">{{ blogcomment.comment }}</p>
               {% if request.user == blogpost.author or request.user.is_superuser %}
               <p>
-                <a class="btn" href="{% url 'delete_blogcomment' blogcomment.id %}" >Delete Comment</a>
+                <a class="btn mb-1" href="{% url 'delete_blogcomment' blogcomment.id %}" >Delete Comment</a>
                 <a class="btn" href="{% url 'edit_blogcomment' blogcomment.id %}" >Edit Comment</a>
               </p>
               {% endif %}
@@ -85,7 +85,7 @@
     </div>
 </div>
 
-<!---- Delete Blogpost Modal ---->
+<!--Delete Blogpost Modal-->
 
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
   <div class="modal-dialog">
