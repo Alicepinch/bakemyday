@@ -31,12 +31,15 @@ def blog_detail(request, blogpost_id):
 
     return render(request, 'blog/blog-detail.html', context)
 
+
 @login_required
 def add_blogpost(request):
     """ Adds a blogpost to the blog section """
 
     if not request.user.is_authenticated:
-        messages.error(request, 'Sorry, you can only add a blog post if you are a registered user!')
+        messages.error(
+            request, 'Sorry, you can only add a \
+                blog post if you are a registered user!')
         return redirect(reverse('blog'))
 
     if request.method == 'POST':
@@ -45,13 +48,16 @@ def add_blogpost(request):
             blogpost = form.save(commit=False)
             blogpost.author = request.user
             blogpost.save()
-            messages.success(request, 'New blogpost added')
+            messages.success(
+                request, 'New blogpost added')
             return redirect(reverse('blog'))
         else:
-            messages.error(request, 'Failed to add blogpost 😔 Please check the form is valid.')
+            messages.error(
+                request,
+                'Failed to add blogpost 😔 Please check the form is valid.')
     else:
         form = BlogForm()
-    
+
     form = BlogForm()
     template = 'blog/add-blogpost.html'
     context = {
@@ -72,7 +78,9 @@ def delete_blogpost(request, blogpost_id):
         messages.success(request, "Blogpost succesfully deleted")
         return redirect(reverse('blog'))
     else:
-        messages.error(request, "Sorry, you didn't create this blogpost so you can't delete it")
+        messages.error(
+            request, "Sorry, you didn't create \
+                this blogpost so you can't delete it")
         return redirect(reverse('blog'))
 
 
@@ -83,7 +91,9 @@ def edit_blogpost(request, blogpost_id):
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
 
     if not request.user.is_superuser or request.user != blogpost.author:
-        messages.error(request, 'Sorry, you didnt create this blogpost so you cant edit it')
+        messages.error(
+            request, 'Sorry, you didnt create this \
+                blogpost so you cant edit it')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -94,8 +104,8 @@ def edit_blogpost(request, blogpost_id):
             return redirect(reverse('blog_detail', args=[blogpost.id]))
         else:
             messages.error(
-                    request,
-                    'Failed to update the blog post. Pleas make sure form is valid')
+                    request, 'Failed to update the blog post. \
+                        Please make sure form is valid')
     else:
         form = BlogForm(instance=blogpost)
 
@@ -121,7 +131,9 @@ def add_blogcomment(request, blogpost_id):
             blogcomment.comment_user = request.user
             blogcomment.blogpost = blogpost
             blogcomment.save()
-            messages.success(request, f'Thanks for your commenting on {blogpost.blog_title}')
+            messages.success(
+                request, f'Thanks for your \
+                    commenting on {blogpost.blog_title}')
             return redirect(reverse('blog_detail', args=[blogpost.id]))
         else:
             messages.error(request,
@@ -164,12 +176,13 @@ def edit_blogcomment(request, blogcomment_id):
             form = CommentForm(request.POST, instance=blogcomment)
             if form.is_valid():
                 form.save()
-                messages.success(request, 'Successfully updated comment!')
+                messages.success(
+                    request, 'Successfully updated comment!')
                 return redirect(reverse('blog'))
             else:
                 messages.error(
-                        request,
-                        'Failed to update the blog comment. Please make sure form is valid')
+                        request, 'Failed to update the blog comment. \
+                            Please make sure form is valid')
         else:
             form = CommentForm(instance=blogcomment)
     else:

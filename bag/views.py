@@ -32,7 +32,9 @@ def add_item(request, item_id):
             if size in bag[item_id]['cakes_by_size'].keys():
                 bag[item_id]['cakes_by_size'][size] += quantity
                 messages.success(
-                    request, f'Added another {size} {product.name} to bag, quantity is now {bag[item_id]["cakes_by_size"][size]}')
+                    request,
+                    f'Added another {size}{product.name} to bag, quantity \
+                    is now {bag[item_id]["cakes_by_size"][size]}')
             else:
                 bag[item_id]['cakes_by_size'][size] = quantity
                 messages.success(
@@ -43,7 +45,9 @@ def add_item(request, item_id):
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
-            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+            messages.success(
+                request,
+                f'Updated {product.name} quantity to {bag[item_id]}')
         else:
             bag[item_id] = quantity
             messages.success(request, f'Added {product.name} to bag')
@@ -66,7 +70,9 @@ def adjust_item(request, item_id):
         if quantity > 0:
             bag[item_id]['cakes_by_size'][size] = quantity
             messages.success(
-                request, f'Updated {product.name} {size} quantity to {bag[item_id]["cakes_by_size"][size]}')
+                request,
+                f'Updated {product.name} {size} quantity \
+                to {bag[item_id] ["cakes_by_size"][size]}')
         else:
             del bag[item_id]['cakes_by_size'][size]
             if not bag[item_id]['cakes_by_size']:
@@ -77,7 +83,8 @@ def adjust_item(request, item_id):
         if quantity > 0:
             bag[item_id] = quantity
             messages.success(
-                request, f'Updated {product.name} quantity to {bag[item_id]}')
+                request,
+                f'Updated {product.name} quantity to {bag[item_id]}')
         else:
             bag.pop(item_id)
             messages.success(request, f'Removed {product.name} from bag')

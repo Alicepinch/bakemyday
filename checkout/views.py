@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -84,22 +85,26 @@ def checkout(request):
                             )
                             order_item.save()
                 except Product.DoesNotExist:
-                    messages.error(request, (
-                        "Sorry! One of the products in your bag was not found. ")
-                    )
+                    messages.error(
+                        request, "Sorry! One of the products in \
+                            your bag was not found. ")
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number]))
         else:
-            messages.error(request, 'There was an error when entering your form. \
+            messages.error(
+                request, 'There was an error when entering your form. \
                 Please check your information has been input correctly.')
 
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "Whoops! Looks like you have nothing in your bag at the moment.")
+            messages.error(
+                request, "Whoops! Looks like you have \
+                    nothing in your bag at the moment.")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -144,7 +149,7 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    View to handle successful checkouts 
+    View to handle successful checkouts
     and save users information to user profile
     """
 

@@ -2,6 +2,7 @@ from django import forms
 from .widgets import CustomClearableFileInput
 from .models import BlogPost, BlogComment
 
+
 class BlogForm(forms.ModelForm):
     class Meta:
         model = BlogPost
@@ -11,8 +12,10 @@ class BlogForm(forms.ModelForm):
             'blog_body',
             'image',
             )
-            
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+
+    image = forms.ImageField(
+        label='Image', required=False, widget=CustomClearableFileInput)
+
 
 class CommentForm(forms.ModelForm):
     class Meta:

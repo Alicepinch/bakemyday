@@ -16,7 +16,8 @@ def profile(request):
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Thank you! Profile updated successfully')
+            messages.success(
+                request, 'Thank you! Profile updated successfully')
 
     form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
