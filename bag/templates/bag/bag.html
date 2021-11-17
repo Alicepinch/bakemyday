@@ -41,7 +41,6 @@
             </td>
             <td class="bag-product-name">
               <h3 class="m-0 font-weight-bold">{{ item.product.name }}</h3> 
-              <p class="m-0 font-weight-bold">Size: {% if item.product.has_size %}{{ item.size }}{% else %}N/A{% endif %}</p> 
               <small class="text-muted">SKU: {{ item.product.sku}}</small>
             </td>
             <td class="bag-product-price">
@@ -72,9 +71,6 @@
                                 </span>
                             </button>
                         </div>
-                        {% if item.product.has_size %}
-                        <input type="hidden" name="product_size" value="{{ item.size }}">
-                    {% endif %}
                     </div>
                   </div>
               </form>
@@ -84,7 +80,7 @@
                <p> £{{ item.product.price | calc_subtotal:item.quantity }}</p> 
             </td>
             <td class="bag-remove">
-              <a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><i class="fas fa-times-circle"></i></a>
+              <a class="remove-item text-danger" id="remove_{{ item.item_id }}"><i class="fas fa-times-circle"></i></a>
             </td>
           </tr>
           {% endfor %}
@@ -141,9 +137,8 @@
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('product_size');
         var url = `/bag/remove/${itemId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+        var data = {'csrfmiddlewaretoken': csrfToken};
 
         $.post(url, data)
          .done(function() {

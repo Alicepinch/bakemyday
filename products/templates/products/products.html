@@ -55,9 +55,8 @@
         {% endif %}
         <div class="card-body">
           <h3 class="m-0 product-name font-weight-bold">{{ product.name }}</h3>
-          <small class="text-muted">{{ product.category.friendly_name }} <br></small>
           <p class="font-weight-bold mb-0">£{{ product.price }}</p>
-          <p class="mt-1">
+          <p class="mt-2 font-weight-bold">
             <a class="pt-0"
                 href="{% url 'products' %}?category={{ product.category.name }}">
                 <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
