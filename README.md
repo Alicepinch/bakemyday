@@ -192,10 +192,11 @@ Below are all the wireframes that have been created for bakemyday.
 
 ### Typography 
 
-The fonts chosen for this website are Bebas Neue and  the reason for this choice was to try and match the logo font as closely as possible to keep a similiar design feel throughout the website.
+The fonts chosen for this website are Bebas Neue and Montserrat the reason for this choice was because they were clean, modern and complimented each other. 
 
 ### Colour Scheme 
 
+The main colour's chosen for the website are pink and brown. For links and the hover colour for the Navigation bar I chose a brown colour to match the logo and a lighter brown for the hover as a lighter contrast. For links and buttons throughout the same pink colour with brown writing and on the pink background on the home I have used the reverse colourway. 
 
 ## Features
 
@@ -221,6 +222,7 @@ The fonts chosen for this website are Bebas Neue and  the reason for this choice
 - Pagination
 - Discount System
 - Form where users can personalise a cake and generate an order
+- Customer can select what size cake/how many cupcakes they would like to purchase and price will update accordingly
 
 ## Data Modelling 
 
@@ -228,111 +230,15 @@ Heroku PostgreSQL has been used to host the backend database in production. The 
 
 The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home) and is shown below.
 
-![](docs/readme/wireframes/bake-my-day-data-modelling.jpg)
+![](docs/readme/wireframes/bake-my-day-data-modelling.jpg) - Need to update
 
 ## Models
 
-Below are all the models used for this project. 
+Below are all the models used for this project. This different models within this project map to a table in the project’s database, with each of its attributes corresponding to a specific column in that table.
 
-### Product App
+## Occasion & Category
 
-#### Occasion
-
-Name              |Database Key            |Field Type        | Validation Requirements                      |
-|-----------------|------------------------|-------------------|---------------------------------------------|
-|Name             |name                    |CharField          | max_length=254                              |
-|Friendly Name    | friendly_name          | CharField         | max_length=254, null=True, blank=True       |
-
-#### Category
-Name              |Database Key            |Field Type        | Validation Requirements                      |
-|-----------------|------------------------|-------------------|---------------------------------------------|
-|Name             |name                    |CharField          | max_length=254                              |
-|Friendly Name    | friendly_name          | CharField         | max_length=254, null=True, blank=True       |
-
-#### Product
-
-Name              |Database Key            |Field Type          | Validation Requirements                     |
-|-----------------|------------------------|--------------------|---------------------------------------------|
-|Category         |category                |ForeignKey(Category)|on_delete=models.SET_NULL                    |
-|Occasion         |occasion                |ForeignKey(Occasion)|on_delete=models.SET_NULL                    |
-|SKU              |sku                     |CharField           |max_length=80, null=True, blank=True         |
-|Name             |name                    |CharField           |max_length=80, null=True, blank=True         |
-|Description      |description             |TextField           |                                             |
-|Has Size         |has_size                |Boolean             |default=False, null=True, blank=True         |
-|Has Flavours     |has_flavour             |Boolean             |default=False, null=True, blank=True         |
-|Price            |price                   |DecimalField        |max_digits=6, decimal_places=2               |
-|Image URL        |image_url               |URL Field           |max_length=20, null=True, blank=True         |
-|Image            |img                     |Image Field         |max_length=20, null=True, blank=True         |
-
-### Profile App
-
-#### UserProfile
-
-Name             |Database Key            |Field Type         | Validation Requirements                     |
-|-----------------|------------------------|-------------------|---------------------------------------------|
-|User             |user                    |OneToOneField(User)|on_delete=models.CASCADE                     |
-|Phone Number     |default_phone_number    |CharField          |max_length=20, null=True, blank=True         |
-|Street Address 1 |default_street_address1 |CharField          |max_length=80, null=True, blank=True         |
-|Street Address 2 |default_street_address2 |CharField          |max_length=80, null=True, blank=True         |
-|Town or City     |default_town_or_city    |CharField          |max_length=40, null=True, blank=True         |
-|County           |default_county          |CharField          |max_length=80, null=True, blank=True         |
-|Postcode         |default_postcode        |CharField          |max_length=20, null=True, blank=True         |
-
-### Checkout App
-
-#### Order
-
-Name              |Database Key            |Field Type          | Validation Requirements                     |
-|-----------------|------------------------|--------------------|---------------------------------------------|
-|Order Number     |order_number            |CharField           |max_length=32,null=False, editable=False     |
-|User Profile     |user_profile            |ForeignKey(UserProfile)|on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'|
-|Full Name        |full_name                |CharField           |max_length=50, null=False, blank=False       |
-|Email            |email                    |CharField           |max_length=80, null=True, blank=True         |
-|Phone Number     |phone_number             |CharField           |max_length=20, null=False, blank=False       |
-|Post Code        |post_code                |CharField           |max_length=20, null=True, blank=True         |
-|Town or City     |town_or_city             |CharField           |max_length=40, null=False, blank=False       |
-|Street Address 1 |street_address1          |CharField           |max_length=80, null=False, blank=False       |
-|Street Address 2 |street_address2          |CharField           |max_length=80, null=False, blank=False       |
-|County           |county                   |CharField           |max_length=20, null=True, blank=True         |
-|Date             |date                     |DateTimeField       |auto_now_add=True                            |
-|Delivery Cost    |delivery_cost            |DecimalField        |max_digits=6, decimal_places=2, null=False, default=0|
-|Order Total      |order_total              |DecimalField        |max_digits=6, decimal_places=2, null=False, default=0|
-|Grand Total      |grand_total              |DecimalField        |max_digits=6, decimal_places=2, null=False, default=0|
-|Original Bag     |original_bag             |TextField           |null=False, blank=False, default=''          |
-|Stripe Pid       |stripe_pid               |CharField           |max_length=254, null=False, blank=False, default=''|
-
-#### OrderItem
-
-Name              |Database Key            |Field Type          | Validation Requirements                     |
-|-----------------|------------------------|--------------------|---------------------------------------------|
-|Order            |order                   |ForeignKey(Order)   |null=False, blank=False, on_delete=models.CASCADE, related_name='items'|
-|Product          |product                  |ForeignKey(Product) | null=False, blank=False, on_delete=models.CASCADE |
-|Product Size     |product_size             |CharField           |max_length=10, null=True, blank=True)       |
-|Quanity          |quantity                 |IntegerField        |null=False, blank=False, default=0          |
-|Item Total       |item_total               |DecimalField        |max_digits=6, decimal_places=2, null=False, blank=False, editable=False|
-
-### Blog App
-
-#### BlogPost
-
-Name              |Database Key            |Field Type          | Validation Requirements                     |
-|-----------------|------------------------|--------------------|---------------------------------------------|
-|Author           |author                  |ForeignKey(User)    |null=True, blank=True, on_delete=models.CASCADE|
-|Blog Title       |blog_title              |CharField           |max_length=60, null=True, blank=True.       |
-|Blog Date Created|date_created            |DateTimeField       |auto_now_add=True, null=True.               |
-|Blog Preview     |blog_preview            |CharField           |null=False, blank=False, default=0          |
-|Blog Body        |blod_body               |TextField           |                                            |
-|Image            |image                   |ImageField          |null=True, blank=True                       |
-
-#### BlogComment
-
-Name              |Database Key            |Field Type          | Validation Requirements                     |
-|-----------------|------------------------|--------------------|---------------------------------------------|
-|Blog Post        |blog_post               |ForeignKey(BlogPost)|on_delete=models.CASCADE                     |
-|comment_user     |comment_user            |ForeignKey(User)    |on_delete=models.CASCADE                     |
-|Date Created     |date_created            |DateTimeField       |auto_now_add=True, null=True.                |
-|Comment Title    |comment_title           |CharField           |max_length=50, null=False, blank=False       |
-|Comment          |comment                 |TextField           |max_length=2048, null=False, blank=False     |
+The occasion and category models create a table in the projects database for the 'name' and 'friendly names' for both Occasions and Category. The reason I chose to have both Occasion and Category for this project is because I felt for this business there were many different reasons why users will be shopping. This could be either for a specific thing such as cookies, cupcakes or a large cake for example which would fall under Category. Or alternatively, they would be looking for a cake for a specific occasion such as Valentines day, a birthday etc.. The models are the same for this however used for different reasons across the site. The friendly name is what appears to the user when displayed on the website and the name is what appears in the back end of the database. The CharField has been used for the field type as this is a string field, for small to large sized strings. 
 
 ## Technologies Used
 
@@ -546,8 +452,11 @@ SECRET_WH_KEY | `<your_webhook_secret_key>`
 AWS_ACCESS_KEY_ID | `<your_aws_acess_key>`
 AWS_SECRET_ACCESS_KEY | `<your_aws_secret_key>`
 
-
 ## Credits
 
 All images and content has been taken from the [@bakemyday_byamber](https://www.instagram.com/bakemyday_byamber/) instagram account. 
 I have full permission to use all images and all branding for this website from the owner of this business. 
+
+## Codes
+
+- [Django Central](https://djangocentral.com/building-a-blog-application-with-django/) was used to help build the blog app

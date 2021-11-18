@@ -2,140 +2,55 @@
 
 ### Shopper
 
-<details><summary>As a shopper on bakemyday I would like to be able to view all products available</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a shopper on bakemyday I would like to be able to view product details</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a shopper on bakemyday I would like to be able to sort products by category/occasion</summary>
-
-<br>
-
-
-</details>
-
-<details><summary>As a shopper on bakemyday I would like to be able identiy if there are any deals on the website</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a shopper on bakemyday I would like to be able to add a product to my basket</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a shopper on bakemyday I would like to be able to view all the products I have added to my basket</summary>
-
-<br>
-
-</details>
-<details><summary>As a shopper on bakemyday I would like to be able to create a personalised order</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a shopper on bakemyday I would like to be able to personalise my order</summary>
-
-<br>
-
-</details>
-<details><summary>As a shopper on bakemyday I would like to be able to search the website and see my results</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a shopper on bakemyday I would like to be able to easily select the quantity of what I add to my basket</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a shopper on bakemyday I would like to be able to sort product by name an description</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a shopper on bakemyday I would like to recieve email confirmation after I have placed an order</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a shopper on bakemyday I would like to be able to view my order history after placing an order</summary>
-
-<br>
-
-</details>
-
+- As a shopper on bakemyday I would like to be able to view all products available
+    -
+- As a shopper on bakemyday I would like to be able to view product details
+    -
+- As a shopper on bakemyday I would like to be able to sort products by category/occasion
+    -
+- As a shopper on bakemyday I would like to be able identiy if there are any deals on the website
+    -
+- As a shopper on bakemyday I would like to be able to add a product to my basket
+    -
+- As a shopper on bakemyday I would like to be able to view all the products I have added to my basket 
+    -
+- As a shopper on bakemyday I would like to be able to create a personalised order
+    -
+- As a shopper on bakemyday I would like to be able to personalise my order
+    -
+- As a shopper on bakemyday I would like to be able to search the website and see my results
+    -
+- As a shopper on bakemyday I would like to be able to easily select the quantity of what I add to my basket
+    -
+- As a shopper on bakemyday I would like to be able to sort product by name an description
+    -
+- As a shopper on bakemyday I would like to recieve email confirmation after I have placed an order
+    -
+- As a shopper on bakemyday I would like to be able to view my order history after placing an order
+    -
 
 ### Site User
 
-<details><summary>As a site user of bakemyday I would like to easily register for an account</summary>
+- As a site user of bakemyday I would like to easily register for an account
+    -
+- As a site user of bakemyday I would like to easily login and logout
+    -
+- As a site user of bakemyday I would like to easily be able to change my password
+    -
+- As a site user of bakemyday I would to easily recover my password incase I forget it
+    -
+- As a site user of bakemyday I would like to recieve email confirmation after registering
+    -
+- As a site user of bakemyday I would like to have a personalized user profile
+    -
+- As a site user of bakemydat I would like to be able to post blog posts
+    -
+- As a site user of bakemyday I would like to be able to edit or delete a blog post I have created
+    -
+- As a site user of bakemyday I would like to be able to comment on & view other users blog postS
+    -
 
-<br>
-
-</details>
-
-<details><summary>As a site user of bakemyday I would like to easily login and logout</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a site user of bakemyday I would like to easily be able to change my password</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a site user of bakemyday I would to easily recover my password incase I forget it</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a site user of bakemyday I would like to recieve email confirmation after registering</summary>
-
-<br>
-
-</details>
-
-
-<details><summary>As a site user of bakemyday I would like to have a personalized user profile</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a site user of bakemydat I would like to be able to post blog posts</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a site user of bakemyday I would like to be able to edit or delete a blog post I have created</summary>
-
-<br>
-
-</details>
-
-<details><summary>As a site user of bakemyday I would like to be able to comment on & view other users blog posts</summary>
-
-<br>
-
-</details>
+### Admin Rights Tested:
 
 
 ## Usability Testing
@@ -156,6 +71,13 @@ iMac
 - Firefox
 - Microsoft Edge
 
+## Stripe Webhooks:
+Webhooks work as expected, and give a 200 code.
+![](docs/testing/stripe-webhook-success.png)
+
+A confirmation email is sent to customer when a checkout is successful and appears as below:
+![](docs/testing/checkout-success-email.png)
+
 ## W3C Validators:
 
 ### W3C HTML Validator:
@@ -163,17 +85,23 @@ iMac
 0 Errors
 0 Warnings
 
+![](docs/testing/w3c-html-validator.png)
+
 ### W3C CSS Validator
 
 0 Errors
 
+![](docs/testing/w3c-css-validator.png)
+
 ### JSHint
+
 JavaScript code passed through JShint with no major issues. Once run through, it prompted to add some semicolons that were missing. These were all added in where necessary.
 
 0 Errors
 1 Undefined variable stripe
 
 ### Python Testing
+
 Flake8 extension was used to test that python code was compliant with PEP8. 
 Any remaining errors are outlined below:
 
@@ -188,12 +116,60 @@ Please note for the following file errors have been ignored as these were genera
     - ./manage.py
     - checkout/init.py
 
-Some 'Avoid' errors were raised such as 'Avoid using null=True on string-based fields such CharField.' these were ignored for some models as I didn't want to be mandatory
+Some 'Avoid' errors were raised such as 'Avoid using null=True on string-based fields such CharField.' These were also ignored as these have "Blank=True" and if I am going to allow these fields to be blank in the form, then I need the database to allow NULL values for that field.
 
 ## 404, 500 Errors
 
 If a user tries to access a page that is non existent then they will be directed to the custom 404 page. On this page there is a CTA that redirects the user back to the homepage. I have forced this error by typing a wrong URL into the bar.
 In case of an internal server error occurring then a 500 error page has also been implemented. This looks similar to the 400 error page and has a CTA for users to click back to the homepage.
+
+## Bugs and Fixes:
+
+Throughout the build process of this website I used the django errors to identify any issues within my code such as templating issues and fixed these as I went. Some major bugs and issues I faced:
+
+## Unable to create duplicate blog posts:
+
+During the build to blog app of bakemyday I came across the error of a User not being unable to create more than one blogpost at a time. Every time I went to submit another blog post the below error would appear:
+
+![](docs/testing/add-blogpost-django-error.png)
+
+After getting multiple people to check if there was something wrong with my code and no one being able to find the error I decided to remove my database and all migrations. In order to do this I deleted my db.sqlite3 folder and then all migrations folders in each app. I then rerun all migrations to reinstate my database which fixed the issue.  
+
+## Django Warnings
+
+After not updating my Django and sqlparse for a long time github was giving me an error the some security dependencies and to upgrade Django and sqlparse. After doing this I was faced with the below warnings: 
+
+In order to fix this I added in ```DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField``` into my settings file
+
+## Internal Server Error on Heroku
+
+After I had deployed my app to heroku I was faced with an Internal Server Error every time I opened the app. The issue was that I had changed my models but hadn't applied my migrations to the heroku app. To fix this I entered the following command into the terminal:
+
+```heroku run python3 manage.py migrate -a 'heroku-app-name'```
+
+## Blog
+
+When testing the add blog functionality I noticed that a user could add a blog post with no title, this isn't the best user experience as a specific blog title tells a user what questions are being answered as well as an insight into the information you're providing.
+
+To fix this I changed the my blog model from:
+
+```blog_title = models.CharField(max_length=60, null=True, blank=False)```
+
+To:
+
+```blog_title = models.CharField(max_length=60, null=True, blank=True)```
+
+I also noticed that the blog posts were not displaying in order of them being created. In order to fix this I added in a meta option for the blog model:
+
+```class Meta: ordering = ['-date_created']```
+
+When adding a new blogpost to the blog the success message was still showing the bag when it had been uploaded succesfully. To fix this issue I updated the messages to be info rather than success.
+
+When testing the blogpost functionality I realised that the blog preview section was not mandatory and that if someone didn't add this in then the template would return 'None'. To fix this I could have made this mandatory however, I thought it would make more sense to remove one step for a user and just take the preview from the blog body itself. I removed 'blog_preview' from the BlogPost model and then added in ```{{blogpost.blog_body|slice:":200" }}``` into my template to pull in a preview of the blog content on the blog page. 
+
+## Save Info:
+
+When testing the save info to profile functionality during the building process I noticed this wasn't working, after some investiation I noticed that there were a couple of spelling errors within my file in the def cache_checkout_data view and def checkout and checkout success and ```('save-info')``` was updated to ```'save_info'```
 
 ## Notes
 
