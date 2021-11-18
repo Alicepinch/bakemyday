@@ -3,52 +3,30 @@
 ### Shopper
 
 - As a shopper on bakemyday I would like to be able to view all products available
-    -
 - As a shopper on bakemyday I would like to be able to view product details
-    -
 - As a shopper on bakemyday I would like to be able to sort products by category/occasion
-    -
 - As a shopper on bakemyday I would like to be able identiy if there are any deals on the website
-    -
 - As a shopper on bakemyday I would like to be able to add a product to my basket
-    -
 - As a shopper on bakemyday I would like to be able to view all the products I have added to my basket 
-    -
 - As a shopper on bakemyday I would like to be able to create a personalised order
-    -
 - As a shopper on bakemyday I would like to be able to personalise my order
-    -
 - As a shopper on bakemyday I would like to be able to search the website and see my results
-    -
 - As a shopper on bakemyday I would like to be able to easily select the quantity of what I add to my basket
-    -
 - As a shopper on bakemyday I would like to be able to sort product by name an description
-    -
 - As a shopper on bakemyday I would like to recieve email confirmation after I have placed an order
-    -
 - As a shopper on bakemyday I would like to be able to view my order history after placing an order
-    -
 
 ### Site User
 
 - As a site user of bakemyday I would like to easily register for an account
-    -
 - As a site user of bakemyday I would like to easily login and logout
-    -
 - As a site user of bakemyday I would like to easily be able to change my password
-    -
 - As a site user of bakemyday I would to easily recover my password incase I forget it
-    -
 - As a site user of bakemyday I would like to recieve email confirmation after registering
-    -
 - As a site user of bakemyday I would like to have a personalized user profile
-    -
 - As a site user of bakemydat I would like to be able to post blog posts
-    -
 - As a site user of bakemyday I would like to be able to edit or delete a blog post I have created
-    -
 - As a site user of bakemyday I would like to be able to comment on & view other users blog postS
-    -
 
 ### Admin Rights Tested:
 
@@ -91,7 +69,7 @@ A confirmation email is sent to customer when a checkout is successful and appea
 
 0 Errors
 
-![](docs/testing/w3c-css-validator.png)
+![](docs/testing/w3c-css-validation.png)
 
 ### JSHint
 
@@ -173,4 +151,6 @@ When testing the save info to profile functionality during the building process 
 
 ## Notes
 
-Git commit: 6b66b7f81d052d42873224147e38fecd9833ff7c was a large commit due to deleting database and migrations due to a database issue meaning I couldnt create multiple blog posts. Also included was changes to allauth templates which should have been split up into two or three commits. A whole commit was done by accident
+Git commit: 6b66b7f81d052d42873224147e38fecd9833ff7c was a large commit due to deleting database and migrations due to a database issue meaning I couldnt create multiple blog posts. Also included was changes to allauth templates which should have been split up into two or three commits. A whole commit was done by accident.
+
+### Manual Testing:
