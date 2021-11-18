@@ -74,8 +74,8 @@
               <p class="blog-comment">{{ blogcomment.comment }}</p>
               {% if request.user == blogpost.author or request.user.is_superuser %}
               <p>
-                <a class="btn mb-1" href="{% url 'delete_blogcomment' blogcomment.id %}" >Delete Comment</a>
-                <a class="btn" href="{% url 'edit_blogcomment' blogcomment.id %}" >Edit Comment</a>
+                <a class="btn" href="{% url 'delete_blogcomment' blogcomment.id %}" ><i class="fas fa-trash"></i></a>
+                <a class="btn" href="{% url 'edit_blogcomment' blogcomment.id %}" ><i class="fas fa-pencil-alt"></i></a>
               </p>
               {% endif %}
           </div>

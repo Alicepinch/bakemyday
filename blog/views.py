@@ -13,6 +13,7 @@ def blog(request):
 
     context = {
         'blogposts': blogposts,
+        'on_blog_page': True
     }
 
     return render(request, 'blog/blog.html', context)
@@ -48,7 +49,7 @@ def add_blogpost(request):
             blogpost = form.save(commit=False)
             blogpost.author = request.user
             blogpost.save()
-            messages.success(
+            messages.info(
                 request, 'New blogpost added')
             return redirect(reverse('blog'))
         else:
@@ -75,7 +76,7 @@ def delete_blogpost(request, blogpost_id):
 
     if request.user.is_superuser or request.user == blogpost.author:
         blogpost.delete()
-        messages.success(request, "Blogpost succesfully deleted")
+        messages.info(request, "Blogpost succesfully deleted")
         return redirect(reverse('blog'))
     else:
         messages.error(
@@ -100,7 +101,7 @@ def edit_blogpost(request, blogpost_id):
         form = BlogForm(request.POST, request.FILES, instance=blogpost)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated blog post!')
+            messages.info(request, 'Successfully updated blog post!')
             return redirect(reverse('blog_detail', args=[blogpost.id]))
         else:
             messages.error(
@@ -131,7 +132,7 @@ def add_blogcomment(request, blogpost_id):
             blogcomment.comment_user = request.user
             blogcomment.blogpost = blogpost
             blogcomment.save()
-            messages.success(
+            messages.info(
                 request, f'Thanks for your \
                     commenting on {blogpost.blog_title}')
             return redirect(reverse('blog_detail', args=[blogpost.id]))
@@ -157,7 +158,7 @@ def delete_blogcomment(request, blogcomment_id):
 
     if request.user == blogcomment.comment_user or request.user.is_superuser:
         blogcomment.delete()
-        messages.success(request, "Comment succesfully deleted")
+        messages.info(request, "Comment succesfully deleted")
         return redirect(reverse('blog'))
     else:
         messages.error(request, "Sorry, this isn't your comment to delete")
@@ -176,7 +177,7 @@ def edit_blogcomment(request, blogcomment_id):
             form = CommentForm(request.POST, instance=blogcomment)
             if form.is_valid():
                 form.save()
-                messages.success(
+                messages.info(
                     request, 'Successfully updated comment!')
                 return redirect(reverse('blog'))
             else:

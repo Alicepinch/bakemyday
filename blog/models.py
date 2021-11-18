@@ -8,7 +8,7 @@ class BlogPost(models.Model):
     author = models.ForeignKey(
         User, null=True, blank=True, on_delete=models.CASCADE)
     blog_title = models.CharField(
-        max_length=60, null=True, blank=True)
+        max_length=60, null=True, blank=False)
     date_created = models.DateTimeField(
         auto_now_add=True, null=True)
     blog_preview = models.CharField(
@@ -16,6 +16,9 @@ class BlogPost(models.Model):
     blog_body = models.TextField()
     image = models.ImageField(
         null=True, blank=True)
+
+    class Meta:
+        ordering = ['-date_created']
 
     def __str__(self):
         return self.blog_title
