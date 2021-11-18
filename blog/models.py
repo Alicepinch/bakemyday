@@ -11,8 +11,6 @@ class BlogPost(models.Model):
         max_length=60, null=True, blank=False)
     date_created = models.DateTimeField(
         auto_now_add=True, null=True)
-    blog_preview = models.CharField(
-        max_length=260, null=True, blank=True)
     blog_body = models.TextField()
     image = models.ImageField(
         null=True, blank=True)

@@ -47,9 +47,9 @@
             <small class="text-muted"
               >By {{ blogpost.author }} on {{ blogpost.date_created }}
             </small>
-            <p>{{ blogpost.blog_preview }}</p>
+            <p>{{blogpost.blog_body|slice:":200" }}...</p>
             <a href="{% url 'blog_detail' blogpost.id %}" class="btn">
-              View Full Blogpost
+              Read More
             </a>
           </div>
         </div>

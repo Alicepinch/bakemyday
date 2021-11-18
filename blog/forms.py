@@ -8,7 +8,6 @@ class BlogForm(forms.ModelForm):
         model = BlogPost
         fields = (
             'blog_title',
-            'blog_preview',
             'blog_body',
             'image',
             )
