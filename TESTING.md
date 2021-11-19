@@ -3,34 +3,65 @@
 ### Shopper
 
 - As a shopper on bakemyday I would like to be able to view all products available
+    - A shopper can view all products by navigating to the 'All products' tab in the navigation
 - As a shopper on bakemyday I would like to be able to view product details
+    - A shopper can view product details by clicking on any product, they will be taken to the corresponding product detail page where there is more information in here
 - As a shopper on bakemyday I would like to be able to sort products by category/occasion
-- As a shopper on bakemyday I would like to be able identiy if there are any deals on the website
+    - A shopper can either shop for occasion (Christmas etc.) or Category (Birthday etc.) by navigating to the tab's within the navigation. Once clicked a drop down appears that a shopper can select from.
 - As a shopper on bakemyday I would like to be able to add a product to my basket
+    - A shopper can add any product to their basket on it's product detail page by using the 'Add to Bag' CTA
 - As a shopper on bakemyday I would like to be able to view all the products I have added to my basket 
-- As a shopper on bakemyday I would like to be able to create a personalised order
-- As a shopper on bakemyday I would like to be able to personalise my order
+    - A shopper can view all products that they have in their basket by navigating to the basket in the top right corner of the page. This takes them to the basket where it lists all their products and quantities
 - As a shopper on bakemyday I would like to be able to search the website and see my results
+    - A shopper can search the website from any page that they are on, if a product matches their search request then the product will appear
 - As a shopper on bakemyday I would like to be able to easily select the quantity of what I add to my basket
-- As a shopper on bakemyday I would like to be able to sort product by name an description
+    - A shopper can increase the quantity either on the product detail page or in their basket and get up to date total pricing
 - As a shopper on bakemyday I would like to recieve email confirmation after I have placed an order
+    - A shopper recieves an order confirmation to their chosen email address when they have successfully checked out
+- As a shopper on bakemyday I would like to be able to save my account details and create an account
+    - A new shopper can chose to create an account in the checkout to save their checkout information for next time
 - As a shopper on bakemyday I would like to be able to view my order history after placing an order
+    - If a shopper has decided to create an account then their order history will be saved automatically to their profile
+
 
 ### Site User
 
-- As a site user of bakemyday I would like to easily register for an account
+- As a site user of bakemyday I would like to easily register an account
+    - A user can easily register an account by navigating to the 'My Account' in the top right corner, this presents the user with a drop down where they can click on register, they are then taken to a register form to set up their account
 - As a site user of bakemyday I would like to easily login and logout
+    - A user can login to their account by navigating to the 'My Account' in the top right corner, once they click on login they are taken to the login page to enter their email address and password
 - As a site user of bakemyday I would like to easily be able to change my password
+    - Once a user is logged in then they can navigate to their 'Profile' page, in here they have a CTA called 'Change password' this takes them to a form where they have to fill in their current password to update it to a new one
 - As a site user of bakemyday I would to easily recover my password incase I forget it
+    - A user can recover their password on the login page if they have forgotten this by clicking on 'Forgotten Password'
 - As a site user of bakemyday I would like to recieve email confirmation after registering
-- As a site user of bakemyday I would like to have a personalized user profile
-- As a site user of bakemydat I would like to be able to post blog posts
+    - Once registering an account a user will be sent an email to confirm that they want to register an account
+- As a site user of bakemyday I would like to be able to post blog posts
+    - A user can post a blog post by navigating to 'My Account' in the top right corner and clicking on 'Create a blogpost' in the drop down
 - As a site user of bakemyday I would like to be able to edit or delete a blog post I have created
-- As a site user of bakemyday I would like to be able to comment on & view other users blog postS
+    - A user can edit/delete a blog post they have created by navigating to the blog post itself and clicking on either the 'Edit Blogpost' or 'Delete Blogpost' CTA's
+- As a site user of bakemyday I would like to be able to comment on & view other users blog posts
+    - A user can comment on any other blogpost by navigating to a blog post and scrolling down to the 'Comments' section and clicking on the 'Create a Comment' CTA, a user can only comment if they are logged in
+- As a site user of bakemyday I would like to be able to view other blog posts that other users have posted
+    - A user can view all blog posts on the website by navigating to the 'Blog' tab in the navigation
 
 ### Admin Rights Tested:
 
-
+- To be able to make any adjustments needed to any products across the website.
+    - An admin can edit any product on the website by clicking on the relevant product and then clicking on the 'Edit Product' CTA
+- To be able to remove any products from the website
+    - An admin can delete any product on the website by clicking on the relevant product and then clicking on the 'Delete Product' CTA
+- To be able to make any adjustments needed to any blogposts across the website.
+    - An admin can edit any blog post on the website by clicking on the relevant post and then clicking on the 'Edit Blogpost' CTA
+- To be able to remove any blogposts from the website
+    - An admin can delete any blog post on the website by clicking on the relevant blogpost and then clicking on the 'Delete Blogpost' CTA
+- To be able to make any adjustments needed to any comments on blog posts.
+    - An admin can edit any blog comment on the website by clicking on the relevant post and then clicking on the 'Edit Blog Comment' CTA
+- To be able to remove any blog comments from blog posts incase they are innapropriate
+    - An admin can delete any blog comments on the website by clicking on the relevant post and then clicking on the 'Delete Blog Comment' CTA
+- To be able to add new products to the website
+    - An admin can add any new product by navigating to the 'My Account' in the top right corner and clicking on 'Add Product' in the drop down
+    
 ## Usability Testing
 
 iPhone 11 Plus
@@ -109,7 +140,7 @@ Throughout the build process of this website I used the django errors to identif
 
 During the build to blog app of bakemyday I came across the error of a User not being unable to create more than one blogpost at a time. Every time I went to submit another blog post the below error would appear:
 
-![](docs/testing/add-blogpost-django-error.png)
+![](docs/testing/add-blogpost-django-error.jpg)
 
 After getting multiple people to check if there was something wrong with my code and no one being able to find the error I decided to remove my database and all migrations. In order to do this I deleted my db.sqlite3 folder and then all migrations folders in each app. I then rerun all migrations to reinstate my database which fixed the issue.  
 
