@@ -80,12 +80,6 @@ iMac
 - Firefox
 - Microsoft Edge
 
-## Stripe Webhooks:
-Webhooks work as expected, and give a 200 code.
-![](docs/testing/stripe-webhook-success.png)
-
-A confirmation email is sent to customer when a checkout is successful and appears as below:
-![](docs/testing/checkout-success-email.png)
 
 ## W3C Validators:
 
@@ -185,3 +179,173 @@ When testing the save info to profile functionality during the building process 
 Git commit: 6b66b7f81d052d42873224147e38fecd9833ff7c was a large commit due to deleting database and migrations due to a database issue meaning I couldnt create multiple blog posts. Also included was changes to allauth templates which should have been split up into two or three commits. A whole commit was done by accident.
 
 ### Manual Testing:
+
+#### Responsive Design - PASS
+
+- All pages were tested locally, and on Heroku using Chrome, Firefox, IE, and Safari.
+- All pages tested for responsiveness in different device sizes using Google Chrome Developer Tools, and Google Chrome Responsive Viewer extension;
+  - Desktop
+  - iPhone 5/6/7/8/X
+  - iPad 1/2/3/Pro
+  - Galaxy Android phones
+- All the pages were also tested manually using;
+  - iPhone 5s/6s/8/X/XS/11/
+  - Samsung Galaxy S8/Note 10+
+  - iPad Air 2
+  - iPad Pro 3
+
+## Manual Functionality Testing
+
+#### Navbar - PASS
+
+- All links, including logo are working as expected, and takes the user where they want to go.
+- Search bar is working and lets a user search through products, categories, product details and occasion. If user input is empty a "You didn't enter anything!" message is shown.
+- Account links work as expected, and succefully directs user to Register, Login, Profile, and Add product page's. Logout link successfully logs out user.
+- All Products works as exptected and shows the user all products
+- Occasion and Category links generate a drop down with all the different occasions and categorys for users to look through
+- Shopping bag link works, and updates successfully when user adds or removes a product from/to the bag, and updates the grand total accordingly.
+- Navbar condenses down succesfully for mobile view.
+
+#### Homepage - PASS
+
+- CTA button's on homepage work as expected and take users to products page and blog page
+
+#### Register - PASS
+
+- Form input and validations work as expected. Form gives feedback upon unmatched format, invalid data, or for existing user
+- Submit button works as expected and submits data successfully, and send verification e-mail for users to confirm their email address.
+
+#### Login - PASS
+
+- Form input and validations work as expected. Form gives feedback if any unmatched format's or incorrect username, email and password, or if user doesn't exist in the database.
+- Submit button works as expected if user is in database, this then redirects user to homepage with a success toast message.
+- Forgot password link works as expected and takes user to password recovery page.
+
+#### Profile - PASS
+
+- All recent purchases are shown in the Order History tab.
+- All recent purchase links works as expected and open in a new page with the past order information.
+- User details form works as expected, and successfully updates user details.
+
+#### Logout - PASS
+
+- Logout functionality is working as expected. This logs the user out and removes session cookies.
+
+#### Products - PASS
+
+- Products page works as expected and displays all products in the database.
+- Category tag's work and explains to customer what category the products is.
+- When a product is clicked it succesfully takes you to the correct product detail page
+
+#### Product Detail - PASS
+
+- Page renders the specified product details of the product that was clicked on the product page.
+- Quantity input buttons work as expected, increments product quantity by specified amount between 1-5.
+- Keep shopping CTA works as expected and takes the user back to Products page.
+- Add to bag CTA works as expected and adds the item and its quantity into the shopping bag and returns a success message with a preview of the bag.
+- Edit Product and Delete Product CTA's display for admin user's only and work as expected. 
+- Delete modal is displayed when trying to delete product as a precaution layer
+- Edit Product CTA directs user to a edit product page
+
+#### Edit Product
+
+- Page works as expected and renders a prefilled form with product details in
+- Admin can successfully update all aspects of the product from the form
+- Update Product CTA successfully updates product data in database and redirects back to the product page where changes are reflected
+- Cancel CTA succesfully redirects back to products page
+- Field validators are working, user can't submit form if all required fields are not filled. 
+
+#### Add Product
+
+- Page works as expected and renders the same form as edit product but with empty fields
+- Add Product CTA successfully adds product into database and redirects back to products pages 
+- Cancel CTA succesfully redirects back to products page
+- Field validators are working, user can't submit form if all required fields are not filled
+
+#### Bag - PASS
+
+- Page works as expected and renders all items in a users bag with some product details
+- Remove button works and removes item from bag
+- Quantity input works correctly and user can increase quantity of product in their bag with 'Update'
+- Grand total, and delivery are visible and reflect any changes that are made on the bag page
+- Keep shopping button works as expected and redirects user back to Products page
+- Secure Checkout button works as expected and directs user to the Checkout Page
+
+#### Checkout - PASS
+
+- Page works as expected and renders all items in bag in the order summary section
+- Checkout form works as expected and successfully submits data for payment
+- Checkout form validation works as expected and gives feedback if any format is unmatched or incorrect inputs
+- If save info is selected then checkout form sucessfully saves, and updates user data for them to use later
+- If user doesn't have an account or isn't logged in then save info is replaced by 'Create an account or login' these links succesfully redirects to the register account page and login page
+- Upon successful payment, a confirmation e-mail is sent to user with their order details.
+
+#### Checkout Success - PASS
+
+- Page works as expected, it renders and and summarizes the order for customers with their confirmation number. A success message is displayed in top right corner with order confirmation
+- Email is sent to email address used for the order with order confirmation
+
+#### Blog - PASS
+
+- Page works as expected, and renders all the blog post data from database.
+- All post images, titles, and read more links work as expected and takes the user to the post page.
+
+#### Blog Detail - PASS
+
+- Successfully renders all the blog post data 
+- Comment section works as expected and displays all the comments associated with blogpost with a comment counter. If there are no comments on the post, a message is shown to the user if they would like to add one.
+- 'Add a comment' CTA links user succesfully through to comment form, if user is not logged in they will be redirected to login page
+- Edit Blog Post and Delete Blog Post CTA's only display for admin user's or the author of the blogpost and work as expected. 
+- Delete modal is displayed when trying to delete blog post as a precaution layer
+- Delete CTA in modal succesfully removes blog post from database
+- Edit Blogpost CTA redirects user to a edit blogpost page
+- If a user who created a comment is logged in then 'Delete Comment' and 'Edit Comment' CTA's are displayed 
+- 'Delete Comment' CTA deletes comment 
+- 'Edit Comment' redirects user to edit comment page
+
+#### Add Blog Post - PASS
+
+- Page works as expected and renders blog post form with empty fields
+- 'Add Blog Post' CTA successfully adds blogpost into database and redirects back to blog page where this is displayed
+- Cancel CTA succesfully redirects back to blog page
+- Field validators are working, user can't submit form if all required fields are not filled/invalid.
+
+#### Edit Blog Post - PASS
+
+- Page works as expected and renders blog post prefilled with blog post data
+- 'Update Blog Post' CTA successfully updates blogpost data in database and redirects back to blog page where this is displayed
+- 'Cancel' CTA succesfully redirects back to blog page
+- Field validators are working, user can't submit form if all required fields are not filled/invalid.
+
+#### Blog Comment - PASS
+
+- Page works as expected and renders blog comment form with empty fields
+- 'Add Blog Comment' CTA successfully adds comment into database for relevant blog post and redirects back to blog post where this is displayed
+- 'Cancel' CTA succesfully redirects back to blog page
+- Field validators are working, user can't submit form if all required fields are not filled/invalid.
+
+#### Contact 
+
+#### Footer - PASS
+
+- Footer is available across all pages.
+- Quick links work as expected, and redirects user to the specified page.
+- Social link on the footer works as expected, and link opens in a new tab.
+
+#### Error 404 - PASS
+
+- Works as expected, successfuly captures and handles page not found error.
+- Go back button on error page works as expected and redirects user back to the homepage.
+
+#### Error 500 - PASS
+
+- Works as expected, successfuly captures and handles internal server error.
+- Go back button on error page works as expected and redirects user back to the homepage.
+
+#### Stripe Webhooks - PASS
+
+Webhooks work as expected, and give a 200 code.
+![](docs/testing/stripe-webhook-success.png)
+
+A confirmation email is sent to customer when a checkout is successful and appears as below:
+![](docs/testing/checkout-success-email.png)
