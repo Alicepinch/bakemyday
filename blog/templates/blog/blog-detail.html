@@ -27,7 +27,7 @@
         <div class="image-container">
           {% if blogpost.image %}
             <img
-              class="img-fluid"
+              class="img-fluid blogdetail-img"
               src="{{ blogpost.image.url }}"
               alt="{{ blogpost.blog_title }}"
             />
@@ -61,7 +61,12 @@
     <div class="row">
       <div class="col-12 pb-3">
         <h3 class="blog-title">Comments Section</h3>
+        {% if blogcomments.count > 0 %}
+        <p>{{ blogcomments.count }} comment</p>
         <hr>
+        {% else %}
+            <p>There are no comments on this post yet! Be the first to comment below!</p>
+        {% endif %}
         <a class="btn" href="{% url 'add_blogcomment' blogpost.id %}">Create New Comment</a>
       </div>
 
@@ -71,7 +76,7 @@
           <div class="p-0">
               <h5 class="blog-title">{{ blogcomment.comment_title }}</h5>
               <small class="text-muted">By {{ blogcomment.comment_user }} on {{ blogcomment.date_created }}</small>
-              <p class="blog-comment">{{ blogcomment.comment }}</p>
+              <p class="blog-comment">{{ blogcomment.comment | linebreaks }}</p>
               {% if request.user == blogpost.author or request.user.is_superuser %}
               <p>
                 <a class="btn" href="{% url 'delete_blogcomment' blogcomment.id %}" ><i class="fas fa-trash"></i></a>
