@@ -271,4 +271,17 @@ footer a:hover {
         width: 150px;
         padding-bottom: 1rem;
    }
+   .account-background {
+        padding-top: 125px;
+   }
+   .nav-link {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
+@media screen and (max-width: 640px) {
+    .nav-link {
+        font-size: 12px;
+    }
+}
+
