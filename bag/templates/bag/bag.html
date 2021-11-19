@@ -84,16 +84,6 @@
             </td>
           </tr>
           {% endfor %}
-          <tr>
-            <td colspan="5" class="text-right">
-                <a href="{% url 'products' %}" class="btn btn-secondary">
-                  <i class="fas fa-chevron-left pr-1"></i><span>Keep Shopping</span>
-                </a>
-                <a href="{% url 'checkout' %}" class="btn btn-secondary">
-                    <span>Secure Checkout</span><i class="fas fa-lock pl-1"></i>
-                </a>
-            </td>
-        </tr>
         <tr>
           <td colspan="5" class="pt-5 text-right">
               <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
@@ -101,6 +91,16 @@
               <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
           </td>
       </tr>
+      <tr>
+        <td colspan="5" class="text-right">
+            <a href="{% url 'products' %}" class="btn btn-secondary">
+              <i class="fas fa-chevron-left pr-1"></i><span>Keep Shopping</span>
+            </a>
+            <a href="{% url 'checkout' %}" class="btn btn-secondary">
+                <span>Secure Checkout</span><i class="fas fa-lock pl-1"></i>
+            </a>
+        </td>
+    </tr>
       </table>
 
       {% else %}

@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 from .models import BlogPost, BlogComment
 from .forms import BlogForm, CommentForm
@@ -11,16 +10,6 @@ def blog(request):
     """ A view to show blog posts details """
 
     blogposts = BlogPost.objects.all()
-    paginator = Paginator(blogposts, 4)  # Maximum 4 posts on each page
-    page = request.GET.get('page')
-    try:
-        posts = paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer deliver the first page
-        posts = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range deliver last page of results
-        posts = paginator.page(paginator.num_pages)
 
     context = {
         'blogposts': blogposts,
@@ -189,7 +178,7 @@ def edit_blogcomment(request, blogcomment_id):
                 form.save()
                 messages.info(
                     request, 'Successfully updated comment!')
-                return redirect(reverse('blog'))
+                return redirect(reverse('blog_detail', args=[blogpost.id]))
             else:
                 messages.error(
                         request, 'Failed to update the blog comment. \
