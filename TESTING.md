@@ -174,26 +174,6 @@ When testing the blogpost functionality I realised that the blog preview section
 
 When testing the save info to profile functionality during the building process I noticed this wasn't working, after some investiation I noticed that there were a couple of spelling errors within my file in the def cache_checkout_data view and def checkout and checkout success and ```('save-info')``` was updated to ```'save_info'```
 
-## Notes
-
-Git commit: 6b66b7f81d052d42873224147e38fecd9833ff7c was a large commit due to deleting database and migrations due to a database issue meaning I couldnt create multiple blog posts. Also included was changes to allauth templates which should have been split up into two or three commits. A whole commit was done by accident.
-
-### Manual Testing:
-
-#### Responsive Design - PASS
-
-- All pages were tested locally, and on Heroku using Chrome, Firefox, IE, and Safari.
-- All pages tested for responsiveness in different device sizes using Google Chrome Developer Tools, and Google Chrome Responsive Viewer extension;
-  - Desktop
-  - iPhone 5/6/7/8/X
-  - iPad 1/2/3/Pro
-  - Galaxy Android phones
-- All the pages were also tested manually using;
-  - iPhone 5s/6s/8/X/XS/11/
-  - Samsung Galaxy S8/Note 10+
-  - iPad Air 2
-  - iPad Pro 3
-
 ## Manual Functionality Testing
 
 #### Navbar - PASS
@@ -247,7 +227,7 @@ Git commit: 6b66b7f81d052d42873224147e38fecd9833ff7c was a large commit due to d
 - Delete modal is displayed when trying to delete product as a precaution layer
 - Edit Product CTA directs user to a edit product page
 
-#### Edit Product
+#### Edit Product - PASS
 
 - Page works as expected and renders a prefilled form with product details in
 - Admin can successfully update all aspects of the product from the form
@@ -255,7 +235,7 @@ Git commit: 6b66b7f81d052d42873224147e38fecd9833ff7c was a large commit due to d
 - Cancel CTA succesfully redirects back to products page
 - Field validators are working, user can't submit form if all required fields are not filled. 
 
-#### Add Product
+#### Add Product - PASS
 
 - Page works as expected and renders the same form as edit product but with empty fields
 - Add Product CTA successfully adds product into database and redirects back to products pages 
@@ -349,3 +329,7 @@ Webhooks work as expected, and give a 200 code.
 
 A confirmation email is sent to customer when a checkout is successful and appears as below:
 ![](docs/testing/checkout-success-email.png)
+
+## Notes
+
+Git commit: 6b66b7f81d052d42873224147e38fecd9833ff7c was a large commit due to deleting database and migrations due to a database issue meaning I couldnt create multiple blog posts. Also included was changes to allauth templates which should have been split up into two or three commits. A whole commit was done by accident.
