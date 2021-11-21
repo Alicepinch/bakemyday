@@ -238,9 +238,9 @@ The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home).
 ### UserProfile
 
 - The UserProfile model is connected to the User model that is created by Allauth when a user registers
-- The default fields are fields that will populate is a user has saved information, this speeds up the checkout process by pre-populating shipping details when a user order's again.
+- The default fields are fields that will populate if a user has saved information, this pre-populates shipping details when a user order's again.
 
-### Order
+### Order and Order Item
 
 - The Order model is connected to the UserProfile model, allowing the user to view all their previous orders.
 - The Order model acts as a container for the order items. Although the item is stored within the OrderItem model, having them connected allows retrieving the item purchased.
@@ -290,6 +290,7 @@ The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home).
 - AWS S3 Bucket
 - Boto3
 - Django Storages
+- Allauth
 
 ### Databases
 - SQlite3
@@ -297,7 +298,7 @@ The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home).
 
 ## Testing
 
-All the testing carried out for Bake My Day can be found [here](TESTING.md)
+All the testing carried out for Bake My Day can be found [here.](TESTING.md)
 
 ## Deployment
 
