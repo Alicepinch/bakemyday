@@ -281,7 +281,7 @@ footer a:hover {
 }
 }
 @media screen and (max-width: 568px) {
-    .nav-link {
+    .dropdown-item, .nav-link {
         font-size: 12px;
     }
     .list-inline-item:not(:last-child) {

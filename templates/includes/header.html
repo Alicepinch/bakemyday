@@ -20,7 +20,7 @@
                         <p class="my-0">Account</p>
                     </div>
                 </a>
-                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                <div class="dropdown-menu border-0 py-0" aria-labelledby="user-options">
                     {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                     <a href="{% url 'add_product' %}"
@@ -28,7 +28,6 @@
                     {% endif %}
                     <a href="{% url 'profile' %}"
                         class="dropdown-item">Profile</a>
-                        <a href="{% url 'add_blogpost' %}" class="dropdown-item link-font">Create a blogpost</a>
                     <a href="{% url 'account_logout' %}"
                         class="dropdown-item">Logout</a>
                     {% else %}
