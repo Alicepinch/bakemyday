@@ -51,13 +51,11 @@ Bake my day is an online e-commerce store where users can search through all of 
 - As a shopper on bakemyday I would like to be able identiy if there are any deals on the website
 - As a shopper on bakemyday I would like to be able to add a product to my basket
 - As a shopper on bakemyday I would like to be able to view all the products I have added to my basket
-- As a shopper on bakemyday I would like to be able to create a personalised order
-- As a shopper on bakemyday I would like to be able to personalise my order
 - As a shopper on bakemyday I would like to be able to search the website and see my results
 - As a shopper on bakemyday I would like to be able to easily select the quantity of what I add to my basket
-- As a shopper on bakemyday I would like to be able to sort product by name an description
 - As a shopper on bakemyday I would like to recieve email confirmation after I have placed an order
 - As a shopper on bakemyday I would like to be able to view my order history after placing an order
+- As a shopper on bakemyday I would like to be able to checkout safe and secure
 
 ### Site User
 
@@ -66,8 +64,7 @@ Bake my day is an online e-commerce store where users can search through all of 
 - As a site user of bakemyday I would like to easily be able to change my password
 - As a site user of bakemyday I would to easily recover my password incase I forget it
 - As a site user of bakemyday I would like to recieve email confirmation after registering
-- As a site user of bakemyday I would like to have a personalized user profile
-- As a site user of bakemydat I would like to be able to post blog posts
+- As a site user of bakemyday I would like to be able to post blog posts
 - As a site user of bakemyday I would like to be able to edit or delete a blog post I have created
 - As a site user of bakemyday I would like to be able to comment on & view other users blog posts
 
@@ -201,7 +198,8 @@ The main colour's chosen for the website are pink and brown. For links and the h
 ## Features
 
 - Products
-- Filter by different occasions and categorys
+- Product detail page
+- Navigate to products with different occasions and categorys
 - Checkout
 - Stripe payments
 - Django-allauth authorisation
@@ -211,9 +209,10 @@ The main colour's chosen for the website are pink and brown. For links and the h
 - Profile page
 - Error pages
 - Blog section
-- Comment section on blog
+- Comment section for blog
+- CRUD for blog posts and comments
+- About us page
  
-
 ## Future Features
 
 - Personalisation for each product on page
@@ -228,17 +227,38 @@ The main colour's chosen for the website are pink and brown. For links and the h
 
 Heroku PostgreSQL has been used to host the backend database in production. The database used during development of the app is SQLite.
 
-The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home) and is shown below.
+Below are all the models used for this project. This different models within this project map to a table in the project’s database, with each of its attributes corresponding to a specific column in that table.
+
+The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home).
 
 ![](docs/readme/wireframes/bake-my-day-data-modelling.jpg) - Need to update
 
-## Models
+## Key Models
 
-Below are all the models used for this project. This different models within this project map to a table in the project’s database, with each of its attributes corresponding to a specific column in that table.
+### UserProfile
 
-## Occasion & Category
+- The UserProfile model is connected to the User model that is created by Allauth when a user registers
+- The default fields are fields that will populate is a user has saved information, this speeds up the checkout process by pre-populating shipping details when a user order's again.
 
-The occasion and category models create a table in the projects database for the 'name' and 'friendly names' for both Occasions and Category. The reason I chose to have both Occasion and Category for this project is because I felt for this business there were many different reasons why users will be shopping. This could be either for a specific thing such as cookies, cupcakes or a large cake for example which would fall under Category. Or alternatively, they would be looking for a cake for a specific occasion such as Valentines day, a birthday etc.. The models are the same for this however used for different reasons across the site. The friendly name is what appears to the user when displayed on the website and the name is what appears in the back end of the database. The CharField has been used for the field type as this is a string field, for small to large sized strings. 
+### Order
+
+- The Order model is connected to the UserProfile model, allowing the user to view all their previous orders.
+- The Order model acts as a container for the order items. Although the item is stored within the OrderItem model, having them connected allows retrieving the item purchased.
+
+### Blog Post
+
+- The BlogPost model is conntected to the User model from allauth to generate the author of blogpost. 
+- The BlogPost model holds all information for the blogpost.
+
+### Blog Comment
+- The BlogComment model is connected to the BlogPost model to link comments to the relevant blogpost that a user is commenting on
+- The BlogComment is also connected to the User model from allauth to generate the author of the comment.
+- When the blogpost is deleted, the comments connected to it will also delete in the database.
+
+### Product
+
+- The Product model holds all information for each product on the website.
+- The Product model is connected to the Category model and Occasion Models which allows a user to filter products by category and occasion in navigation.
 
 ## Technologies Used
 

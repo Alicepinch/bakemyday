@@ -22,6 +22,8 @@
     - A new shopper can chose to create an account in the checkout to save their checkout information for next time
 - As a shopper on bakemyday I would like to be able to view my order history after placing an order
     - If a shopper has decided to create an account then their order history will be saved automatically to their profile
+- As a shopper on bakemyday I would like to be able to checkout safe and secure
+    - When a shopper checks out they are using Stripe which allows safe and efficient processing of funds.
 
 
 ### Site User
@@ -130,7 +132,7 @@ In case of an internal server error occurring then a 500 error page has also bee
 
 Throughout the build process of this website I used the django errors to identify any issues within my code such as templating issues and fixed these as I went. Some major bugs and issues I faced:
 
-## Unable to create duplicate blog posts:
+### Unable to create duplicate blog posts:
 
 During the build to blog app of bakemyday I came across the error of a User not being unable to create more than one blogpost at a time. Every time I went to submit another blog post the below error would appear:
 
@@ -138,19 +140,19 @@ During the build to blog app of bakemyday I came across the error of a User not 
 
 After getting multiple people to check if there was something wrong with my code and no one being able to find the error I decided to remove my database and all migrations. In order to do this I deleted my db.sqlite3 folder and then all migrations folders in each app. I then rerun all migrations to reinstate my database which fixed the issue.  
 
-## Django Warnings
+### Django Warnings
 
 After not updating my Django and sqlparse for a long time github was giving me an error the some security dependencies and to upgrade Django and sqlparse. After doing this I was faced with the below warnings: 
 
 In order to fix this I added in ```DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField``` into my settings file
 
-## Internal Server Error on Heroku
+### Internal Server Error on Heroku
 
 After I had deployed my app to heroku I was faced with an Internal Server Error every time I opened the app. The issue was that I had changed my models but hadn't applied my migrations to the heroku app. To fix this I entered the following command into the terminal:
 
 ```heroku run python3 manage.py migrate -a 'heroku-app-name'```
 
-## Blog
+### Blog
 
 When testing the add blog functionality I noticed that a user could add a blog post with no title, this isn't the best user experience as a specific blog title tells a user what questions are being answered as well as an insight into the information you're providing.
 
@@ -170,9 +172,15 @@ When adding a new blogpost to the blog the success message was still showing the
 
 When testing the blogpost functionality I realised that the blog preview section was not mandatory and that if someone didn't add this in then the template would return 'None'. To fix this I could have made this mandatory however, I thought it would make more sense to remove one step for a user and just take the preview from the blog body itself. I removed 'blog_preview' from the BlogPost model and then added in ```{{blogpost.blog_body|slice:":200" }}``` into my template to pull in a preview of the blog content on the blog page. 
 
-## Save Info:
+### Save Info:
 
 When testing the save info to profile functionality during the building process I noticed this wasn't working, after some investiation I noticed that there were a couple of spelling errors within my file in the def cache_checkout_data view and def checkout and checkout success and ```('save-info')``` was updated to ```'save_info'```
+
+## Unsolved bug's due to prioritization:
+
+- Deleting a product which has been purchased will delete an orders item this means that the order history will not display any information.
+
+- Users cart is not saved if they log out of their account.
 
 ## Manual Functionality Testing
 
@@ -329,6 +337,9 @@ Webhooks work as expected, and give a 200 code.
 
 A confirmation email is sent to customer when a checkout is successful and appears as below:
 ![](docs/testing/checkout-success-email.png)
+
+Authentication works correctly when stripe test number is used at checkout:
+![](docs/testing/checkout-authentication.png)
 
 ## Notes
 
