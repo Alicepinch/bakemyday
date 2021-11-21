@@ -78,8 +78,6 @@ class OrderItem(models.Model):
         on_delete=models.CASCADE, related_name='items')
     product = models.ForeignKey(
         Product, null=False, blank=False, on_delete=models.CASCADE)
-    product_size = models.CharField(
-        max_length=10, null=True, blank=True)  # Cupcake size and cake size
     quantity = models.IntegerField(
         null=False, blank=False, default=0)
     item_total = models.DecimalField(
