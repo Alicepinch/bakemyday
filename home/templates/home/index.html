@@ -16,7 +16,7 @@
       <a href="{% url 'products'%}"
         ><img
           class="homepage-product"
-          src="{{ MEDIA_URL }}white-chocolate-rasberry-cake.jpg"
+          src="{{ MEDIA_URL }}easter-cupcakes.jpg"
           alt="White Chocolate Rasberry Cake"
       /></a>
     </div>
@@ -24,7 +24,7 @@
       <a href="{% url 'products'%}">
         <img
           class="homepage-product"
-          src="{{ MEDIA_URL }}biscoff-cake.jpg"
+          src="{{ MEDIA_URL }}chocolate-smash-heart.jpg"
           alt="Biscoff Cake"
       /></a>
     </div>
@@ -32,7 +32,7 @@
       <a href="{% url 'products'%}"
         ><img
           class="homepage-product"
-          src="{{ MEDIA_URL }}chocolate-overload.jpg"
+          src="{{ MEDIA_URL }}pink-cake-pops.jpg"
           alt="Chocolate overload"
       /></a>
     </div>
@@ -40,7 +40,7 @@
       <a href="{% url 'products'%}"
         ><img
           class="homepage-product"
-          src="{{ MEDIA_URL }}pink-dream-cake.jpg"
+          src="{{ MEDIA_URL }}rainbow-giant-cookie.jpg"
           alt="Pink Dream Cake"
       /></a>
     </div>
@@ -56,9 +56,7 @@
     <div class="col-12 col-md-6 text-center my-auto">
       <h3 class="pt-3 homepage-header">Shop For Any Occasion</h3>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio facilis
-        et harum. Dolorum molestias repudiandae sit ratione ea, rerum doloremque
-        ducimus ullam magni ipsa error quis hic eius illo maxime!
+        Looking for a sweet treat for a special occasion? We have you covered for all different situations. Browser through our selection of sweet treats created specially for different occasions. Looking for a valentines gift, or a christmas cupcake then be sure to take a look.
       </p>
       <a
         href="{% url 'products'%}?occasion=birthdays,mother_and_fathers_day,easter,afternoon_tea,christmas"
@@ -82,9 +80,9 @@
     <div class="col-12 text-center">
       <h3 class="homepage-header">Learn with us!</h3>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio facilis
-        et harum. Dolorum molestias repudiandae sit ratione ea, rerum doloremque
-        ducimus ullam magni ipsa error quis hic eius illo maxime!
+        Read through posts created by others in the community and by the owner of Bake My Day herself all in one place. 
+        Follow along with our owners tutorials to learn how to recreate some of your favourite sweet treats. {% if not request.user.is_authenticated %}
+        <a href="{% url 'account_signup'%}">Create your own account</a> to share your own posts too! {% endif %}
       </p>
       <img
         src="{{ MEDIA_URL }}blog-post-image.jpg"
