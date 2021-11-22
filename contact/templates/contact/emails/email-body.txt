@@ -1,0 +1,13 @@
+Hello admin, 
+
+You have a new contact message from {{ name }},
+
+Message:
+
+{{ message }}
+
+Customer's email address to get back in contact:
+
+{{ email }} 
+
+Thank you

@@ -1,0 +1,43 @@
+{% extends "base.html"%} 
+{% load static %} 
+{% block extra_title %} - Home {%endblock %} 
+
+{% block page_header %}
+
+<div class="container header-container">
+  <div class="row">
+    <div class="col">
+      <h2 class="page-headline">Contact Us</h2>
+      <hr>    
+    </div>
+  </div>
+</div>
+
+{% endblock %} 
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <form
+          method="POST"
+          action="{% url 'contact_us' %}"
+          class="form mb-2"
+          enctype="multipart/form-data">
+          {% csrf_token %}
+                    {% for field in contact_form %}
+                        {{ field | as_crispy_field }}
+                    {% endfor %}
+          <div class="text-right">
+            <a class="btn" href="{% url 'home' %}">Cancel</a>
+            <button class="btn" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock %}
