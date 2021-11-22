@@ -70,9 +70,6 @@ header, footer {
 .dropdown-menu {
     background-color: rgb(252, 221, 233);
 }
-.dropdown-menu-search {
-    border: 0;
-}
 .dropdown-item {
     padding-top: 5px;
     color: rgb(82, 68, 68);
