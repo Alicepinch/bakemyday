@@ -8,7 +8,7 @@ from .forms import BlogForm, CommentForm
 
 def blog(request):
     """ A view to show blog posts details """
-
+    # Fetches all blogposts from database
     blogposts = BlogPost.objects.all()
 
     context = {
@@ -20,7 +20,7 @@ def blog(request):
 
 def blog_detail(request, blogpost_id):
     """ A view to display blog detail page"""
-
+    # Fetches specific blopost and blog comment from database
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
     blogcomments = BlogComment.objects.filter(blogpost=blogpost)
 
@@ -45,6 +45,7 @@ def add_blogpost(request):
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
+            # Saves blogpost to database
             blogpost = form.save(commit=False)
             blogpost.author = request.user
             blogpost.save()
@@ -74,6 +75,7 @@ def delete_blogpost(request, blogpost_id):
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
 
     if request.user.is_superuser or request.user == blogpost.author:
+        # Removes blopost from database
         blogpost.delete()
         messages.info(request, "Blogpost succesfully deleted")
         return redirect(reverse('blog'))
@@ -95,7 +97,7 @@ def edit_blogpost(request, blogpost_id):
             request, 'Sorry, you didnt create this \
                 blogpost so you cant edit it')
         return redirect(reverse('home'))
-
+    # Updates blogpost in database
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES, instance=blogpost)
         if form.is_valid():
@@ -127,6 +129,7 @@ def add_blogcomment(request, blogpost_id):
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
+            # Saves blog comment to database
             blogcomment = form.save(commit=False)
             blogcomment.comment_user = request.user
             blogcomment.blogpost = blogpost
@@ -156,6 +159,7 @@ def delete_blogcomment(request, blogcomment_id):
     blogcomment = get_object_or_404(BlogComment, pk=blogcomment_id)
 
     if request.user == blogcomment.comment_user or request.user.is_superuser:
+        # Removes blog comment from database
         blogcomment.delete()
         messages.info(request, "Comment succesfully deleted")
         return redirect(reverse('blog'))
@@ -172,6 +176,7 @@ def edit_blogcomment(request, blogcomment_id):
     blogpost = get_object_or_404(BlogPost, pk=blogcomment.blogpost.id)
 
     if request.user == blogcomment.comment_user or request.user.is_superuser:
+        # Updates blogcomment in database
         if request.method == 'POST':
             form = CommentForm(request.POST, instance=blogcomment)
             if form.is_valid():
