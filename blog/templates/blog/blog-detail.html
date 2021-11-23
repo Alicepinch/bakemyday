@@ -6,12 +6,11 @@
 
 <!--Blogpost Name-->
 
-<div class="container header-container">
+<div class="container header-container text-center">
   <div class="row">
     <div class="col">
       <h2 class="page-headline">{{ blogpost.blog_title }}</h2>
-      <p class="mb-0 text-muted"> By {{ blogpost.author }} on {{ blogpost.date_created }}</p>
-      <hr>    
+      <p class="mb-0 text-muted pb-3"> By {{ blogpost.author }} on {{ blogpost.date_created }}</p>
     </div>
   </div>
 </div>
@@ -22,18 +21,19 @@
 
 <!--Blogpost-->
 
-<div class="container">
+
+<div class="container text-center">
     <div class="col-12 p-0">
-        <div class="image-container">
+        <div class="image-containe">
           {% if blogpost.image %}
             <img
-              class="img-fluid blogdetail-img"
+              class="img-fluid shadow blogdetail-img"
               src="{{ blogpost.image.url }}"
               alt="{{ blogpost.blog_title }}"
             />
           {% else %}
             <img
-              class="img-fluid"
+              class="img-fluid shadow"
               src="{{ MEDIA_URL }}noimage.jpeg"
               alt="{{ blogpost.blog_title }}"
             />
@@ -50,14 +50,13 @@
       </div>
       <div class="col-12 p-0 pb-4">
           <p class="mb-0 p-0">{{ blogpost.blog_body }}</p>
-          
       </div>
     </div>
 </div>
 
 <!--Comments Section-->
 
-<div class="container pb-5">
+<div class="container py-5 mb-5 shadow ">
     <div class="row">
       <div class="col-12 pb-3">
         <h3 class="blog-title">Comments Section</h3>

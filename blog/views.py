@@ -74,7 +74,7 @@ def delete_blogpost(request, blogpost_id):
 
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
 
-    if request.user.is_superuser or request.user == blogpost.author:
+    if request.user == blogpost.author or request.user.is_superuser:
         # Removes blopost from database
         blogpost.delete()
         messages.info(request, "Blogpost succesfully deleted")
@@ -92,24 +92,25 @@ def edit_blogpost(request, blogpost_id):
 
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
 
-    if not request.user.is_superuser or request.user != blogpost.author:
-        messages.error(
-            request, 'Sorry, you didnt create this \
-                blogpost so you cant edit it')
-        return redirect(reverse('home'))
-    # Updates blogpost in database
-    if request.method == 'POST':
-        form = BlogForm(request.POST, request.FILES, instance=blogpost)
-        if form.is_valid():
-            form.save()
-            messages.info(request, 'Successfully updated blog post!')
-            return redirect(reverse('blog_detail', args=[blogpost.id]))
+    if request.user == blogpost.author or request.user.is_superuser:
+        # Updates blogpost in database
+        if request.method == 'POST':
+            form = BlogForm(request.POST, request.FILES, instance=blogpost)
+            if form.is_valid():
+                form.save()
+                messages.info(request, 'Successfully updated blog post!')
+                return redirect(reverse('blog_detail', args=[blogpost.id]))
+            else:
+                messages.error(
+                        request, 'Failed to update the blog post. \
+                            Please make sure form is valid')
         else:
-            messages.error(
-                    request, 'Failed to update the blog post. \
-                        Please make sure form is valid')
+            form = BlogForm(instance=blogpost)
     else:
-        form = BlogForm(instance=blogpost)
+        messages.error(
+                request, 'Sorry, you didnt create this \
+                    blogpost so you cant edit it')
+        return redirect(reverse('home'))
 
     template = 'blog/edit-blogpost.html'
     context = {
