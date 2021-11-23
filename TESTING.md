@@ -128,6 +128,10 @@ Please note for the following file errors have been ignored as these were genera
 
 Some 'Avoid' errors were raised such as 'Avoid using null=True on string-based fields such CharField.' These were also ignored as these have "Blank=True" and if I am going to allow these fields to be blank in the form, then I need the database to allow NULL values for that field.
 
+On top of flake8 I also ran all my own python files through pep8 to ensure that everything was ok and all passed through pep8 validator apart from the issues mentioned above in the the webhook handler py files:
+
+![](docs/testing/pep8-validator.png)
+
 ## 404, 500 Errors
 
 If a user tries to access a page that is non existent then they will be directed to the custom 404 page. On this page there is a CTA that redirects the user back to the homepage. I have forced this error by typing a wrong URL into the bar.

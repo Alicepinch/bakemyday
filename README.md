@@ -203,21 +203,69 @@ The main colour's chosen for the website are pink and brown as I think these com
 
 ## Features
 
-- Products
-- Product detail page
-- Navigate to products with different occasions and categorys
-- Checkout
-- Stripe payments
-- Django-allauth authorisation
-- CRUD for all products
-- Contact page
-- Add to bag
-- Profile page
-- Error pages
-- Blog section
-- Comment section for blog
-- CRUD for blog posts and comments
-- About us page
+#### Register account (Allauth)
+- New users can register an account
+#### Login to account (Allauth)
+- Existing users can log into their account
+#### Session cookie 
+- Once user is logged in/ creates an account their information is stored in a session cookie until they log out
+#### Personal profile page
+- Displays user details and order history of user logged in
+#### Update password (Allauth)
+-  Logged in users can change their password if their current password is correct and the two new passwords they enter match with allauth
+#### All Products page 
+- Displays all products to users
+#### Categories and Occasion
+- Users can select different categories of cakes in the navigation
+- Users can select different occasions for cakes in the navigation
+#### Single product page
+- Displays specific product information to page and allows user to add product to bag
+#### Bag
+- User can add any product to bag from product detail page
+- Bag stores all of users items that they have added in one place
+#### Checkout
+- User can checkout as a guest or as a logged in user 
+- User can see a preview of their bag in checkout before they proceed with payment
+- User will recieve email confirmation when checkout is succesfull and be redirected to a checkout success page
+#### Stripe Payments
+- Users can checkout using secure stripe payments (please note this is only set up for test numbers at the moment more details can be found:)
+- Test number for this is : 4242 4242 4242 4242
+#### Toast messages
+- Displays success, information, warnings and error messages from backend to user across the site
+#### Search
+- All users can search products by name and description
+#### Blog
+- A place where users and admin can create blogposts to share with others
+- Only logged in users can create blogposts
+#### Edit Blogpost
+- Prefilled form with all blogpost details
+- If user has created the blogpost they can edit it via the form
+- Changes display to the user straight away
+#### Blog Comments
+- Logged in users can create blog comments on different blogposts
+#### Edit Blog Comment 
+- Prefilled form with blogcomment details.
+- If user has created the blogcomment then they can edit it via the form.
+- Changes display to the user straight away.
+#### Navigation bar
+- All users have a navigation bar however, different links are displayed to users that are logged in
+#### Footer   
+- Across all pages contains the contact link, social links and location
+- Social links go through to bakemyday instagram account
+#### Admin 
+- Admin account can create, read, update or delete any product, blogposts or blogcomments on the website if needed
+   - Add product page displays only for admin users
+   - Loads an empty form with all necessary fields needed to add a new product to the website
+   - Edit product page displays also only for admin user
+   - Loads a prefilled form with all product details that the admin can adjust if needed
+#### Error Pages
+- 404 page not found, 500 internal server error and 405 method not allowed custom pages which redirect back to homepage
+#### Responsive design 
+- Website is optimized for multiple screen sizes
+#### Homepage 
+- Provides users with an insight into what the website is about
+#### Accessibility
+- Website is accesible for screenreaders
  
 ## Future Features
 
@@ -237,7 +285,7 @@ Below are all the models used for this project. This different models within thi
 
 The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home).
 
-![](docs/readme/wireframes/bake-my-day-data-modelling.jpg) - Need to update
+![](docs/readme/bakemyday-data-modelling.jpg)
 
 ## Key Models
 
@@ -488,7 +536,6 @@ AWS_SECRET_ACCESS_KEY | `<your_aws_secret_key>`
 
 All images and content has been taken from the [@bakemyday_byamber](https://www.instagram.com/bakemyday_byamber/) instagram account. 
 I have full permission to use all images and all branding for this website from the owner of this business. 
-- 
 
 ## Codes
 
