@@ -1,21 +1,21 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
        <li class="nav-item">
-          <a class="nav-link py-0" href="{% url 'home' %}">
+          <a class="nav-link pt-0 pb-1" href="{% url 'home' %}">
           Home
           </a>
        </li>
        <li class="nav-item">
-          <a class="nav-link py-0" href="{% url 'products' %}">
+          <a class="nav-link pt-0 pb-1" href="{% url 'products' %}">
           All Products
           </a>
        </li>
        <li class="nav-item dropdown">
-          <a class="nav-link py-0" href="#" id="cake-link"
+          <a class="nav-link pt-0 pb-1" href="#" id="cake-link"
              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Cakes
           </a>
-          <div class="dropdown-menu border-0" aria-labelledby="cake-link">
+          <div class="dropdown-menu border-0 py-0" aria-labelledby="cake-link">
              <a href="{% url 'products'%}?category=large_cakes" class="dropdown-item">Large Cakes</a>
              <a href="{% url 'products'%}?category=cupcakes" class="dropdown-item ">Cupcakes</a>
              <a href="{% url 'products'%}?category=cake_pops" class="dropdown-item ">Cakepops</a>
@@ -23,25 +23,11 @@
           </div>
        </li>
        <li class="nav-item dropdown">
-          <a class="nav-link py-0" href="#" id="occasion-link"
-             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Occasion
-          </a>
-          <div class="dropdown-menu border-0" aria-labelledby="occasion-link">
-             <a href="{% url 'products'%}?occasion=birthdays" class="dropdown-item">Birthdays</a>
-             <a href="{% url 'products'%}?occasion=mother_and_fathers_day" class="dropdown-item">Mothers & Fathers Day</a>
-             <a href="{% url 'products'%}?occasion=valentines_day" class="dropdown-item">Valentines Day</a>
-             <a href="{% url 'products'%}?occasion=easter" class="dropdown-item">Easter</a>
-             <a href="{% url 'products'%}?occasion=afternoon_tea" class="dropdown-item">Afternoon tea</a>
-             <a href="{% url 'products'%}?occasion=christmas" class="dropdown-item">Christmas</a>
-          </div>
-       </li>
-       <li class="nav-item dropdown">
-          <a class="nav-link py-0" href="#" id="other-link"
+          <a class="nav-link pt-0 pb-1" href="#" id="other-link"
              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Other
           </a>
-          <div class="dropdown-menu border-0" aria-labelledby="other-link">
+          <div class="dropdown-menu border-0 py-0" aria-labelledby="other-link">
              <a href="{% url 'products'%}?category=smash_hearts" class="dropdown-item">Smash hearts</a>
              <a href="{% url 'products'%}?category=giant_cookies" class="dropdown-item">Giant Cookies</a>
              <a href="{% url 'products'%}?category=cookies" class="dropdown-item ">Cookies</a>
@@ -49,11 +35,25 @@
           </div>
        </li>
        <li class="nav-item dropdown">
-         <a class="nav-link py-0" href="#" id="blog-link"
+         <a class="nav-link pt-0 pb-1" href="#" id="occasion-link"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Occasion
+         </a>
+         <div class="dropdown-menu border-0 py-0" aria-labelledby="occasion-link">
+            <a href="{% url 'products'%}?occasion=birthdays" class="dropdown-item">Birthdays</a>
+            <a href="{% url 'products'%}?occasion=mother_and_fathers_day" class="dropdown-item">Mothers & Fathers Day</a>
+            <a href="{% url 'products'%}?occasion=valentines_day" class="dropdown-item">Valentines Day</a>
+            <a href="{% url 'products'%}?occasion=easter" class="dropdown-item">Easter</a>
+            <a href="{% url 'products'%}?occasion=afternoon_tea" class="dropdown-item">Afternoon tea</a>
+            <a href="{% url 'products'%}?occasion=christmas" class="dropdown-item">Christmas</a>
+         </div>
+      </li>
+       <li class="nav-item dropdown">
+         <a class="nav-link pt-0 pb-1" href="#" id="blog-link"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Blog
          </a>
-         <div class="dropdown-menu border-0" aria-labelledby="blog-link">
+         <div class="dropdown-menu border-0 py-0" aria-labelledby="blog-link">
             {% if user.is_authenticated %}
             <a href="{% url 'add_blogpost' %}" class="dropdown-item">Create Blogpost</a>
             {% endif %}
