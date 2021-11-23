@@ -22,7 +22,7 @@ header, footer {
     background-color: #F7C1BB;
 }
 .main-content {
-    min-height: 600px;
+    min-height: 900px;
 }
 .allauth-main-content {
     padding-top: 200px;
