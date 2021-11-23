@@ -23,36 +23,36 @@
 
 
 <div class="container text-center">
-    <div class="col-12 p-0">
-        <div>
-          {% if blogpost.image %}
-            <img
-              class="img-fluid shadow blogdetail-img"
-              src="{{ blogpost.image.url }}"
-              alt="{{ blogpost.blog_title }}"
-            />
-          {% else %}
-            <img
-              class="img-fluid shadow"
-              src="{{ MEDIA_URL }}noimage.jpeg"
-              alt="{{ blogpost.blog_title }}"
-            />
-          {% endif %}
-        </div>
-        <div class="py-3">
-          {% if request.user == blogpost.author or request.user.is_superuser %}
-          <button type="button" class="btn" data-toggle="modal" data-target="#deleteModal">
-            Delete Blogpost
-        </button>
-          <a class="btn" href="{% url 'edit_blogpost' blogpost.id %}">Edit Blog Post</a>
+  <div class="col-12 p-0">
+      <div>
+        {% if blogpost.image %}
+          <img
+            class="img-fluid shadow blogdetail-img"
+            src="{{ blogpost.image.url }}"
+            alt="{{ blogpost.blog_title }}"
+          />
+        {% else %}
+          <img
+            class="img-fluid shadow"
+            src="{{ MEDIA_URL }}noimage.jpeg"
+            alt="{{ blogpost.blog_title }}"
+          />
         {% endif %}
-        </div>
       </div>
-      <div class="col-12 p-0 pb-4">
-          <p class="mb-0 p-0">{{ blogpost.blog_body }}</p>
+      <div class="py-3">
+        {% if request.user == blogpost.author or request.user.is_superuser %}
+        <button type="button" class="btn" data-toggle="modal" data-target="#deleteModal">
+          Delete Blogpost
+      </button>
+        <a class="btn" href="{% url 'edit_blogpost' blogpost.id %}">Edit Blog Post</a>
+      {% endif %}
       </div>
     </div>
+    <div class="col-12 p-0 pb-4">
+        <p class="mb-0 p-0">{{ blogpost.blog_body }}</p>
+    </div>
 </div>
+
 
 <!--Comments Section-->
 
