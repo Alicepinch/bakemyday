@@ -1,12 +1,12 @@
 from django import forms
-from .models import Contact
+from .models import ContactInquiry
 
 
 class ContactForm(forms.ModelForm):
     """Create Contact form for users to contact admin"""
 
     class Meta:
-        model = Contact
+        model = ContactInquiry
         fields = (
             'name',
             'email',

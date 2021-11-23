@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Contact(models.Model):
+class ContactInquiry(models.Model):
     """ Create contact model in database """
 
     name = models.CharField(max_length=50)
