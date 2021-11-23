@@ -45,7 +45,7 @@ header, footer {
     color: white;
 }
 .btn-allauth:hover {
-    background-color: #524444;
+    background-color: #524444cf;
 }
 .btn:focus, .btn:active, .form-control:focus, .form-control:active {
     outline: none !important;
@@ -281,7 +281,7 @@ footer a:hover {
     padding-top: 50px;
 }
 .allauth-main-content {
-    padding-top: 100px;
+    padding-top: 200px;
 }
 .homepage-text {
     background: rgba(255, 255, 255, 0.846);

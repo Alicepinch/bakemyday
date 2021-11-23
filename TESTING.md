@@ -23,7 +23,9 @@
 - As a shopper on bakemyday I would like to be able to view my order history after placing an order
     - If a shopper has decided to create an account then their order history will be saved automatically to their profile
 - As a shopper on bakemyday I would like to be able to checkout safe and secure
-    - When a shopper checks out they are using Stripe which allows safe and efficient processing of funds.
+    - When a shopper checks out they are using Stripe which allows safe and efficient processing of funds
+- As a shopper on bakemyday I would like to be able to contact the owner incase of any questions
+    - A user can contact the site owner by navigating to the contact link at the bottom of the page and submitting the form
 
 
 ### Site User
@@ -46,6 +48,8 @@
     - A user can comment on any other blogpost by navigating to a blog post and scrolling down to the 'Comments' section and clicking on the 'Create a Comment' CTA, a user can only comment if they are logged in
 - As a site user of bakemyday I would like to be able to view other blog posts that other users have posted
     - A user can view all blog posts on the website by navigating to the 'Blog' tab in the navigation
+- As a site user of bakemyday I would like to be able to contact the owner incase of any questions
+    - A user can contact the site owner by navigating to the contact link at the bottom of the page and submitting the form
 
 ### Admin Rights Tested:
 
@@ -63,6 +67,8 @@
     - An admin can delete any blog comments on the website by clicking on the relevant post and then clicking on the 'Delete Blog Comment' CTA
 - To be able to add new products to the website
     - An admin can add any new product by navigating to the 'My Account' in the top right corner and clicking on 'Add Product' in the drop down
+- To be able to view all contact forms that come through the contact page
+    - All contact forms will go through to the owners email address, they can also be viewed in the admin section of the django app
     
 ## Usability Testing
 
@@ -81,7 +87,6 @@ iMac
 - Chrome
 - Firefox
 - Microsoft Edge
-
 
 ## W3C Validators:
 
@@ -172,6 +177,50 @@ When adding a new blogpost to the blog the success message was still showing the
 
 When testing the blogpost functionality I realised that the blog preview section was not mandatory and that if someone didn't add this in then the template would return 'None'. To fix this I could have made this mandatory however, I thought it would make more sense to remove one step for a user and just take the preview from the blog body itself. I removed 'blog_preview' from the BlogPost model and then added in ```{{blogpost.blog_body|slice:":200" }}``` into my template to pull in a preview of the blog content on the blog page. 
 
+When testing the edit blog post functionality, it wouldnt let a super user edit another users blogpost. This isn't ideal incase someone has posted something inappropriate the admin should be able to edit this. 
+
+To fix this I updated my code in the blog views from:
+```
+if not request.user.is_superuser or request.user != blogpost.author:
+        messages.error(
+            request, 'Sorry, you didnt create this \
+                blogpost so you cant edit it')
+        return redirect(reverse('home'))
+    # Updates blogpost in database
+    if request.method == 'POST':
+        form = BlogForm(request.POST, request.FILES, instance=blogpost)
+        if form.is_valid():
+            form.save()
+            messages.info(request, 'Successfully updated blog post!')
+            return redirect(reverse('blog_detail', args=[blogpost.id]))
+
+```
+
+To:
+
+```
+    if request.user == blogpost.author or request.user.is_superuser:
+        # Updates blogpost in database
+        if request.method == 'POST':
+            form = BlogForm(request.POST, request.FILES, instance=blogpost)
+            if form.is_valid():
+                form.save()
+                messages.info(request, 'Successfully updated blog post!')
+                return redirect(reverse('blog_detail', args=[blogpost.id]))
+            else:
+                messages.error(
+                        request, 'Failed to update the blog post. \
+                            Please make sure form is valid')
+        else:
+            form = BlogForm(instance=blogpost)
+    else:
+        messages.error(
+                request, 'Sorry, you didnt create this \
+                    blogpost so you cant edit it')
+        return redirect(reverse('home'))
+
+```
+
 ### Save Info:
 
 When testing the save info to profile functionality during the building process I noticed this wasn't working, after some investiation I noticed that there were a couple of spelling errors within my file in the def cache_checkout_data view and def checkout and checkout success and ```('save-info')``` was updated to ```'save_info'```
@@ -179,7 +228,6 @@ When testing the save info to profile functionality during the building process 
 ## Unsolved bug's due to prioritization:
 
 - Deleting a product which has been purchased will delete an orders item this means that the order history will not display any information.
-
 - Users cart is not saved if they log out of their account.
 
 ## Manual Functionality Testing
@@ -202,12 +250,14 @@ When testing the save info to profile functionality during the building process 
 
 - Form input and validations work as expected. Form gives feedback upon unmatched format, invalid data, or for existing user
 - Submit button works as expected and submits data successfully, and send verification e-mail for users to confirm their email address.
+- Email confirmation email works correctly and directs user to the confirm user page where they can verify their email
+- Once email is verified user can succesfully login
 
 #### Login - PASS
 
 - Form input and validations work as expected. Form gives feedback if any unmatched format's or incorrect username, email and password, or if user doesn't exist in the database.
 - Submit button works as expected if user is in database, this then redirects user to homepage with a success toast message.
-- Forgot password link works as expected and takes user to password recovery page.
+- 'Forgot password' link works as expected and takes user to password recovery page.
 
 #### Profile - PASS
 
@@ -312,7 +362,12 @@ When testing the save info to profile functionality during the building process 
 - 'Cancel' CTA succesfully redirects back to blog page
 - Field validators are working, user can't submit form if all required fields are not filled/invalid.
 
-#### Contact 
+#### Contact - PASS
+
+- Page works as expected and renders the contact form
+- 'Submit' CTA submits contact form and sends directly to the store owners email address
+- 'Cancel' CTA redirects user back to homepage
+- Success message renders after succesful form submission letting the user know someone will be in touch shortly
 
 #### Footer - PASS
 

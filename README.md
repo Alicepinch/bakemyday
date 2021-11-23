@@ -1,8 +1,10 @@
 # Bake My Day
 
-Bake my day is an online e-commerce store where users can search through all of the different products on offer and add anything that they would like to purchase to their basket. On Bake my day not only can you search through the array of products that are on offer but you can also order personalised cakes, cupcakes and more. 
+Bake my day is an online e-commerce store where users can search through all of the different products on offer and add anything that they would like to purchase to their basket. On Bake my day not only can you search through the array of products that are on offer but you can order directly through the site. 
 
 [Bake My Day Live Site](https://bakemydaybyamber.herokuapp.com/)
+
+![](docs/readme/bakemyday-ami-responsive.png)
 
 ## Table of Index: 
 - [UX](#ux)
@@ -56,6 +58,7 @@ Bake my day is an online e-commerce store where users can search through all of 
 - As a shopper on bakemyday I would like to recieve email confirmation after I have placed an order
 - As a shopper on bakemyday I would like to be able to view my order history after placing an order
 - As a shopper on bakemyday I would like to be able to checkout safe and secure
+- As a shopper on bakemyday I would like to be able to get in contact with the store owner
 
 ### Site User
 
@@ -67,6 +70,7 @@ Bake my day is an online e-commerce store where users can search through all of 
 - As a site user of bakemyday I would like to be able to post blog posts
 - As a site user of bakemyday I would like to be able to edit or delete a blog post I have created
 - As a site user of bakemyday I would like to be able to comment on & view other users blog posts
+- As a site user of bakemyday I would like to be able to cget in contact with the store owner
 
 ## Wireframes
 
@@ -193,7 +197,9 @@ The fonts chosen for this website are Bebas Neue and Montserrat the reason for t
 
 ### Colour Scheme 
 
-The main colour's chosen for the website are pink and brown. For links and the hover colour for the Navigation bar I chose a brown colour to match the logo and a lighter brown for the hover as a lighter contrast. For links and buttons throughout the same pink colour with brown writing and on the pink background on the home I have used the reverse colourway. 
+The main colour's chosen for the website are pink and brown as I think these compliment the colours in the images used across the sit and in the logo. For links and the hover colour for the Navigation bar I chose a brown colour to match the logo and a white as a hover colour for contrast. For links and buttons throughout the same pink colour with brown writing and on the pink background on the home I have used the reverse colourway. 
+
+![](docs/readme/bakemyday-colours.png)
 
 ## Features
 
@@ -237,8 +243,8 @@ The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home).
 
 ### UserProfile
 
-- The UserProfile model is connected to the User model that is created by Allauth when a user registers
-- The default fields are fields that will populate if a user has saved information, this pre-populates shipping details when a user order's again.
+- The UseProfile is created on registration for each user and the Foreiign key in this model is the User model that is created by Allauth when a user registers an account.
+- The UserProdile stores the default fields which will populate if a user has saved information at checkout, this pre-populates shipping details when a user order's again.
 
 ### Order and Order Item
 
@@ -251,14 +257,19 @@ The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home).
 - The BlogPost model holds all information for the blogpost.
 
 ### Blog Comment
-- The BlogComment model is connected to the BlogPost model to link comments to the relevant blogpost that a user is commenting on
+- The BlogComment model is connected to the BlogPost model to link comments to relevant blogpost that a user is commenting on
 - The BlogComment is also connected to the User model from allauth to generate the author of the comment.
 - When the blogpost is deleted, the comments connected to it will also delete in the database.
 
-### Product
+### Product, Category and Occasion
 
-- The Product model holds all information for each product on the website.
-- The Product model is connected to the Category model and Occasion Models which allows a user to filter products by category and occasion in navigation.
+- The Product model holds all information for each product on the website (name, description, occasion, category, sku, price).
+- The Foreign keys within this model are to Category model and Occasion Models which attachs a specific categoy or occasion to a product which in turn allows a user to filter products by category and occasion in navigation.
+- The relationship to the Occasion Model and Category Model are purley for description purposes.
+
+## Contact
+
+- The contact model holds the information for when a user completes the contact form (name, email, subject line and contact message)
 
 ## Technologies Used
 
@@ -477,7 +488,9 @@ AWS_SECRET_ACCESS_KEY | `<your_aws_secret_key>`
 
 All images and content has been taken from the [@bakemyday_byamber](https://www.instagram.com/bakemyday_byamber/) instagram account. 
 I have full permission to use all images and all branding for this website from the owner of this business. 
+- 
 
 ## Codes
 
 - [Django Central](https://djangocentral.com/building-a-blog-application-with-django/) was used to help build the blog app
+- [Ordinary Coders](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend) was used to help build contact app
