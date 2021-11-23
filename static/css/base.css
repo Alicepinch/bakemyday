@@ -1,17 +1,17 @@
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Bebas Neue', cursive;
-    color: rgb(82, 68, 68);
+    color: #524444;
 }
 p, li, small{
-    color: rgb(82, 68, 68);
+    color: #524444;
     font-family: 'Montserrat', sans-serif;
 }
 a {
     font-family: 'Montserrat', sans-serif;
-    color: rgb(251 162 197);
+    color: #F7C1BB;
 }
 a:hover {
-    color: rgb(82, 68, 68);
+    color: #524444;
     text-decoration: none;
     transition: all 300ms ease-in-out;
 }
@@ -19,7 +19,7 @@ input, label {
     font-family: 'Montserrat', sans-serif;
 }
 header, footer {
-    background-color: rgb(252, 221, 233);
+    background-color: #F7C1BB;
 }
 .main-content {
     min-height: 600px;
@@ -29,23 +29,23 @@ header, footer {
 }
 /* Buttons */
 .btn {
-    background-color: rgb(248, 202, 220);
+    background-color: #F7C1BB;
     border: 0;
-    color: rgb(82, 68, 68);
+    color: #524444;
     font-family: 'Montserrat', sans-serif;
 }
 .btn:hover {
-    background-color: rgb(82, 68, 68);
+    background-color: #524444;
     color: white;
     border: 0;
     transition: all 300ms ease-in-out;
 }
 .btn-search,.btn-allauth {
-    background-color: rgb(82, 68, 68);
+    background-color: #524444;
     color: white;
 }
 .btn-allauth:hover {
-    background-color: rgb(110, 100, 100);
+    background-color: #524444;
 }
 .btn:focus, .btn:active, .form-control:focus, .form-control:active {
     outline: none !important;
@@ -54,14 +54,14 @@ header, footer {
 /* Navigation */
 #user-options, #bag-link, #mobile-search {
     font-size: 1em;
-    color: rgb(82, 68, 68);
+    color: #524444;
 }
 .navbar-toggler-icon i {
-    color: rgb(82, 68, 68);
+    color: #524444;
     padding-top: .25rem;
 }
 .nav-link {
-    color: rgb(82, 68, 68);
+    color: #524444;
     font-weight: bold;
 }
 .nav-link:hover {
@@ -69,14 +69,14 @@ header, footer {
     transition: all 300ms ease-in-out;
 }
 .dropdown-menu {
-    background-color: rgb(252, 221, 233);
+    background-color: #F7C1BB;
 }
 .dropdown-item {
     padding-top: 5px;
-    color: rgb(82, 68, 68);
+    color: #524444;
 }
 .dropdown-item:focus {
-    background-color: rgb(82, 68, 68);
+    background-color: #524444;
 }
 /* Blog */
 .blog-comment {
@@ -118,13 +118,13 @@ header, footer {
     height: 616px;
 }
 .occasion-promotion-section {
-    background-color:rgb(252, 221, 233);
+    background-color:#F7C1BB;
 }
 .occasion-img {
     height: 400px;
 }
 .occasion-btn {
-    background-color: rgb(82, 68, 68);
+    background-color: #524444;
     color: white;
 }
 .occasion-btn:hover {
@@ -161,7 +161,7 @@ header, footer {
     margin: 0 auto;
 }
 .table {
-    color: rgb(82, 68, 68);
+    color: #524444;
 }
 /* Bag */
 .bag-img {
@@ -170,7 +170,7 @@ header, footer {
     object-fit: cover;
 }
 .fa-shopping-basket, .fa-user {
-    color: rgb(82, 68, 68);
+    color: #524444;
     font-size: 1.25rem;
 }
 .remove-item:hover, .update-link:hover {
@@ -199,7 +199,7 @@ input[type=number] {
 }
 /* Products */
 .product-name {
-    color: rgb(82, 68, 68);
+    color: #524444;
 }
 .card {
     border: 0;
@@ -247,10 +247,10 @@ input[type=number] {
 }
 /* Footer Styling */
 footer a {
-    color: rgb(82, 68, 68);
+    color: #524444;
 }
 footer a:hover {
-    color: rgb(129, 111, 111);
+    color: white;
 }
 @media screen and (max-width: 1120px) {
     .blog-img-home {
