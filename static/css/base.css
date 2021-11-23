@@ -65,7 +65,7 @@ header, footer {
     font-weight: bold;
 }
 .nav-link:hover {
-    color: rgb(139, 127, 127);
+    color: white;
     transition: all 300ms ease-in-out;
 }
 .dropdown-menu {
@@ -290,7 +290,10 @@ footer a:hover {
 }
 @media screen and (max-width: 568px) {
     .dropdown-item, .nav-link {
-        font-size: 14px;
+        font-size: 13px;
+    }
+    .header-link {
+        font-size: 12px;
     }
     .list-inline-item:not(:last-child) {
         margin-right: 0rem;
