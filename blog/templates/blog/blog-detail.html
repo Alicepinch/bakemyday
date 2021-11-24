@@ -95,17 +95,15 @@
 
      
       <div class="col-12 pt-4">
-          <div class="p-0">
             {% for blogcomment in blogcomments %}
               <h5 class="blog-title">{{ blogcomment.comment_title }}</h5>
               <small class="text-muted">By {{ blogcomment.comment_user }} on {{ blogcomment.date_created }}</small>
-              <p class="blog-comment">{{ blogcomment.comment | linebreaks }}</p>
+              <p class="blog-comment">{{ blogcomment.comment }}</p>
               {% if request.user == blogpost.author or request.user.is_superuser %}
-              <a class="btn mb-2" href="{% url 'delete_blogcomment' blogcomment.id %}" ><i class="fas fa-trash-alt"></i></a>
-              <a class="btn mb-2" href="{% url 'edit_blogcomment' blogcomment.id %}" ><i class="fas fa-pencil-alt"></i></a>
+                <a class="btn mb-2" href="{% url 'delete_blogcomment' blogcomment.id %}" ><i class="fas fa-trash-alt"></i></a>
+                <a class="btn mb-2" href="{% url 'edit_blogcomment' blogcomment.id %}" ><i class="fas fa-pencil-alt"></i></a>
               {% endif %}
-            {% endfor %}
-          </div>
+              {% endfor %}
       </div>
     </div>
 </div>
