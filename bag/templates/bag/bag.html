@@ -1,104 +1,106 @@
-{% extends "base.html"%} {% load static %} {% load bag_tools %}
+{% extends "base.html"%} 
+{% load static %} 
+{% load bag_tools %}
 {% block title %} Shopping Bag | {% endblock %}
 
 {% block page_header %}
-<div class="container header-container">
-  <div class="row">
-    <div class="col">
-      <h2 class="page-headline">Your Basket</h2>
-      <hr>
-    </div>
-  </div>
-</div>
 
+<div class="container header-container">
+   <div class="row">
+      <div class="col">
+         <h2 class="page-headline">Your Basket</h2>
+         <hr>
+      </div>
+   </div>
+</div>
 
 {% endblock %} 
 
 {% block content %}
 
 <div class="container pt-3">
-  <div class="row">
-    {% if bag_items %}
+   <div class="row">
+      {% if bag_items %}
 
-    {% for item in bag_items %}
+      {% for item in bag_items %}
       <div class="col-12 col-md-6 mb-4">
-        {% if item.product.image %}
-          <img class="bag-img" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+         {% if item.product.image %}
+         <img class="bag-img" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
             {% else %}
-          <img class="bag-img" src="{{ MEDIA_URL }}noimage.jpeg" alt="{{ item.product.name }}">
-        {% endif %}
+         <img class="bag-img" src="{{ MEDIA_URL }}noimage.jpeg" alt="{{ item.product.name }}">
+         {% endif %}
       </div>
-
       <div class="col-12 col-md-6">
-        <h3 class="font-weight-bold m-0 p-0">{{ item.product.name }}</h3> 
-        <small class="text-muted">SKU: {{ item.product.sku}}</small>
-        <p class="my-2" ><strong>Price:</strong> £{{ item.product.price }}</p>
-        <p class="font-weight-bold my-2">Quantity:</p>
-        <div class="w-50">
-          {% include "bag/quantity-form.html" %}
-          {% if item.quantity > 1 %}
-            <p class="pt-2"><strong>Subtotal: </strong>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
-          {% endif %}
+         <h3 class="font-weight-bold m-0 p-0">{{ item.product.name }}</h3>
+         <small class="text-muted">SKU: {{ item.product.sku}}</small>
+         <p class="my-2" ><strong>Price:</strong> £{{ item.product.price }}</p>
+         <p class="font-weight-bold my-2">Quantity:</p>
+         <div class="w-50">
+            {% include "bag/quantity-form.html" %}
+            {% if item.quantity > 1 %}
+              <p class="pt-2"><strong>Subtotal: </strong>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
+            {% endif %}
+         </div>
       </div>
-    </div>
+      {% endfor %}
+      <div class="col-12 text-right pt-4">
+         <hr>
+         <h5>
+         <strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
+         <h5>Delivery: £{{ delivery|floatformat:2 }}</h5>
+         <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+      </div>
+      <div class="col-12 text-right pb-4">
+         <a href="{% url 'products' %}" class="btn btn-secondary">
+         <i class="fas fa-chevron-left pr-1"></i><span>Keep Shopping</span>
+         </a>
+         <a href="{% url 'checkout' %}" class="btn btn-secondary">
+         <span>Secure Checkout</span><i class="fas fa-lock pl-1"></i>
+         </a>
+      </div>
 
-    {% endfor %}
+      {% else %}
 
+      <div class="container">
+         <p>
+            Your shopping bag is empty
+         </p>
+         <div class="pb-5">
+            <a href="{% url 'products' %}" class="btn btn-secondary">
+            <i class="fas fa-chevron-left pr-1"></i><span>Keep Shopping</span>
+            </a>
+         </div>
+      </div>
 
-    <div class="col-12 text-right pt-4">
-    <hr>
-      <h5><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
-      <h5>Delivery: £{{ delivery|floatformat:2 }}</h5>
-      <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
-    </div>
-    <div class="col-12 text-right pb-4">
-      <a href="{% url 'products' %}" class="btn btn-secondary">
-      <i class="fas fa-chevron-left pr-1"></i><span>Keep Shopping</span>
-      </a>
-      <a href="{% url 'checkout' %}" class="btn btn-secondary">
-      <span>Secure Checkout</span><i class="fas fa-lock pl-1"></i>
-      </a>
-    </div>
-    {% else %}
-    <div class="container">
-    <p>
-      Your shopping bag is empty
-    </p> 
-    <div class="pb-5">
-      <a href="{% url 'products' %}" class="btn btn-secondary">
-        <i class="fas fa-chevron-left pr-1"></i><span>Keep Shopping</span>
-      </a>
-    </div>
-  </div>
+      {% endif %}
 
-    {% endif %}
+   </div>
 </div>
 
 
 {% endblock %}
-
 {% block postloadjs %}
 {{ block.super }}
+
 {% include 'products/includes/quantity_input_script.html' %}
-
 <script>
-    // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
-
-    // Remove item and reload on click
-    $('.remove-item').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/bag/remove/${itemId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
-
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
+   // Update quantity on click
+   $('.update-link').click(function(e) {
+       var form = $(this).prev('.update-form');
+       form.submit();
+   })
+   
+   // Remove item and reload on click
+   $('.remove-item').click(function(e) {
+       var csrfToken = "{{ csrf_token }}";
+       var itemId = $(this).attr('id').split('remove_')[1];
+       var url = `/bag/remove/${itemId}`;
+       var data = {'csrfmiddlewaretoken': csrfToken};
+   
+       $.post(url, data)
+        .done(function() {
+            location.reload();
+        });
+   })
 </script>
 {% endblock %}
