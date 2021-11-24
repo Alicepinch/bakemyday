@@ -101,15 +101,13 @@
               <small class="text-muted">By {{ blogcomment.comment_user }} on {{ blogcomment.date_created }}</small>
               <p class="blog-comment">{{ blogcomment.comment | linebreaks }}</p>
               {% if request.user == blogpost.author or request.user.is_superuser %}
-              <p>
-                <button type="button" class="btn" data-toggle="modal" data-target="#deleteComment">
+                <button type="button" class="btn mb-2" data-toggle="modal" data-target="#deleteComment">
                   <i class="fas fa-trash-alt"></i>
                 </button>
-                <a class="btn" href="{% url 'edit_blogcomment' blogcomment.id %}" ><i class="fas fa-pencil-alt"></i></a>
-              </p>
+                <a class="btn mb-2" href="{% url 'edit_blogcomment' blogcomment.id %}" ><i class="fas fa-pencil-alt"></i></a>
               {% endif %}
+            {% endfor %}
           </div>
-        {% endfor %}
       </div>
     </div>
 </div>
