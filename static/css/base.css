@@ -15,7 +15,7 @@ a:hover {
     text-decoration: none;
     transition: all 300ms ease-in-out;
 }
-input, label {
+input, label, textarea {
     font-family: 'Montserrat', sans-serif;
 }
 header, footer {
