@@ -2,6 +2,9 @@
 
 Bake my day is an online e-commerce store where users can search through all of the different products on offer and add anything that they would like to purchase to their basket.
 
+This is a test website and uses purchases on this website are accepted via stripes test card details. You will need to use stripes test numbers.
+You can find more information about this in the [stripe documentation](https://stripe.com/docs/testing). 
+
 [Bake My Day Live Site](https://bakemydaybyamber.herokuapp.com/)
 
 ![](docs/readme/bakemyday-ami-responsive.png)
@@ -14,7 +17,7 @@ Bake my day is an online e-commerce store where users can search through all of 
 - [Features](#features)
 - [Future Features](#future-features)
 - [Technologies Used](#technologies-used)
-- [Data Schema](#data-schema)
+- [Data Schema](#data-modelling)
 - [Testing](TESTING.md)
 - [Deployment](#deployment)
    - [Github cloning](#creating-a-local-repository)
@@ -47,10 +50,9 @@ Bake my day is an online e-commerce store where users can search through all of 
 
 ### Shopper
 
-- As a shopper on bakemyday I would like to be able to view all products available
+- As a shopper on bakemyday I want to be able to view all products available
 - As a shopper on bakemyday I would like to be able to view product details
 - As a shopper on bakemyday I would like to be able to sort products by category/occasion
-- As a shopper on bakemyday I would like to be able identiy if there are any deals on the website
 - As a shopper on bakemyday I would like to be able to add a product to my basket
 - As a shopper on bakemyday I would like to be able to view all the products I have added to my basket
 - As a shopper on bakemyday I would like to be able to search the website and see my results
@@ -74,7 +76,7 @@ Bake my day is an online e-commerce store where users can search through all of 
 
 ## Wireframes
 
-Below are all the wireframes that have been created for bakemyday. You will see that some of the wireframes do differ from the current site layout, this is just due to preference changes when seeing the project come together. 
+Below are all the wireframes that have been created for bakemyday. You will see that some of the wireframes do differ from the current site layout, this is just due to preference changes when seeing the project come together. From the product detail page you can see that initially I was planning to have an option for the user to be able to select which cake size they wanted to order. This was deprioriized and would now be a planned future feature. 
 
 [Bake my day Wireframes](/docs/readme/wireframes/bakemyday-wireframes.pdf)
 
@@ -86,7 +88,7 @@ The fonts chosen for this website are Bebas Neue and Montserrat the reason for t
 
 ### Colour Scheme 
 
-The main colour's chosen for the website are pink and brown as I think these compliment the colours in the images used across the sit and in the logo. For links and the hover colour for the Navigation bar I chose a brown colour to match the logo and a white as a hover colour for contrast. For links and buttons throughout the same pink colour with brown writing and on the pink background on the home I have used the reverse colourway. 
+The main colour's chosen for the website is pink and brown as I think these complement the colours in the images used across the site and in the logo. For links and the hover colour for the Navigation bar, I chose a brown colour to match the logo and a white as a hover colour for contrast. For links and buttons throughout the same pink colour with brown writing and on the pink background on the home I have used the reverse colourway. 
 
 ![](docs/readme/bakemyday-colours.png)
 
@@ -95,11 +97,11 @@ The main colour's chosen for the website are pink and brown as I think these com
 #### Register account (Allauth)
 - New users can register an account
 #### Login to account (Allauth)
-- Existing users can log into their account
+- Existing users can log in to their account
 #### Session cookie 
-- Once user is logged in/ creates an account their information is stored in a session cookie until they log out
+- Once a user is logged in/ creates an account their information is stored in a session cookie until they log out
 #### Personal profile page
-- Displays user details and order history of user logged in
+- Displays user details and order history of a user logged in
 #### Update password (Allauth)
 -  Logged in users can change their password if their current password is correct and the two new passwords they enter match with allauth
 #### All Products page 
@@ -108,47 +110,47 @@ The main colour's chosen for the website are pink and brown as I think these com
 - Users can select different categories of cakes in the navigation
 - Users can select different occasions for cakes in the navigation
 #### Single product page
-- Displays specific product information to page and allows user to add product to bag
+- Displays specific product information to the page and allows users to add the product to the bag
 #### Bag
-- User can add any product to bag from product detail page
-- Bag stores all of users items that they have added in one place
+- User can add any product to the bag from the product detail page
+- Bag stores all of the user's items that they have added in one place
 #### Checkout
-- User can checkout as a guest or as a logged in user 
-- User can see a preview of their bag in checkout before they proceed with payment
-- User will recieve email confirmation when checkout is succesfull and be redirected to a checkout success page
+- User can checkout as a guest or logged-in in user 
+- Users can see a preview of their bag at checkout before they proceed with payment
+- User will receive an email confirmation when checkout is successful and be redirected to a checkout success page
 #### Stripe Payments
 - Users can checkout using secure stripe payments (please note this is only set up for test numbers at the moment more details can be found:)
-- Test number for this is : 4242 4242 4242 4242
+- Test number is in the stripe documentation mentioned at the start of the readme 
 #### Toast messages
 - Displays success, information, warnings and error messages from backend to user across the site
 #### Search
 - All users can search products by name and description
 #### Blog
-- A place where users and admin can create blogposts to share with others
+- A place where users and admin can create blog posts to share with others
 - Only logged in users can create blogposts
 #### Edit Blogpost
 - Prefilled form with all blogpost details
-- If user has created the blogpost they can edit it via the form
-- Changes display to the user straight away
+- If a user has created the blogpost they can edit it via the form
+- Changes are display to the user straight away
 #### Blog Comments
 - Logged in users can create blog comments on different blogposts
 #### Edit Blog Comment 
-- Prefilled form with blogcomment details.
-- If user has created the blogcomment then they can edit it via the form.
-- Changes display to the user straight away.
+- Prefilled form with blog comment details.
+- If the user has created the blog comment then they can edit it via the form.
+- Changes are displayed straight away.
 #### Navigation bar
 - All users have a navigation bar however, different links are displayed to users that are logged in
 #### Footer   
 - Across all pages contains the contact link, social links and location
-- Social links go through to bakemyday instagram account
+- Social links go through to bakemyday Instagram account
 #### Admin 
-- Admin account can create, read, update or delete any product, blogposts or blogcomments on the website if needed
+- Admin account can create, read, update or delete any product, blogposts or blog comments on the website if needed
    - Add product page displays only for admin users
    - Loads an empty form with all necessary fields needed to add a new product to the website
-   - Edit product page displays also only for admin user
+   - Edit product page displays also only for the admin user
    - Loads a prefilled form with all product details that the admin can adjust if needed
 #### Error Pages
-- 404 page not found, 500 internal server error and 405 method not allowed custom pages which redirect back to homepage
+- 404 page not found, 500 internal server error and 405 method not allowed custom pages which redirect back to the homepage
 #### Responsive design 
 - Website is optimized for multiple screen sizes
 #### Homepage 
@@ -181,16 +183,16 @@ The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home).
 ### UserProfile
 
 - The UseProfile is created on registration for each user and the Foreiign key in this model is the User model that is created by Allauth when a user registers an account.
-- The UserProdile stores the default fields which will populate if a user has saved information at checkout, this pre-populates shipping details when a user order's again.
+- The UserProfile stores the default fields which will populate if a user has saved information at checkout, this pre-populates shipping details when a user order's again.
 
 ### Order and Order Item
 
 - The Order model is connected to the UserProfile model, allowing the user to view all their previous orders.
 - The Order model acts as a container for the order items. Although the item is stored within the OrderItem model, having them connected allows retrieving the item purchased.
 
-### Blog Post
+connectedness
 
-- The BlogPost model is conntected to the User model from allauth to generate the author of blogpost. 
+- The BlogPost model is connected to the User model from allauth to generate the author of the blog post. 
 - The BlogPost model holds all information for the blogpost.
 
 ### Blog Comment
@@ -216,7 +218,7 @@ The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home).
 - CSS
 - Heroku
 - Bootstrap
-- Git & GitHub.com
+- Git
 - Jinja templating 
 
 ### Other Tools Used
@@ -243,7 +245,7 @@ The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home).
 
 ### Databases
 - SQlite3
-- PostgreSQL 
+- Heroku Postgress
 
 ## Testing
 
@@ -258,9 +260,9 @@ In order to run this on your local IDE you need to insure you have the following
 - PIP
 - Python
 - Git
-- You will also need an account on MongoDB 
+- You will also need an account on Heroku
 
-In order to deploy your own version of this website you will need to clone a local copy of the repository. To do this you need to follow the following steps.
+To deploy your own version of this website, you will need to clone a local copy of the repository. To do this you need to follow the following steps.
 
 - Click on the 'Code' button next to 'Add a file' when you have opened a repository
 - To clone your repository by https:// click on the clipboard icon next to the URL.
@@ -291,7 +293,7 @@ os.environ.setdefault("DEVELOPMENT", "True")
 
 This repository can now be deployed to Heroku:
 
-To deploy this project to Heroku you will need a Heroku acccount.
+To deploy this project to Heroku you will need a Heroku account.
 Once you have an account please follow the below steps. 
 
 Before you deploy to heroku make sure you have dj_database_url and psycopg2 installed. To do this then enter the below into your terminal :
@@ -304,26 +306,26 @@ pip3 install psycopg2
 
 1. In Heroku create a new app and set the region to EU. 
 2. Next you want to Login to the Heroku CLI ```heroku login -i``` 
-3. Run migrations on Heroku Postgres - ```heroku run python manage.py migrate```
+3. Run migrations on Heroku Postgres - ```Heroku run python manage.py migrate```
 3. Then Create a superuser - ```python manage.py createsuperuser``` 
 4. Install gunicorn ```pip3 install gunicorn```
-5. In your github project create a requirements.txt file using the terminal command ```pip3 freeze —-local > requirements.txt ``` (This is so Heroku can read all of the web apps that have been used in the project)
+5. In your GitHub project create a requirements.txt file using the terminal command ```pip3 freeze —-local > requirements.txt ``` (This is so Heroku can read all of the web apps that have been used in the project)
 
-6. Create a Procfile by typing ```echo web: python app.py > Procfile``` into the terminal.
+6. Create a Procfile by typing ``` echo web: python app.py > Procfile``` into the terminal.
 
 7. You will need to disable Heroku from collecting static files in your terminal with ```heroku config:set DISABLE_COLLECTSTATIC=1 --app <your-app-name>```
 
-8. Then add all files to github by typing 'git add .' into the terminal to stage all of your files. Then ```git commit -m "<message here>``` to commit the changes ready to be pushed to GitHub.
+8. Then add all files to GitHub by typing 'git add .' into the terminal to stage all of your files. Then ```git commit -m "<message here>``` to commit the changes ready to be pushed to GitHub.
 
-9. When all your files are ready to be pushed to github, type ```git push``` in the terminal.
+9. When all your files are ready to be pushed to GitHub, type ```git push``` in the terminal.
 
 10. Back on your Heroku dashboard for your application, go to 'Deploy'.
 
 11. Within this section, scroll down to 'Deployment method' and select 'Connect to GitHub'
 
-12. In the 'Connect to GitHub' section below - search for the github repository name. When you see the repository name click on the 'Connect' button.
+12. In the 'Connect to GitHub' section below - search for the GitHub repository name. When you see the repository name click on the 'Connect' button.
 
-13. Confirm the linking of the heroku app to the correct GitHub repository.
+13. Confirm the linking of the Heroku app to the correct GitHub repository.
 
 14. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
 
@@ -340,19 +342,19 @@ STRIPE_SECRET_KEY | `<your_stripe_key>`
 STRIPE_PUBLIC_KEY| `<your_stripe_secret_key>`
 SECRET_WH_KEY | `<your_webhook_secret_key>`
 
-16. Back in your terminal the next time you add, commit and push any of your changes this will automatically deploy to heroku
+16. Back in your terminal the next time you add, commit and push any of your changes this will automatically deploy to Heroku
 
 ### AWS S3 Bucket
 
 1. Go to Amazon AWS and create a new account
 2. In apps search for S3 and create a new bucket 
-   - Name your bucket to match heroku app name
+   - Name your bucket to match Heroku to name
    - Select region close to you
-   - Allow public access for files
+   - Allow public access to files
 3. Open bucket settings and allow static website hosting 
 
 4. Under Permissions > CORS Configuration
-   - In permission tab, add in below cors configaration to set up required access for heroku app and S3 bucket:
+   - In the permission tab, add in below cors configuration to set up required access for the Heroku app and S3 bucket:
 ```
 [
   {
@@ -403,7 +405,7 @@ pip3 install django-storages
 pip3 freeze > requirements.txt
 ```
 - Add the secret key and access key from the .csv file to Heroku Config Vars
-- Set 'USE_AWS' to true for heroku to fetch files from AWS
+- Set 'USE_AWS' to true for Heroku to fetch files from AWS
 - Delete DISABLE_COLLECTSTATIC variable from Config Variables and deploy Heroku app
 - The variables in heroku should look like:
 
@@ -424,10 +426,11 @@ AWS_SECRET_ACCESS_KEY | `<your_aws_secret_key>`
 
 ## Credits
 
-All images and content has been taken from the [@bakemyday_byamber](https://www.instagram.com/bakemyday_byamber/) instagram account. 
+All images and content has been taken from the [@bakemyday_byamber](https://www.instagram.com/bakemyday_byamber/) Instagram account. 
 I have full permission to use all images and all branding for this website from the owner of this business. 
+- CI Slack Community
 
 ## Codes
 
 - [Django Central](https://djangocentral.com/building-a-blog-application-with-django/) was used to help build the blog app
-- [Ordinary Coders](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend) was used to help build contact app
+- [Ordinary Coders](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend) was used to help build a contact app

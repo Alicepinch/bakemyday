@@ -5,19 +5,19 @@
 - As a shopper on bakemyday I would like to be able to view all products available
     - A shopper can view all products by navigating to the 'All products' tab in the navigation
 - As a shopper on bakemyday I would like to be able to view product details
-    - A shopper can view product details by clicking on any product, they will be taken to the corresponding product detail page where there is more information in here
-- As a shopper on bakemyday I would like to be able to sort products by category/occasion
-    - A shopper can either shop for occasion (Christmas etc.) or Category (Birthday etc.) by navigating to the tab's within the navigation. Once clicked a drop down appears that a shopper can select from.
+    - A shopper can view product details by clicking on any product, they will be taken to the corresponding product detail page where there is more information here
+- As a shopper on the bakemyday I would like to be able to sort products by category/occasion
+    - A shopper can either shop for the occasion (Chrthe istmas etc.) or Category (Birthday etc.) by navigating to the tab's within the navigation. Once clicked a drop-down appears that a shopper can select from.
 - As a shopper on bakemyday I would like to be able to add a product to my basket
-    - A shopper can add any product to their basket on it's product detail page by using the 'Add to Bag' CTA
+    - A shopper can add any product to their basket on its product detail page by using the 'Add to Bag' CTA
 - As a shopper on bakemyday I would like to be able to view all the products I have added to my basket 
     - A shopper can view all products that they have in their basket by navigating to the basket in the top right corner of the page. This takes them to the basket where it lists all their products and quantities
 - As a shopper on bakemyday I would like to be able to search the website and see my results
     - A shopper can search the website from any page that they are on, if a product matches their search request then the product will appear
 - As a shopper on bakemyday I would like to be able to easily select the quantity of what I add to my basket
     - A shopper can increase the quantity either on the product detail page or in their basket and get up to date total pricing
-- As a shopper on bakemyday I would like to recieve email confirmation after I have placed an order
-    - A shopper recieves an order confirmation to their chosen email address when they have successfully checked out
+- As a shopper on bakemyday I would like to receive an email confirmation after I have placed an order
+    - A shopper receives an order confirmation to their chosen email address when they have successfully checked out
 - As a shopper on bakemyday I would like to be able to save my account details and create an account
     - A new shopper can chose to create an account in the checkout to save their checkout information for next time
 - As a shopper on bakemyday I would like to be able to view my order history after placing an order
@@ -31,9 +31,9 @@
 ### Site User
 
 - As a site user of bakemyday I would like to easily register an account
-    - A user can easily register an account by navigating to the 'My Account' in the top right corner, this presents the user with a drop down where they can click on register, they are then taken to a register form to set up their account
+    - A user can easily register an account by navigating to the 'My Account' in the top right corner, this presents the user with a drop-down where they can click on register, they are then taken to a registration form to set up their account
 - As a site user of bakemyday I would like to easily login and logout
-    - A user can login to their account by navigating to the 'My Account' in the top right corner, once they click on login they are taken to the login page to enter their email address and password
+    - A user can log in to their account by navigating to the 'My Account' in the top right corner, once they click on login they are taken to the login page to enter their email address and password
 - As a site user of bakemyday I would like to easily be able to change my password
     - Once a user is logged in then they can navigate to their 'Profile' page, in here they have a CTA called 'Change password' this takes them to a form where they have to fill in their current password to update it to a new one
 - As a site user of bakemyday I would to easily recover my password incase I forget it
@@ -66,26 +66,24 @@
 - To be able to remove any blog comments from blog posts incase they are innapropriate
     - An admin can delete any blog comments on the website by clicking on the relevant post and then clicking on the 'Delete Blog Comment' CTA
 - To be able to add new products to the website
-    - An admin can add any new product by navigating to the 'My Account' in the top right corner and clicking on 'Add Product' in the drop down
+    - An admin can add any new product by navigating to the 'My Acccount in the top right corner and clicking on 'Add Product' in the drop down
 - To be able to view all contact forms that come through the contact page
-    - All contact forms will go through to the owners email address, they can also be viewed in the admin section of the django app
+    - All contact forms will go through to the owner's email address, they can also be viewed in the admin section of the django app
     
 ## Usability Testing
 
+Chrome developer tools was used throughout the development of the project to test responsiveness. Responsiveness was tested using Dev Tools for the following devices,
 
-Chrome dev tools was used throughout the development of the project to test responsiveness. Responsiveness was tested using Dev Tools for the following devices,
-
-- Iphone 5
-- Iphone 6/7/8
-- Iphone 6/7/8 Plus
-- Iphone X
+- iPhone 5
+- iPhone 6/7/8
+- iPhone 6/7/8 Plus
+- iPhone X
 - Ipad
 - Ipad Pro
 - Browser Testing
 
-After development this was also tested on my personal iphone to make sure dev tools was correct.
-
-This has also been tested on the following devides with different screensizes on different browsers.
+After development, this was also tested on my iPhone to make sure the dev tools was correct.
+This has also been tested on the following devices with different screen sizes on different browsers.
 
 MacBook Pro 13"
 - Safari
@@ -127,7 +125,7 @@ Flake8 extension was used to test that python code was compliant with PEP8.
 Any remaining errors are outlined below:
 
 - Error 'variable 'e' not being used' is because 'e' is a variable that is used to capture any errors from the Stripe webhook handler.
-- Error './checkout/app.py - 'checkout.signals' imported but unused' is because the import is just to let Django know that there is a signal listening for changes to automatically updating the totals
+- Error './checkout/app.py - 'checkout.signals' imported but unused' is because the import is just to let Django know that there is a signal listening for changes to automatically update the totals
 - Error 'line too long (80 > 79 characters)' in the webhook handler file cannot be shortened without breaking the code.
 - Error './checkout/views.py:79:80: E501 line too long (81 > 79 characters)' also cannot be shortened without breaking the code.
 
@@ -139,13 +137,13 @@ Please note for the following file errors have been ignored as these were genera
 
 Some 'Avoid' errors were raised such as 'Avoid using null=True on string-based fields such CharField.' These were also ignored as these have "Blank=True" and if I am going to allow these fields to be blank in the form, then I need the database to allow NULL values for that field.
 
-On top of flake8 I also ran all my own python files through pep8 to ensure that everything was ok and all passed through pep8 validator apart from the issues mentioned above in the the webhook handler py files:
+On top of flake8, I also ran all my python files through pep8 to ensure that everything was ok and all passed through the pep8 validator apart from the issues mentioned above in the webhook handler py files:
 
 ![](docs/testing/pep8-validator.png)
 
 ## 404, 500 Errors
 
-If a user tries to access a page that is non existent then they will be directed to the custom 404 page. On this page there is a CTA that redirects the user back to the homepage. I have forced this error by typing a wrong URL into the bar.
+If a user tries to access a non-existent page then the,y will be directed to the custom 404 page. On this page, there is a CTA that redirects the user back to the homepage. I have forced this error by typing the wrong URL into the bar.
 In case of an internal server error occurring then a 500 error page has also been implemented. This looks similar to the 400 error page and has a CTA for users to click back to the homepage.
 
 ## Bugs and Fixes:
@@ -184,15 +182,15 @@ To:
 
 ```blog_title = models.CharField(max_length=60, null=True, blank=True)```
 
-I also noticed that the blog posts were not displaying in order of them being created. In order to fix this I added in a meta option for the blog model:
+I also noticed that the blog posts were not displaying in order of them being created. To fix this I added a meta tag to the blog model:
 
 ```class Meta: ordering = ['-date_created']```
 
-When adding a new blogpost to the blog the success message was still showing the bag when it had been uploaded succesfully. To fix this issue I updated the messages to be info rather than success.
+When adding a new blog post to the blog the success message was still showing the bag when it had been uploaded successfully. To fix this issue I updated the messages to be info rather than successful.
 
-When testing the blogpost functionality I realised that the blog preview section was not mandatory and that if someone didn't add this in then the template would return 'None'. To fix this I could have made this mandatory however, I thought it would make more sense to remove one step for a user and just take the preview from the blog body itself. I removed 'blog_preview' from the BlogPost model and then added in ```{{blogpost.blog_body|slice:":200" }}``` into my template to pull in a preview of the blog content on the blog page. 
+When testing the blogpost functionality I realised that the blog preview section was not mandatory and that if someone didn't add this in then the template would return 'None'. To fix this I could have made this mandatory, however, I thought it would make more blog posts remove one step for a user and just take the preview from the blog body itself. I removed 'blog_preview' from the BlogPost model and then added in ```{{blogpost.blog_body|slice:":200" }}``` into my template to pull in a preview of the blog content on the blog page. 
 
-When testing the edit blog post functionality, it wouldnt let a super user edit another users blogpost. This isn't ideal incase someone has posted something inappropriate the admin should be able to edit this. 
+When testing the edit blog post functionality, it wouldn't let a superuser edit another user blog post. This isn't ideal in case someone has posted something inappropriate the admin should be able to edit this. 
 
 To fix this I updated my code in the blog views from:
 ```
@@ -242,44 +240,44 @@ When testing the save info to profile functionality during the building process 
 
 ## Unsolved bug's due to prioritization:
 
-- Deleting a product which has been purchased will delete an orders item this means that the order history will not display any information.
+- Deleting a product that has been purchased will delete an orders item this means that the order history will not display any information.
 - Users cart is not saved if they log out of their account.
-- User can delete the current quantity number in the input field on product detail page and can add it to shopping bag. 
-    - User is directed to 404 page but issue still remains.
+- User can delete the current quantity number in the input field on the product detail page and can add it to the shopping bag. 
+    - User is directed to the 404 page but the issue remains.
 
 ## Manual Functionality Testing
 
 #### Navbar - PASS
 
-- All links, including logo are working as expected, and takes the user where they want to go.
-- Search bar is working and lets a user search through products, categories, product details and occasion. If user input is empty a "You didn't enter anything!" message is shown.
-- Account links work as expected, and succefully directs user to Register, Login, Profile, and Add product page's. Logout link successfully logs out user.
-- All Products works as exptected and shows the user all products
-- Occasion and Category links generate a drop down with all the different occasions and categorys for users to look through
-- Shopping bag link works, and updates successfully when user adds or removes a product from/to the bag, and updates the grand total accordingly.
-- Navbar condenses down succesfully for mobile view.
+- All links, including the logo are working as expected and takes the user where they want to go.
+- Search bar is working and lets a user search through products, categories, product details and occasions. If user input is empty a "You didn't enter anything!" message is shown.
+- Account links work as expected, and successfully redirects the user to Register, Login, Profile, and Add product pages. Logout link successfully logs out the user.
+- All Products works as expected and shows the user all products
+- Occasion and Category links generate a drop-down with all the different occasions and categories for users to look through
+- Shopping bag link works, and updates successfully when a user adds or removes a product from/to the bag, and updates the grand total accordingly.
+- Navbar condenses down successfully for mobile view.
 
 #### Homepage - PASS
 
-- CTA button's on homepage work as expected and take users to products page and blog page
+- CTA button's on the homepage works as expected and takes the user to the products page and blog page
 
 #### Register - PASS
 
-- Form input and validations work as expected. Form gives feedback upon unmatched format, invalid data, or for existing user
+- Form input and validations work as expected. The form gives feedback upon unmatched format, invalid data, or for existing user
 - Submit button works as expected and submits data successfully, and send verification e-mail for users to confirm their email address.
-- Email confirmation email works correctly and directs user to the confirm user page where they can verify their email
-- Once email is verified user can succesfully login
+- Email confirmation email works correctly and directs the user to the confirm user page where they can verify their email
+- Once the email is verified user can successfully login
 
 #### Login - PASS
 
-- Form input and validations work as expected. Form gives feedback if any unmatched format's or incorrect username, email and password, or if user doesn't exist in the database.
-- Submit button works as expected if user is in database, this then redirects user to homepage with a success toast message.
-- 'Forgot password' link works as expected and takes user to password recovery page.
+- Form input and validations work as expected. The form gives feedback if any unmatched format's or incorrect username, email and password, or if the user doesn't exist in the database.
+- Submit button works as expected if a user is in the database, this then redirects the user to the homepage with a success toast message.
+- 'Forgot password' link works as expected and takes the user to the password recovery page.
 
 #### Profile - PASS
 
 - All recent purchases are shown in the Order History tab.
-- All recent purchase links works as expected and open in a new page with the past order information.
+- All recent purchase links work as expected and open on a new page with the past order information.
 - User details form works as expected, and successfully updates user details.
 
 #### Logout - PASS
@@ -300,15 +298,15 @@ When testing the save info to profile functionality during the building process 
 - Add to bag CTA works as expected and adds the item and its quantity into the shopping bag and returns a success message with a preview of the bag.
 - Edit Product and Delete Product CTA's display for admin user's only and work as expected. 
 - Delete modal is displayed when trying to delete product as a precaution layer
-- Edit Product CTA directs user to a edit product page
+- Edit Product CTA directs the user to an edit product page
 
 #### Edit Product - PASS
 
 - Page works as expected and renders a prefilled form with product details in
 - Admin can successfully update all aspects of the product from the form
-- Update Product CTA successfully updates product data in database and redirects back to the product page where changes are reflected
-- Cancel CTA succesfully redirects back to products page
-- Field validators are working, user can't submit form if all required fields are not filled. 
+- Update Product CTA successfully updates product data in the database and redirects back to the product page where changes are reflected
+- Cancel CTA successfully redirects back to the products page
+- Field validators are working, the user can't submit the form if all required fields are not filled. 
 
 #### Add Product - PASS
 
@@ -320,8 +318,8 @@ When testing the save info to profile functionality during the building process 
 #### Bag - PASS
 
 - Page works as expected and renders all items in a users bag with some product details
-- Remove button works and removes item from bag
-- Quantity input works correctly and user can increase quantity of product in their bag with 'Update'
+- Remove button works and removes the item from bag
+- Quantity input works correctly and users can increase the quantity of prodproductstheir bag with 'Update'
 - Grand total, and delivery are visible and reflect any changes that are made on the bag page
 - Keep shopping button works as expected and redirects user back to Products page
 - Secure Checkout button works as expected and directs user to the Checkout Page
@@ -342,7 +340,7 @@ When testing the save info to profile functionality during the building process 
 
 #### Blog - PASS
 
-- Page works as expected, and renders all the blog post data from database.
+- Page works as expected, and renders all the blog post data from the database.
 - All post images, titles, and read more links work as expected and takes the user to the post page.
 
 #### Blog Detail - PASS
@@ -351,12 +349,12 @@ When testing the save info to profile functionality during the building process 
 - Comment section works as expected and displays all the comments associated with blogpost with a comment counter. If there are no comments on the post, a message is shown to the user if they would like to add one.
 - 'Add a comment' CTA links user succesfully through to comment form, if user is not logged in they will be redirected to login page
 - Edit Blog Post and Delete Blog Post CTA's only display for admin user's or the author of the blogpost and work as expected. 
-- Delete modal is displayed when trying to delete blog post as a precaution layer
-- Delete CTA in modal succesfully removes blog post from database
-- Edit Blogpost CTA redirects user to a edit blogpost page
+- Delete modal is displayed when trying to delete a blog post as a precaution layer
+- Delete CTA in modal successfully removes blog post from the database
+- Edit Blogpost CTA redirects the user to an edit blogpost page
 - If a user who created a comment is logged in then 'Delete Comment' and 'Edit Comment' CTA's are displayed 
-- 'Delete Comment' CTA deletes comment 
-- 'Edit Comment' redirects user to edit comment page
+- 'Delete Comment' CTA deletes a comment 
+- 'Edit Comment' redirects the user to the edit comment page
 
 #### Add Blog Post - PASS
 
@@ -370,14 +368,14 @@ When testing the save info to profile functionality during the building process 
 - Page works as expected and renders blog post prefilled with blog post data
 - 'Update Blog Post' CTA successfully updates blogpost data in database and redirects back to blog page where this is displayed
 - 'Cancel' CTA succesfully redirects back to blog page
-- Field validators are working, user can't submit form if all required fields are not filled/invalid.
+- Field validators are working, the user can't submit the form if all required fields are not filled/invalid.
 
 #### Blog Comment - PASS
 
-- Page works as expected and renders blog comment form with empty fields
-- 'Add Blog Comment' CTA successfully adds comment into database for relevant blog post and redirects back to blog post where this is displayed
-- 'Cancel' CTA succesfully redirects back to blog page
-- Field validators are working, user can't submit form if all required fields are not filled/invalid.
+- Page works as expected and renders a blog comment form with empty fields
+- 'Add Blog Comment' CTA successfully adds comments into a database for relevant blog posts and redirects back to the blog post where this is displayed
+- 'Cancel' CTA successfully redirects back to the blog page
+- Field validators are working, the user can't submit the form if all required fields are not filled/invalid.
 
 #### Contact - PASS
 
@@ -390,24 +388,24 @@ When testing the save info to profile functionality during the building process 
 
 - Footer is available across all pages.
 - Quick links work as expected, and redirects user to the specified page.
-- Social link on the footer works as expected, and link opens in a new tab.
+- Social link on the footer works as expected, and the link opens in a new tab.
 
 #### Error 404 - PASS
 
-- Works as expected, successfuly captures and handles page not found error.
-- Go back button on error page works as expected and redirects user back to the homepage.
+- Works as expected, successfully captures and handles page not found error.
+- Go back button on the error page works as expected and redirects the user back to the homepage.
 
 #### Error 500 - PASS
 
-- Works as expected, successfuly captures and handles internal server error.
-- Go back button on error page works as expected and redirects user back to the homepage.
+- Works as expected, successfully captures and handles internal server error.
+- Go back button on the error page works as expected and redirects the user back to the homepage.
 
 #### Stripe Webhooks - PASS
 
 Webhooks work as expected, and give a 200 code.
 ![](docs/testing/stripe-webhook-success.png)
 
-A confirmation email is sent to customer when a checkout is successful and appears as below:
+A confirmation email is sent to the customer when checkout is successful and appears as below:
 ![](docs/testing/checkout-success-email.png)
 
 Authentication works correctly when stripe test number is used at checkout:
