@@ -25,6 +25,9 @@
     box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 5%);
     border: #F7C1BB;
 }
+.order-number {
+    line-break: anywhere;
+}
 #loading-overlay {
     display: none;
     position: fixed;

@@ -51,10 +51,10 @@
          <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
       </div>
       <div class="col-12 text-right pb-4">
-         <a href="{% url 'products' %}" class="btn btn-secondary">
+         <a href="{% url 'products' %}" class="btn mb-2">
          <i class="fas fa-chevron-left pr-1"></i><span>Keep Shopping</span>
          </a>
-         <a href="{% url 'checkout' %}" class="btn btn-secondary">
+         <a href="{% url 'checkout' %}" class="btn mb-2">
          <span>Secure Checkout</span><i class="fas fa-lock pl-1"></i>
          </a>
       </div>
@@ -66,7 +66,7 @@
             Your shopping bag is empty
          </p>
          <div class="pb-5">
-            <a href="{% url 'products' %}" class="btn btn-secondary">
+            <a href="{% url 'products' %}" class="btn">
             <i class="fas fa-chevron-left pr-1"></i><span>Keep Shopping</span>
             </a>
          </div>
