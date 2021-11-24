@@ -76,7 +76,7 @@ Bake my day is an online e-commerce store where users can search through all of 
 
 Below are all the wireframes that have been created for bakemyday. You will see that some of the wireframes do differ from the current site layout, this is just due to preference changes when seeing the project come together. 
 
-[Bake my day Wireframes](docs/wireframes/bakemyday-wireframes.pdf)
+[Bake my day Wireframes](/docs/readme/wireframes/bakemyday-wireframes.pdf)
 
 ## Design 
 
