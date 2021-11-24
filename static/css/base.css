@@ -181,6 +181,9 @@ header, footer {
     overflow-x: hidden;
     overflow-y: auto;
 }
+.update-link {
+    color: #524444;
+}
 /* Message containers */
 .message-container {
     position: fixed;
@@ -252,14 +255,15 @@ footer a {
 footer a:hover {
     color: white;
 }
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 1200px) {
     .blog-img-home {
         width: 100%;
         height: 300px;
    }
-    .header-container {
-        padding-top: 100px;
-   }
+    .bag-img {
+        height: 500px;
+        width: 100%;
+    }
     .error-container {
         padding-top: 250px;
    }
@@ -288,12 +292,12 @@ footer a:hover {
     margin-top: 250px;
 }
 }
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 1000px) {
     .dropdown-item, .nav-link {
         font-size: 13px;
     }
     .header-link {
-        font-size: 12px;
+        font-size: 11px;
     }
     .list-inline-item:not(:last-child) {
         margin-right: 0rem;
@@ -302,5 +306,8 @@ footer a:hover {
         background-image: url('/media/white-chocolate-rasberry-cake.jpg');
         height: 800px;
     }
+    .header-container {
+        padding-top: 100px;
+   }
 }
 
