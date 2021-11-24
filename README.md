@@ -1,6 +1,6 @@
 # Bake My Day
 
-Bake my day is an online e-commerce store where users can search through all of the different products on offer and add anything that they would like to purchase to their basket. On Bake my day not only can you search through the array of products that are on offer but you can order directly through the site. 
+Bake my day is an online e-commerce store where users can search through all of the different products on offer and add anything that they would like to purchase to their basket.
 
 [Bake My Day Live Site](https://bakemydaybyamber.herokuapp.com/)
 
@@ -74,120 +74,9 @@ Bake my day is an online e-commerce store where users can search through all of 
 
 ## Wireframes
 
-Below are all the wireframes that have been created for bakemyday.
+Below are all the wireframes that have been created for bakemyday. You will see that some of the wireframes do differ from the current site layout, this is just due to preference changes when seeing the project come together. 
 
-### Homepage (All users):
-<details><summary>Desktop </summary>
-
-![](docs/readme/wireframes/bakemyday-homepage-wireframe.png)
-
-</details>
-
-<details><summary>Mobile</summary>
-
-![](docs/readme/wireframes/.png)
-
-</details>
-
-### Products page (All users)
-
-<details><summary>Desktop</summary>
-
-
-![](docs/readme/wireframes/bakemyday-product-page-wireframe.png)
-
-</details>
-
-<details><summary>Mobile</summary>
-
-![](docs/readme/wireframes/.png)
-
-</details>
-
-### Products detail page (All users)
-
-<details><summary>Desktop </summary>
-
-![](docs/readme/wireframes/bakemyday-product-detail-wireframe.png)
-
-</details>
-
-<details><summary>Mobile</summary>
-
-![](docs/readme/wireframes/.png)
-
-</details>
-
-### Profile page (Registered users)
-
-<details><summary>Desktop</summary>
-
-![](docs/readme/wireframes/bakemyday-profile-page-wireframe.png)
-
-</details>
-
-<details><summary>Mobile</summary>
-
-![](docs/readme/wireframes.png)
-
-</details>
-
-### Shopping Bag (All users)
-
-<details><summary>Desktop </summary>
-
-![](docs/readme/wireframes/bakemyday-shopping-bag-wireframe.png)
-
-</details>
-
-<details><summary>Mobile</summary>
-
-![](docs/readme/wireframes/.png)
-
-</details>
-
-### Login Page (All users)
-
-<details><summary>Desktop </summary>
-
-![](docs/readme/wireframes/bakemyday-login-page-wireframe.png)
-
-</details>
-
-<details><summary>Mobile</summary>
-
-![](docs/readme/wireframes/.png)
-
-</details>
-
-### Register page (All users)
-
-<details><summary>Desktop</summary>
-
-![](docs/readme/wireframes/bakemyday-register-wireframe.png)
-
-</details>
-
-<details><summary>Mobile</summary>
-
-![](docs/readme/wireframes/.png)
-
-</details>
-
-
-### Contact page (All users)
-
-<details><summary>Desktop </summary>
-
-![](docs/readme/wireframes/bakemyday-contact-page-wireframe.png)
-
-</details>
-
-<details><summary>Mobile</summary>
-
-![](docs/readme/wireframes/.png)
-
-</details>
+[Bake my day Wireframes](docs/wireframes/bakemyday-wireframes.pdf)
 
 ## Design 
 
@@ -285,7 +174,7 @@ Below are all the models used for this project. This different models within thi
 
 The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home).
 
-![](docs/readme/bakemyday-data-modelling.jpg)
+![](docs/readme/bakemyday-data-modelling.png)
 
 ## Key Models
 
@@ -315,7 +204,7 @@ The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home).
 - The Foreign keys within this model are to Category model and Occasion Models which attachs a specific categoy or occasion to a product which in turn allows a user to filter products by category and occasion in navigation.
 - The relationship to the Occasion Model and Category Model are purley for description purposes.
 
-## Contact
+### Contact
 
 - The contact model holds the information for when a user completes the contact form (name, email, subject line and contact message)
 
@@ -346,10 +235,11 @@ The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home).
 - Django Crispy Forms 
 - Gunicorn 
 - Psycopg2 
-- AWS S3 Bucket
+- AWS S3 Bucket - To host images for heroku site
 - Boto3
 - Django Storages
 - Allauth
+- [ibb](https://ibb.co/1LvgMHM) To store images for image URL for fixtures
 
 ### Databases
 - SQlite3
