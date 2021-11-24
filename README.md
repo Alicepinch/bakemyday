@@ -72,11 +72,11 @@ You can find more information about this in the [stripe documentation](https://s
 - As a site user of bakemyday I would like to be able to post blog posts
 - As a site user of bakemyday I would like to be able to edit or delete a blog post I have created
 - As a site user of bakemyday I would like to be able to comment on & view other users blog posts
-- As a site user of bakemyday I would like to be able to cget in contact with the store owner
+- As a site user of bakemyday I would like to be able to get in contact with the store owner
 
 ## Wireframes
 
-Below are all the wireframes that have been created for bakemyday. You will see that some of the wireframes do differ from the current site layout, this is just due to preference changes when seeing the project come together. From the product detail page you can see that initially I was planning to have an option for the user to be able to select which cake size they wanted to order. This was deprioriized and would now be a planned future feature. 
+Below are all the wireframes that have been created for bakemyday. You will see that some of the wireframes do differ from the current site layout, this is just due to preference changes when seeing the project come together. From the product detail page, you can see that initially, I was planning to have an option for the user to be able to select which cake size they wanted to order. This was deprioritized and would now be a planned future feature. 
 
 [Bake my day Wireframes](/docs/readme/wireframes/bakemyday-wireframes.pdf)
 
@@ -84,7 +84,7 @@ Below are all the wireframes that have been created for bakemyday. You will see 
 
 ### Typography 
 
-The fonts chosen for this website are Bebas Neue and Montserrat the reason for this choice was because they were clean, modern and complimented each other. 
+The fonts chosen for this website are Bebas Neue and Montserrat the reason for this choice was because they were clean, modern and complemented each other. 
 
 ### Colour Scheme 
 
@@ -190,8 +190,7 @@ The data schema was planned using [dbdiagram.io](https://dbdiagram.io/home).
 - The Order model is connected to the UserProfile model, allowing the user to view all their previous orders.
 - The Order model acts as a container for the order items. Although the item is stored within the OrderItem model, having them connected allows retrieving the item purchased.
 
-connectedness
-
+### Blog Post 
 - The BlogPost model is connected to the User model from allauth to generate the author of the blog post. 
 - The BlogPost model holds all information for the blogpost.
 
@@ -210,19 +209,37 @@ connectedness
 
 - The contact model holds the information for when a user completes the contact form (name, email, subject line and contact message)
 
-## Technologies Used
+## Technologies & Tools Used
 
+The following Python modules were used on this project
 - Python 3.8.2
-- Django
-- HTML
-- CSS
-- Heroku
-- Bootstrap
-- Git
-- Jinja templating 
+   - asgiref==3.3.4
+   - boto3==1.19.3
+   - botocore==1.22.3
+   - dj-database-url==0.5.0
+   - Django==3.2.7
+   - django-allauth==0.44.0
+   - django-crispy-forms==1.11.2
+   - django-storages==1.12.2
+   - gunicorn==20.0.4
+   - jmespath==0.10.0
+   - oauthlib==3.1.0
+   - Pillow==8.3.2
+   - psycopg2-binary==2.8.6
+   - PyJWT==2.0.1
+   - python3-openid==3.2.0
+   - pytz==2021.1
+   - requests-oauthlib==1.3.0
+   - s3transfer==0.5.0
+   - sqlparse==0.4.2
+   - stripe==2.60.0
 
-### Other Tools Used
-
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
+- [Heroku](https://id.heroku.com/login)
+- [Bootstrap]()https://getbootstrap.com/
+- [Git](https://git-scm.com/)
+- [GitHub](https://github.com/)
 - [Font Awesome](https://fontawesome.com/) 
 - [Google fonts](https://fonts.google.com/) 
 - [Balsamiq](https://balsamiq.com/) 
@@ -232,16 +249,10 @@ connectedness
 - [Coloors](https://coolors.co/) 
 - [JShint](https://jshint.com/) 
 - [W3cValidator](https://validator.w3.org/)
-- Google chrome developer tools
-- Stripe 
-- Django Crispy Forms 
-- Gunicorn 
-- Psycopg2 
-- AWS S3 Bucket - To host images for heroku site
-- Boto3
-- Django Storages
-- Allauth
 - [ibb](https://ibb.co/1LvgMHM) To store images for image URL for fixtures
+- [Google chrome developer tools](https://developer.chrome.com/docs/devtools/)
+- [AWS S3 Bucket](https://aws.amazon.com/) - To host images for heroku site
+- [Heroku Postgress](https://www.heroku.com/postgres)
 
 ### Databases
 - SQlite3
@@ -426,9 +437,10 @@ AWS_SECRET_ACCESS_KEY | `<your_aws_secret_key>`
 
 ## Credits
 
-All images and content has been taken from the [@bakemyday_byamber](https://www.instagram.com/bakemyday_byamber/) Instagram account. 
+All images and content have been taken from the [@bakemyday_byamber](https://www.instagram.com/bakemyday_byamber/) Instagram account. 
 I have full permission to use all images and all branding for this website from the owner of this business. 
 - CI Slack Community
+-
 
 ## Codes
 

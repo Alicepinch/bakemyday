@@ -7,7 +7,7 @@
 - As a shopper on bakemyday I would like to be able to view product details
     - A shopper can view product details by clicking on any product, they will be taken to the corresponding product detail page where there is more information here
 - As a shopper on the bakemyday I would like to be able to sort products by category/occasion
-    - A shopper can either shop for the occasion (Chrthe istmas etc.) or Category (Birthday etc.) by navigating to the tab's within the navigation. Once clicked a drop-down appears that a shopper can select from.
+    - A shopper can either shop for the occasion (Christmas etc.) or Category (Birthday etc.) by navigating to the tab's within the navigation. Once clicked a drop-down appears that a shopper can select from.
 - As a shopper on bakemyday I would like to be able to add a product to my basket
     - A shopper can add any product to their basket on its product detail page by using the 'Add to Bag' CTA
 - As a shopper on bakemyday I would like to be able to view all the products I have added to my basket 
@@ -66,7 +66,7 @@
 - To be able to remove any blog comments from blog posts incase they are innapropriate
     - An admin can delete any blog comments on the website by clicking on the relevant post and then clicking on the 'Delete Blog Comment' CTA
 - To be able to add new products to the website
-    - An admin can add any new product by navigating to the 'My Acccount in the top right corner and clicking on 'Add Product' in the drop down
+    - An admin can add any new product by navigating to the 'My Account in the top right corner and clicking on 'Add Product' in the drop down
 - To be able to view all contact forms that come through the contact page
     - All contact forms will go through to the owner's email address, they can also be viewed in the admin section of the django app
     
@@ -186,7 +186,7 @@ I also noticed that the blog posts were not displaying in order of them being cr
 
 ```class Meta: ordering = ['-date_created']```
 
-When adding a new blog post to the blog the success message was still showing the bag when it had been uploaded successfully. To fix this issue I updated the messages to be info rather than successful.
+When adding a new blog post to the blog the success message was still showing the bag when it had been uploaded successfully. To fix this issue I updated the messages to be info rather than success.
 
 When testing the blogpost functionality I realised that the blog preview section was not mandatory and that if someone didn't add this in then the template would return 'None'. To fix this I could have made this mandatory, however, I thought it would make more blog posts remove one step for a user and just take the preview from the blog body itself. I removed 'blog_preview' from the BlogPost model and then added in ```{{blogpost.blog_body|slice:":200" }}``` into my template to pull in a preview of the blog content on the blog page. 
 
@@ -319,7 +319,7 @@ When testing the save info to profile functionality during the building process 
 
 - Page works as expected and renders all items in a users bag with some product details
 - Remove button works and removes the item from bag
-- Quantity input works correctly and users can increase the quantity of prodproductstheir bag with 'Update'
+- Quantity input works correctly and users can increase the quantity of products in their bag with 'Update'
 - Grand total, and delivery are visible and reflect any changes that are made on the bag page
 - Keep shopping button works as expected and redirects user back to Products page
 - Secure Checkout button works as expected and directs user to the Checkout Page
