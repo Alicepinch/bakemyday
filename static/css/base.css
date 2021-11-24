@@ -309,5 +309,8 @@ footer a:hover {
     .header-container {
         padding-top: 100px;
    }
+   .toast {
+    margin: 1rem;
+}
 }
 
