@@ -112,7 +112,7 @@
         </div>
         <div class="col-12 p-0 mt-5">
           {% if user.is_superuser %}
-          <button type="button" class="btn" data-toggle="modal" data-target="#deleteModal">
+          <button type="button" class="btn" data-toggle="modal" data-target="#deleteProduct">
             Delete Product
         </button>
           <a class="btn" href="{% url 'edit_product' product.id %}">Edit Product</a>
@@ -126,7 +126,7 @@
 
 <!-- Delete Modal -->
 
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+<div class="modal fade" id="deleteProduct" tabindex="-1" aria-labelledby="deleteProduct" aria-hidden="true">
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
