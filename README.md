@@ -237,7 +237,7 @@ The following Python modules were used on this project
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
 - [Heroku](https://id.heroku.com/login)
-- [Bootstrap]()https://getbootstrap.com/
+- [Bootstrap](https://getbootstrap.com/)
 - [Git](https://git-scm.com/)
 - [GitHub](https://github.com/)
 - [Font Awesome](https://fontawesome.com/) 
@@ -252,7 +252,6 @@ The following Python modules were used on this project
 - [ibb](https://ibb.co/1LvgMHM) To store images for image URL for fixtures
 - [Google chrome developer tools](https://developer.chrome.com/docs/devtools/)
 - [AWS S3 Bucket](https://aws.amazon.com/) - To host images for heroku site
-- [Heroku Postgress](https://www.heroku.com/postgres)
 
 ### Databases
 - SQlite3
@@ -437,12 +436,32 @@ AWS_SECRET_ACCESS_KEY | `<your_aws_secret_key>`
 
 ## Credits
 
-All images and content have been taken from the [@bakemyday_byamber](https://www.instagram.com/bakemyday_byamber/) Instagram account. 
-I have full permission to use all images and all branding for this website from the owner of this business. 
-- CI Slack Community
--
+- CI Slack Community for helping to answer any questions that I had during development
+- Harry Dhillon for his help and support throughout the project
 
-## Codes
+### Media
+
+All product images and content have been taken from the [@bakemyday_byamber](https://www.instagram.com/bakemyday_byamber/) Instagram account. 
+I have full permission to use all images and all branding for this website from the owner of this business. 
+
+- Blog Image on home page was taken from https://www.pexels.com/
+- Cookies image on blog was taken from https://unsplash.com/
+
+### Content
+
+All content on this website has been created for educational purposes only and all product content and content on the homepage has been written by myself.
+
+- [https://sallysbakingaddiction.com/christmas-sugar-cookies/](https://sallysbakingaddiction.com/christmas-sugar-cookies/) - Snippet of content for the blog post was taken from sallys baking addiction blog.
+
+### Codes
 
 - [Django Central](https://djangocentral.com/building-a-blog-application-with-django/) was used to help build the blog app
 - [Ordinary Coders](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend) was used to help build a contact app
+- [Django Documentation](https://docs.djangoproject.com/en/3.2/) was used throughout the project to better understand the creation of a django app
+- Boutique Ado Code Institute project for help with the bag, checkout, products, profile apps, Stripe Payments and some CSS styling.
+
+---- 
+
+This website is for educational purposed only.
+
+Any issues then please email me at [alicepinch@hotmail.co.uk.](mailto:alicepinch@hotmail.co.uk)

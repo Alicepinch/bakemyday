@@ -117,7 +117,7 @@ iMac
 JavaScript code passed through JShint with no major issues. Once run through, it prompted to add some semicolons that were missing. These were all added in where necessary.
 
 0 Errors
-1 Undefined variable stripe
+1 Undefined variable stripe which is being used
 
 ### Python Testing
 
