@@ -8,7 +8,8 @@ p, li, small{
 }
 a {
     font-family: 'Montserrat', sans-serif;
-    color: #F7C1BB;
+    color: #f49c92;
+    font-weight: bold;
 }
 a:hover {
     color: #524444;
