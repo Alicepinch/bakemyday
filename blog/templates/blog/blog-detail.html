@@ -89,7 +89,11 @@
         {% else %}
             <p>There are no comments on this post yet! Be the first to comment below!</p>
         {% endif %}
-        <a class="btn" href="{% url 'add_blogcomment' blogpost.id %}">Create New Comment</a>
+        {% if not request.user.is_authenticated %}
+          <p>You need to be logged in to leave a comment! <a href="{% url 'account_login' %}">Login</a> or register an account <a href="{% url 'account_signup' %}">here</a></p>
+        {% else %}
+          <a class="btn" href="{% url 'add_blogcomment' blogpost.id %}">Create New Comment</a>
+        {% endif %}
       </div>
 
 

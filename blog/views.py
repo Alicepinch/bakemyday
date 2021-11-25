@@ -169,7 +169,7 @@ def delete_blogcomment(request, blogcomment_id):
         return redirect(reverse('blog'))
 
 
-@login_required()
+@login_required
 def edit_blogcomment(request, blogcomment_id):
     """ Edits blog comment on blogpost """
 
