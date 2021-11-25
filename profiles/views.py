@@ -32,6 +32,7 @@ def profile(request):
     return render(request, template, context)
 
 
+@login_required
 def order_history(request, order_number):
     """ A view to render a users order history """
 
